@@ -1,0 +1,45 @@
+# Local Vivado project products
+/FYP.cache/
+/FYP.hw/
+/FYP.ip_user_files/
+/FYP.runs/
+/FYP.sim/
+
+# Tool and language products
+*.bit
+*.bin
+*.dcp
+*.jou
+*.log
+*.pb
+*.pyc
+__pycache__/
+.Xil/
+.vscode/
+
+# Generated release archives and local delivery probes
+/artifacts/delivery/*
+!/artifacts/delivery/
+!/artifacts/delivery/source-manifest.json
+!/artifacts/delivery/core-overlays.patch
+!/artifacts/delivery/release-evidence.json
+
+# Keep only compact, reproducible verification evidence.
+/artifacts/verification/*
+!/artifacts/verification/
+!/artifacts/verification/summary.json
+!/artifacts/verification/benchmark-comparison.json
+!/artifacts/verification/overlay_nn1/
+!/artifacts/verification/overlay_nn1/bench/
+!/artifacts/verification/overlay_nn1/bench/1/
+!/artifacts/verification/overlay_nn1/bench/1/20261021-114500-136671/
+!/artifacts/verification/overlay_nn1/bench/1/20261021-114500-136671/imem.hex
+!/artifacts/verification/overlay_nn1/bench/1/20261021-114500-136671/dmem.hex
+!/artifacts/verification/overlay_nn1/bench/1/20261021-114500-136671/benchmark.json
+!/artifacts/verification/overlay_nn1/bench/1/20261021-114500-136671/expected.json
+!/artifacts/verification/overlay_nn1/bench/1/20261021-114500-136671/build.json
+
+/artifacts/fpga/*
+!/artifacts/fpga/
+!/artifacts/fpga/summary.json
+
