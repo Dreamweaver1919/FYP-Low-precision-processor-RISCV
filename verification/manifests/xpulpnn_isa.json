@@ -1,0 +1,726 @@
+{
+  "abi": "DATE2020-local-v1",
+  "opcode": 123,
+  "forms": [
+    {
+      "name": "add.n",
+      "op": "add",
+      "width": 4,
+      "scalar": false,
+      "funct6": 30,
+      "funct3": 0,
+      "mask": 4261441663,
+      "value": 2013266043
+    },
+    {
+      "name": "add.sc.n",
+      "op": "add",
+      "width": 4,
+      "scalar": true,
+      "funct6": 30,
+      "funct3": 4,
+      "mask": 4261441663,
+      "value": 2013282427
+    },
+    {
+      "name": "add.c",
+      "op": "add",
+      "width": 2,
+      "scalar": false,
+      "funct6": 30,
+      "funct3": 1,
+      "mask": 4261441663,
+      "value": 2013270139
+    },
+    {
+      "name": "add.sc.c",
+      "op": "add",
+      "width": 2,
+      "scalar": true,
+      "funct6": 30,
+      "funct3": 5,
+      "mask": 4261441663,
+      "value": 2013286523
+    },
+    {
+      "name": "sub.n",
+      "op": "sub",
+      "width": 4,
+      "scalar": false,
+      "funct6": 31,
+      "funct3": 0,
+      "mask": 4261441663,
+      "value": 2080374907
+    },
+    {
+      "name": "sub.sc.n",
+      "op": "sub",
+      "width": 4,
+      "scalar": true,
+      "funct6": 31,
+      "funct3": 4,
+      "mask": 4261441663,
+      "value": 2080391291
+    },
+    {
+      "name": "sub.c",
+      "op": "sub",
+      "width": 2,
+      "scalar": false,
+      "funct6": 31,
+      "funct3": 1,
+      "mask": 4261441663,
+      "value": 2080379003
+    },
+    {
+      "name": "sub.sc.c",
+      "op": "sub",
+      "width": 2,
+      "scalar": true,
+      "funct6": 31,
+      "funct3": 5,
+      "mask": 4261441663,
+      "value": 2080395387
+    },
+    {
+      "name": "avg.n",
+      "op": "avg",
+      "width": 4,
+      "scalar": false,
+      "funct6": 33,
+      "funct3": 0,
+      "mask": 4261441663,
+      "value": 2214592635
+    },
+    {
+      "name": "avg.sc.n",
+      "op": "avg",
+      "width": 4,
+      "scalar": true,
+      "funct6": 33,
+      "funct3": 4,
+      "mask": 4261441663,
+      "value": 2214609019
+    },
+    {
+      "name": "avg.c",
+      "op": "avg",
+      "width": 2,
+      "scalar": false,
+      "funct6": 33,
+      "funct3": 1,
+      "mask": 4261441663,
+      "value": 2214596731
+    },
+    {
+      "name": "avg.sc.c",
+      "op": "avg",
+      "width": 2,
+      "scalar": true,
+      "funct6": 33,
+      "funct3": 5,
+      "mask": 4261441663,
+      "value": 2214613115
+    },
+    {
+      "name": "avgu.n",
+      "op": "avgu",
+      "width": 4,
+      "scalar": false,
+      "funct6": 35,
+      "funct3": 0,
+      "mask": 4261441663,
+      "value": 2348810363
+    },
+    {
+      "name": "avgu.sc.n",
+      "op": "avgu",
+      "width": 4,
+      "scalar": true,
+      "funct6": 35,
+      "funct3": 4,
+      "mask": 4261441663,
+      "value": 2348826747
+    },
+    {
+      "name": "avgu.c",
+      "op": "avgu",
+      "width": 2,
+      "scalar": false,
+      "funct6": 35,
+      "funct3": 1,
+      "mask": 4261441663,
+      "value": 2348814459
+    },
+    {
+      "name": "avgu.sc.c",
+      "op": "avgu",
+      "width": 2,
+      "scalar": true,
+      "funct6": 35,
+      "funct3": 5,
+      "mask": 4261441663,
+      "value": 2348830843
+    },
+    {
+      "name": "min.n",
+      "op": "min",
+      "width": 4,
+      "scalar": false,
+      "funct6": 37,
+      "funct3": 0,
+      "mask": 4261441663,
+      "value": 2483028091
+    },
+    {
+      "name": "min.sc.n",
+      "op": "min",
+      "width": 4,
+      "scalar": true,
+      "funct6": 37,
+      "funct3": 4,
+      "mask": 4261441663,
+      "value": 2483044475
+    },
+    {
+      "name": "min.c",
+      "op": "min",
+      "width": 2,
+      "scalar": false,
+      "funct6": 37,
+      "funct3": 1,
+      "mask": 4261441663,
+      "value": 2483032187
+    },
+    {
+      "name": "min.sc.c",
+      "op": "min",
+      "width": 2,
+      "scalar": true,
+      "funct6": 37,
+      "funct3": 5,
+      "mask": 4261441663,
+      "value": 2483048571
+    },
+    {
+      "name": "minu.n",
+      "op": "minu",
+      "width": 4,
+      "scalar": false,
+      "funct6": 39,
+      "funct3": 0,
+      "mask": 4261441663,
+      "value": 2617245819
+    },
+    {
+      "name": "minu.sc.n",
+      "op": "minu",
+      "width": 4,
+      "scalar": true,
+      "funct6": 39,
+      "funct3": 4,
+      "mask": 4261441663,
+      "value": 2617262203
+    },
+    {
+      "name": "minu.c",
+      "op": "minu",
+      "width": 2,
+      "scalar": false,
+      "funct6": 39,
+      "funct3": 1,
+      "mask": 4261441663,
+      "value": 2617249915
+    },
+    {
+      "name": "minu.sc.c",
+      "op": "minu",
+      "width": 2,
+      "scalar": true,
+      "funct6": 39,
+      "funct3": 5,
+      "mask": 4261441663,
+      "value": 2617266299
+    },
+    {
+      "name": "max.n",
+      "op": "max",
+      "width": 4,
+      "scalar": false,
+      "funct6": 41,
+      "funct3": 0,
+      "mask": 4261441663,
+      "value": 2751463547
+    },
+    {
+      "name": "max.sc.n",
+      "op": "max",
+      "width": 4,
+      "scalar": true,
+      "funct6": 41,
+      "funct3": 4,
+      "mask": 4261441663,
+      "value": 2751479931
+    },
+    {
+      "name": "max.c",
+      "op": "max",
+      "width": 2,
+      "scalar": false,
+      "funct6": 41,
+      "funct3": 1,
+      "mask": 4261441663,
+      "value": 2751467643
+    },
+    {
+      "name": "max.sc.c",
+      "op": "max",
+      "width": 2,
+      "scalar": true,
+      "funct6": 41,
+      "funct3": 5,
+      "mask": 4261441663,
+      "value": 2751484027
+    },
+    {
+      "name": "maxu.n",
+      "op": "maxu",
+      "width": 4,
+      "scalar": false,
+      "funct6": 43,
+      "funct3": 0,
+      "mask": 4261441663,
+      "value": 2885681275
+    },
+    {
+      "name": "maxu.sc.n",
+      "op": "maxu",
+      "width": 4,
+      "scalar": true,
+      "funct6": 43,
+      "funct3": 4,
+      "mask": 4261441663,
+      "value": 2885697659
+    },
+    {
+      "name": "maxu.c",
+      "op": "maxu",
+      "width": 2,
+      "scalar": false,
+      "funct6": 43,
+      "funct3": 1,
+      "mask": 4261441663,
+      "value": 2885685371
+    },
+    {
+      "name": "maxu.sc.c",
+      "op": "maxu",
+      "width": 2,
+      "scalar": true,
+      "funct6": 43,
+      "funct3": 5,
+      "mask": 4261441663,
+      "value": 2885701755
+    },
+    {
+      "name": "srl.n",
+      "op": "srl",
+      "width": 4,
+      "scalar": false,
+      "funct6": 44,
+      "funct3": 0,
+      "mask": 4261441663,
+      "value": 2952790139
+    },
+    {
+      "name": "srl.sc.n",
+      "op": "srl",
+      "width": 4,
+      "scalar": true,
+      "funct6": 44,
+      "funct3": 4,
+      "mask": 4261441663,
+      "value": 2952806523
+    },
+    {
+      "name": "srl.c",
+      "op": "srl",
+      "width": 2,
+      "scalar": false,
+      "funct6": 44,
+      "funct3": 1,
+      "mask": 4261441663,
+      "value": 2952794235
+    },
+    {
+      "name": "srl.sc.c",
+      "op": "srl",
+      "width": 2,
+      "scalar": true,
+      "funct6": 44,
+      "funct3": 5,
+      "mask": 4261441663,
+      "value": 2952810619
+    },
+    {
+      "name": "sra.n",
+      "op": "sra",
+      "width": 4,
+      "scalar": false,
+      "funct6": 45,
+      "funct3": 0,
+      "mask": 4261441663,
+      "value": 3019899003
+    },
+    {
+      "name": "sra.sc.n",
+      "op": "sra",
+      "width": 4,
+      "scalar": true,
+      "funct6": 45,
+      "funct3": 4,
+      "mask": 4261441663,
+      "value": 3019915387
+    },
+    {
+      "name": "sra.c",
+      "op": "sra",
+      "width": 2,
+      "scalar": false,
+      "funct6": 45,
+      "funct3": 1,
+      "mask": 4261441663,
+      "value": 3019903099
+    },
+    {
+      "name": "sra.sc.c",
+      "op": "sra",
+      "width": 2,
+      "scalar": true,
+      "funct6": 45,
+      "funct3": 5,
+      "mask": 4261441663,
+      "value": 3019919483
+    },
+    {
+      "name": "sll.n",
+      "op": "sll",
+      "width": 4,
+      "scalar": false,
+      "funct6": 47,
+      "funct3": 0,
+      "mask": 4261441663,
+      "value": 3154116731
+    },
+    {
+      "name": "sll.sc.n",
+      "op": "sll",
+      "width": 4,
+      "scalar": true,
+      "funct6": 47,
+      "funct3": 4,
+      "mask": 4261441663,
+      "value": 3154133115
+    },
+    {
+      "name": "sll.c",
+      "op": "sll",
+      "width": 2,
+      "scalar": false,
+      "funct6": 47,
+      "funct3": 1,
+      "mask": 4261441663,
+      "value": 3154120827
+    },
+    {
+      "name": "sll.sc.c",
+      "op": "sll",
+      "width": 2,
+      "scalar": true,
+      "funct6": 47,
+      "funct3": 5,
+      "mask": 4261441663,
+      "value": 3154137211
+    },
+    {
+      "name": "abs.n",
+      "op": "abs",
+      "width": 4,
+      "scalar": false,
+      "funct6": 49,
+      "funct3": 0,
+      "mask": 4293947519,
+      "value": 3288334459
+    },
+    {
+      "name": "abs.c",
+      "op": "abs",
+      "width": 2,
+      "scalar": false,
+      "funct6": 49,
+      "funct3": 1,
+      "mask": 4293947519,
+      "value": 3288338555
+    },
+    {
+      "name": "dotup.n",
+      "op": "dotup",
+      "width": 4,
+      "scalar": false,
+      "funct6": 51,
+      "funct3": 0,
+      "mask": 4261441663,
+      "value": 3422552187
+    },
+    {
+      "name": "dotup.sc.n",
+      "op": "dotup",
+      "width": 4,
+      "scalar": true,
+      "funct6": 51,
+      "funct3": 4,
+      "mask": 4261441663,
+      "value": 3422568571
+    },
+    {
+      "name": "dotup.c",
+      "op": "dotup",
+      "width": 2,
+      "scalar": false,
+      "funct6": 51,
+      "funct3": 1,
+      "mask": 4261441663,
+      "value": 3422556283
+    },
+    {
+      "name": "dotup.sc.c",
+      "op": "dotup",
+      "width": 2,
+      "scalar": true,
+      "funct6": 51,
+      "funct3": 5,
+      "mask": 4261441663,
+      "value": 3422572667
+    },
+    {
+      "name": "dotusp.n",
+      "op": "dotusp",
+      "width": 4,
+      "scalar": false,
+      "funct6": 53,
+      "funct3": 0,
+      "mask": 4261441663,
+      "value": 3556769915
+    },
+    {
+      "name": "dotusp.sc.n",
+      "op": "dotusp",
+      "width": 4,
+      "scalar": true,
+      "funct6": 53,
+      "funct3": 4,
+      "mask": 4261441663,
+      "value": 3556786299
+    },
+    {
+      "name": "dotusp.c",
+      "op": "dotusp",
+      "width": 2,
+      "scalar": false,
+      "funct6": 53,
+      "funct3": 1,
+      "mask": 4261441663,
+      "value": 3556774011
+    },
+    {
+      "name": "dotusp.sc.c",
+      "op": "dotusp",
+      "width": 2,
+      "scalar": true,
+      "funct6": 53,
+      "funct3": 5,
+      "mask": 4261441663,
+      "value": 3556790395
+    },
+    {
+      "name": "dotsp.n",
+      "op": "dotsp",
+      "width": 4,
+      "scalar": false,
+      "funct6": 55,
+      "funct3": 0,
+      "mask": 4261441663,
+      "value": 3690987643
+    },
+    {
+      "name": "dotsp.sc.n",
+      "op": "dotsp",
+      "width": 4,
+      "scalar": true,
+      "funct6": 55,
+      "funct3": 4,
+      "mask": 4261441663,
+      "value": 3691004027
+    },
+    {
+      "name": "dotsp.c",
+      "op": "dotsp",
+      "width": 2,
+      "scalar": false,
+      "funct6": 55,
+      "funct3": 1,
+      "mask": 4261441663,
+      "value": 3690991739
+    },
+    {
+      "name": "dotsp.sc.c",
+      "op": "dotsp",
+      "width": 2,
+      "scalar": true,
+      "funct6": 55,
+      "funct3": 5,
+      "mask": 4261441663,
+      "value": 3691008123
+    },
+    {
+      "name": "sdotup.n",
+      "op": "sdotup",
+      "width": 4,
+      "scalar": false,
+      "funct6": 57,
+      "funct3": 0,
+      "mask": 4261441663,
+      "value": 3825205371
+    },
+    {
+      "name": "sdotup.sc.n",
+      "op": "sdotup",
+      "width": 4,
+      "scalar": true,
+      "funct6": 57,
+      "funct3": 4,
+      "mask": 4261441663,
+      "value": 3825221755
+    },
+    {
+      "name": "sdotup.c",
+      "op": "sdotup",
+      "width": 2,
+      "scalar": false,
+      "funct6": 57,
+      "funct3": 1,
+      "mask": 4261441663,
+      "value": 3825209467
+    },
+    {
+      "name": "sdotup.sc.c",
+      "op": "sdotup",
+      "width": 2,
+      "scalar": true,
+      "funct6": 57,
+      "funct3": 5,
+      "mask": 4261441663,
+      "value": 3825225851
+    },
+    {
+      "name": "sdotusp.n",
+      "op": "sdotusp",
+      "width": 4,
+      "scalar": false,
+      "funct6": 58,
+      "funct3": 0,
+      "mask": 4261441663,
+      "value": 3892314235
+    },
+    {
+      "name": "sdotusp.sc.n",
+      "op": "sdotusp",
+      "width": 4,
+      "scalar": true,
+      "funct6": 58,
+      "funct3": 4,
+      "mask": 4261441663,
+      "value": 3892330619
+    },
+    {
+      "name": "sdotusp.c",
+      "op": "sdotusp",
+      "width": 2,
+      "scalar": false,
+      "funct6": 58,
+      "funct3": 1,
+      "mask": 4261441663,
+      "value": 3892318331
+    },
+    {
+      "name": "sdotusp.sc.c",
+      "op": "sdotusp",
+      "width": 2,
+      "scalar": true,
+      "funct6": 58,
+      "funct3": 5,
+      "mask": 4261441663,
+      "value": 3892334715
+    },
+    {
+      "name": "sdotsp.n",
+      "op": "sdotsp",
+      "width": 4,
+      "scalar": false,
+      "funct6": 59,
+      "funct3": 0,
+      "mask": 4261441663,
+      "value": 3959423099
+    },
+    {
+      "name": "sdotsp.sc.n",
+      "op": "sdotsp",
+      "width": 4,
+      "scalar": true,
+      "funct6": 59,
+      "funct3": 4,
+      "mask": 4261441663,
+      "value": 3959439483
+    },
+    {
+      "name": "sdotsp.c",
+      "op": "sdotsp",
+      "width": 2,
+      "scalar": false,
+      "funct6": 59,
+      "funct3": 1,
+      "mask": 4261441663,
+      "value": 3959427195
+    },
+    {
+      "name": "sdotsp.sc.c",
+      "op": "sdotsp",
+      "width": 2,
+      "scalar": true,
+      "funct6": 59,
+      "funct3": 5,
+      "mask": 4261441663,
+      "value": 3959443579
+    },
+    {
+      "name": "qnt.n",
+      "op": "qnt",
+      "width": 4,
+      "scalar": false,
+      "funct6": 61,
+      "funct3": 0,
+      "mask": 4261441663,
+      "value": 4093640827
+    },
+    {
+      "name": "qnt.c",
+      "op": "qnt",
+      "width": 2,
+      "scalar": false,
+      "funct6": 61,
+      "funct3": 1,
+      "mask": 4261441663,
+      "value": 4093644923
+    }
+  ]
+}

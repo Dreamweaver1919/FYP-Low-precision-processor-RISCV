@@ -1,0 +1,9 @@
+{
+  "functional_status": "PASS",
+  "functional_index": "artifacts/verification/summary.json",
+  "fpga_summary": "artifacts/fpga/summary.json",
+  "fpga_run_count": 8,
+  "20ns_timing_met": true,
+  "board_programming": "NOT_RUN",
+  "bitstream": "NOT_RUN"
+}

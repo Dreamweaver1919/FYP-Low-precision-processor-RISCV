@@ -1,0 +1,1068 @@
+--- vendor/cv32e40p/rtl/cv32e40p_alu.sv
++++ rtl/core/cv32e40p_alu.sv
+@@ -27,6 +27,7 @@
+ 
+ module cv32e40p_alu
+   import cv32e40p_pkg::*;
++#(parameter COREV_XPULPNN = 0)
+ (
+     input logic               clk,
+     input logic               rst_n,
+@@ -36,7 +37,7 @@
+     input logic        [31:0] operand_b_i,
+     input logic        [31:0] operand_c_i,
+ 
+-    input logic [1:0] vector_mode_i,
++    input vec_mode_e vector_mode_i,
+     input logic [4:0] bmask_a_i,
+     input logic [4:0] bmask_b_i,
+     input logic [1:0] imm_vec_ext_i,
+@@ -51,6 +52,8 @@
+     output logic ready_o,
+     input  logic ex_ready_i
+ );
++
++  logic [31:0] result_legacy, nn_result4, nn_result2;
+ 
+   logic [31:0] operand_a_rev;
+   logic [31:0] operand_a_neg;
+@@ -926,13 +929,13 @@
+   ////////////////////////////////////////////////////////
+ 
+   always_comb begin
+-    result_o = '0;
++    result_legacy = '0;
+ 
+     unique case (operator_i)
+       // Standard Operations
+-      ALU_AND: result_o = operand_a_i & operand_b_i;
+-      ALU_OR:  result_o = operand_a_i | operand_b_i;
+-      ALU_XOR: result_o = operand_a_i ^ operand_b_i;
++      ALU_AND: result_legacy = operand_a_i & operand_b_i;
++      ALU_OR:  result_legacy = operand_a_i | operand_b_i;
++      ALU_XOR: result_legacy = operand_a_i ^ operand_b_i;
+ 
+       // Shift Operations
+       ALU_ADD, ALU_ADDR, ALU_ADDU, ALU_ADDUR,
+@@ -940,42 +943,42 @@
+       ALU_SLL,
+       ALU_SRL, ALU_SRA,
+       ALU_ROR:
+-      result_o = shift_result;
++      result_legacy = shift_result;
+ 
+       // bit manipulation instructions
+-      ALU_BINS, ALU_BEXT, ALU_BEXTU: result_o = bextins_result;
+-
+-      ALU_BCLR: result_o = bclr_result;
+-      ALU_BSET: result_o = bset_result;
++      ALU_BINS, ALU_BEXT, ALU_BEXTU: result_legacy = bextins_result;
++
++      ALU_BCLR: result_legacy = bclr_result;
++      ALU_BSET: result_legacy = bset_result;
+ 
+       // Bit reverse instruction
+-      ALU_BREV: result_o = reverse_result;
++      ALU_BREV: result_legacy = reverse_result;
+ 
+       // pack and shuffle operations
+-      ALU_SHUF, ALU_SHUF2, ALU_PCKLO, ALU_PCKHI, ALU_EXT, ALU_EXTS, ALU_INS: result_o = pack_result;
++      ALU_SHUF, ALU_SHUF2, ALU_PCKLO, ALU_PCKHI, ALU_EXT, ALU_EXTS, ALU_INS: result_legacy = pack_result;
+ 
+       // Min/Max/Ins
+-      ALU_MIN, ALU_MINU, ALU_MAX, ALU_MAXU: result_o = result_minmax;
++      ALU_MIN, ALU_MINU, ALU_MAX, ALU_MAXU: result_legacy = result_minmax;
+ 
+       //Abs/Cplxconj , ABS is used to do 0 - A for Cplxconj
+-      ALU_ABS: result_o = is_clpx_i ? {adder_result[31:16], operand_a_i[15:0]} : result_minmax;
+-
+-      ALU_CLIP, ALU_CLIPU: result_o = clip_result;
++      ALU_ABS: result_legacy = is_clpx_i ? {adder_result[31:16], operand_a_i[15:0]} : result_minmax;
++
++      ALU_CLIP, ALU_CLIPU: result_legacy = clip_result;
+ 
+       // Comparison Operations
+       ALU_EQ, ALU_NE, ALU_GTU, ALU_GEU, ALU_LTU, ALU_LEU, ALU_GTS, ALU_GES, ALU_LTS, ALU_LES: begin
+-        result_o[31:24] = {8{cmp_result[3]}};
+-        result_o[23:16] = {8{cmp_result[2]}};
+-        result_o[15:8]  = {8{cmp_result[1]}};
+-        result_o[7:0]   = {8{cmp_result[0]}};
++        result_legacy[31:24] = {8{cmp_result[3]}};
++        result_legacy[23:16] = {8{cmp_result[2]}};
++        result_legacy[15:8]  = {8{cmp_result[1]}};
++        result_legacy[7:0]   = {8{cmp_result[0]}};
+       end
+       // Non-vector comparisons
+-      ALU_SLTS, ALU_SLTU, ALU_SLETS, ALU_SLETU: result_o = {31'b0, comparison_result_o};
+-
+-      ALU_FF1, ALU_FL1, ALU_CLB, ALU_CNT: result_o = {26'h0, bitop_result[5:0]};
++      ALU_SLTS, ALU_SLTU, ALU_SLETS, ALU_SLETU: result_legacy = {31'b0, comparison_result_o};
++
++      ALU_FF1, ALU_FL1, ALU_CLB, ALU_CNT: result_legacy = {26'h0, bitop_result[5:0]};
+ 
+       // Division Unit Commands
+-      ALU_DIV, ALU_DIVU, ALU_REM, ALU_REMU: result_o = result_div;
++      ALU_DIV, ALU_DIVU, ALU_REM, ALU_REMU: result_legacy = result_div;
+ 
+       default: ;  // default case to suppress unique warning
+     endcase
+@@ -983,4 +986,19 @@
+ 
+   assign ready_o = div_ready;
+ 
++  if (COREV_XPULPNN) begin : gen_nn_alu
++    cv32e40p_nn_alu #(.ELEM_BITS(4)) nn4 (
++      .enable_i(enable_i && vector_mode_i == VEC_MODE4), .operator_i(operator_i),
++      .average_i(bmask_b_i == 5'd1), .operand_a_i(operand_a_i),
++      .operand_b_i(operand_b_i), .result_o(nn_result4));
++    cv32e40p_nn_alu #(.ELEM_BITS(2)) nn2 (
++      .enable_i(enable_i && vector_mode_i == VEC_MODE2), .operator_i(operator_i),
++      .average_i(bmask_b_i == 5'd1), .operand_a_i(operand_a_i),
++      .operand_b_i(operand_b_i), .result_o(nn_result2));
++  end else begin : gen_no_nn_alu
++    assign nn_result4 = '0;
++    assign nn_result2 = '0;
++  end
++  assign result_o = COREV_XPULPNN && vector_mode_i == VEC_MODE4 ? nn_result4 :
++                    COREV_XPULPNN && vector_mode_i == VEC_MODE2 ? nn_result2 : result_legacy;
+ endmodule
+--- vendor/cv32e40p/rtl/cv32e40p_controller.sv
++++ rtl/core/cv32e40p_controller.sv
+@@ -32,7 +32,8 @@
+ #(
+   parameter COREV_CLUSTER = 0,
+   parameter COREV_PULP    = 0,
+-  parameter FPU           = 0
++  parameter FPU           = 0,
++  parameter COREV_XPULPNN = 0
+ )
+ (
+   input  logic        clk,                        // Gated clock
+@@ -43,6 +44,7 @@
+   output logic        ctrl_busy_o,                // Core is busy processing instructions
+   output logic        is_decoding_o,              // Core is in decoding state
+   input  logic        is_fetch_failed_i,
++  input  logic        qnt_block_i,
+ 
+   // decoder related signals
+   output logic        deassert_we_o,              // deassert write enable for next instruction
+@@ -1260,6 +1262,25 @@
+         ctrl_fsm_ns = RESET;
+       end
+     endcase
++    // An accepted qnt is noninterruptible until its single final commit.
++    // This also covers WAIT_DRAIN and same-edge single-step entry to DBG_FLUSH.
++    if (COREV_XPULPNN && qnt_block_i &&
++        ((ctrl_fsm_cs == DECODE) || (ctrl_fsm_cs == DECODE_HWLOOP) || (ctrl_fsm_cs == DBG_FLUSH))) begin
++      ctrl_fsm_ns = ctrl_fsm_cs;
++      is_decoding_o = 1'b0;
++      halt_if_o = 1'b1;
++      halt_id_o = 1'b1;
++      pc_set_o = 1'b0;
++      irq_ack_o = 1'b0;
++      csr_save_if_o = 1'b0;
++      csr_save_id_o = 1'b0;
++      csr_save_ex_o = 1'b0;
++      csr_save_cause_o = 1'b0;
++      debug_csr_save_o = 1'b0;
++      hwlp_dec_cnt_o = '0;
++      hwlp_end_4_id_d = 1'b0;
++      hwlp_mask_o = 1'b1;
++    end
+   end
+ 
+ 
+@@ -1604,7 +1625,7 @@
+   a_single_step_dbg_taken_if : assert property (@(posedge clk)  disable iff (!rst_n)  (ctrl_fsm_ns==DBG_TAKEN_IF) |-> ((~debug_mode_q && debug_single_step_i) || debug_force_wakeup_n));
+ 
+   // Ensure DBG_FLUSH state is only one cycle. This implies that cause is either trigger, debug_req_entry, or ebreak
+-  a_dbg_flush : assert property (@(posedge clk)  disable iff (!rst_n)  (ctrl_fsm_cs==DBG_FLUSH) |-> (ctrl_fsm_ns!=DBG_FLUSH) );
++  a_dbg_flush : assert property (@(posedge clk)  disable iff (!rst_n)  (ctrl_fsm_cs==DBG_FLUSH) |-> ((ctrl_fsm_ns!=DBG_FLUSH) || (COREV_XPULPNN && qnt_block_i)) );
+ 
+   // Ensure that debug state outputs are one-hot
+   a_debug_state_onehot : assert property (@(posedge clk) $onehot({debug_havereset_o, debug_running_o, debug_halted_o}));
+--- vendor/cv32e40p/rtl/cv32e40p_core.sv
++++ rtl/core/cv32e40p_core.sv
+@@ -32,6 +32,7 @@
+   import cv32e40p_apu_core_pkg::*;
+ #(
+     parameter COREV_PULP =  0,  // PULP ISA Extension (incl. custom CSRs and hardware loop, excl. cv.elw)
++    parameter COREV_XPULPNN = 0,  // FYP DATE2020 sub-byte extension
+     parameter COREV_CLUSTER = 0,  // PULP Cluster interface (incl. cv.elw)
+     parameter FPU = 0,  // Floating Point Unit (interfaced via APU interface)
+     parameter FPU_ADDMUL_LAT = 0,  // Floating-Point ADDition/MULtiplication lane pipeline registers number
+@@ -176,7 +177,7 @@
+   logic        [ 4:0] bmask_a_ex;
+   logic        [ 4:0] bmask_b_ex;
+   logic        [ 1:0] imm_vec_ext_ex;
+-  logic        [ 1:0] alu_vec_mode_ex;
++  vec_mode_e alu_vec_mode_ex;
+   logic alu_is_clpx_ex, alu_is_subrot_ex;
+   logic        [                 1:0]       alu_clpx_shift_ex;
+ 
+@@ -280,6 +281,12 @@
+   logic               wb_valid;
+ 
+   logic               lsu_ready_ex;
++  logic qnt_valid_ex, qnt_q4_ex;
++  logic [31:0] qnt_activations_ex, qnt_base_ex;
++  logic qnt_acquire, qnt_acquire_ready, qnt_owned, qnt_release;
++  logic normal_lsu_wb_pending, qnt_req_valid, qnt_req_ready, qnt_rsp_valid;
++  logic [31:0] qnt_req_addr, qnt_rsp_data;
++  logic [3:0] qnt_req_tag, qnt_rsp_tag;
+   logic               lsu_ready_wb;
+ 
+   logic               apu_ready_wb;
+@@ -510,6 +517,7 @@
+   //                                             //
+   /////////////////////////////////////////////////
+   cv32e40p_id_stage #(
++      .COREV_XPULPNN (COREV_XPULPNN),
+       .COREV_PULP      (COREV_PULP),
+       .COREV_CLUSTER   (COREV_CLUSTER),
+       .N_HWLP          (N_HWLP),
+@@ -527,6 +535,10 @@
+       .APU_NUSFLAGS_CPU(APU_NUSFLAGS_CPU),
+       .DEBUG_TRIGGER_EN(DEBUG_TRIGGER_EN)
+   ) id_stage_i (
++      .qnt_valid_ex_o(qnt_valid_ex),
++      .qnt_q4_ex_o(qnt_q4_ex),
++      .qnt_activations_ex_o(qnt_activations_ex),
++      .qnt_base_ex_o(qnt_base_ex),
+       .clk          (clk),  // Gated clock
+       .clk_ungated_i(clk_i),  // Ungated clock
+       .rst_n        (rst_ni),
+@@ -744,6 +756,7 @@
+   //                                                 //
+   /////////////////////////////////////////////////////
+   cv32e40p_ex_stage #(
++      .COREV_XPULPNN (COREV_XPULPNN),
+       .COREV_PULP      (COREV_PULP),
+       .FPU             (FPU),
+       .APU_NARGS_CPU   (APU_NARGS_CPU),
+@@ -751,6 +764,21 @@
+       .APU_NDSFLAGS_CPU(APU_NDSFLAGS_CPU),
+       .APU_NUSFLAGS_CPU(APU_NUSFLAGS_CPU)
+   ) ex_stage_i (
++      .qnt_valid_i(qnt_valid_ex),
++      .qnt_q4_i(qnt_q4_ex),
++      .qnt_activations_i(qnt_activations_ex),
++      .qnt_base_i(qnt_base_ex),
++      .normal_lsu_wb_pending_o(normal_lsu_wb_pending),
++      .qnt_acquire_o(qnt_acquire),
++      .qnt_acquire_ready_i(qnt_acquire_ready),
++      .qnt_release_o(qnt_release),
++      .qnt_req_valid_o(qnt_req_valid),
++      .qnt_req_ready_i(qnt_req_ready),
++      .qnt_req_addr_o(qnt_req_addr),
++      .qnt_req_tag_o(qnt_req_tag),
++      .qnt_rsp_valid_i(qnt_rsp_valid),
++      .qnt_rsp_data_i(qnt_rsp_data),
++      .qnt_rsp_tag_i(qnt_rsp_tag),
+       // Global signals: Clock and active low asynchronous reset
+       .clk  (clk),
+       .rst_n(rst_ni),
+@@ -884,8 +912,21 @@
+   ////////////////////////////////////////////////////////////////////////////////////////
+ 
+   cv32e40p_load_store_unit #(
++      .COREV_XPULPNN(COREV_XPULPNN),
+       .PULP_OBI(PULP_OBI)
+   ) load_store_unit_i (
++      .qnt_acquire_i(qnt_acquire),
++      .qnt_acquire_ready_o(qnt_acquire_ready),
++      .normal_wb_pending_i(normal_lsu_wb_pending),
++      .qnt_owned_o(qnt_owned),
++      .qnt_release_i(qnt_release),
++      .qnt_req_valid_i(qnt_req_valid),
++      .qnt_req_ready_o(qnt_req_ready),
++      .qnt_req_addr_i(qnt_req_addr),
++      .qnt_req_tag_i(qnt_req_tag),
++      .qnt_rsp_valid_o(qnt_rsp_valid),
++      .qnt_rsp_data_o(qnt_rsp_data),
++      .qnt_rsp_tag_o(qnt_rsp_tag),
+       .clk  (clk),
+       .rst_n(rst_ni),
+ 
+@@ -1289,4 +1330,7 @@
+ 
+ `endif
+ 
++  if (COREV_XPULPNN && (!COREV_PULP || COREV_CLUSTER || FPU || ZFINX)) begin : gen_bad_nn_config
++    initial $fatal(1, "COREV_XPULPNN requires PULP=1, CLUSTER=0, FPU=0, ZFINX=0");
++  end
+ endmodule
+--- vendor/cv32e40p/rtl/cv32e40p_decoder.sv
++++ rtl/core/cv32e40p_decoder.sv
+@@ -31,6 +31,7 @@
+   import cv32e40p_fpu_pkg::*;
+ #(
+   parameter COREV_PULP        = 1,              // PULP ISA Extension (including PULP specific CSRs and hardware loop, excluding cv.elw)
++  parameter COREV_XPULPNN = 0,  // FYP DATE2020 sub-byte extension
+   parameter COREV_CLUSTER     = 0,              // PULP ISA Extension cv.elw (need COREV_PULP = 1)
+   parameter A_EXTENSION       = 0,
+   parameter FPU               = 0,
+@@ -87,7 +88,7 @@
+   output logic [2:0]  alu_op_b_mux_sel_o,      // operand b selection: reg value or immediate
+   output logic [1:0]  alu_op_c_mux_sel_o,      // operand c selection: reg value or jump target
+   output logic        alu_vec_o,               // vectorial instruction
+-  output logic [1:0]  alu_vec_mode_o,          // selects between 32 bit, 16 bit and 8 bit vectorial modes
++  output vec_mode_e alu_vec_mode_o,          // selects between 32 bit, 16 bit and 8 bit vectorial modes
+   output logic        scalar_replication_o,    // scalar replication enable
+   output logic        scalar_replication_c_o,  // scalar replication enable for operand C
+   output logic [0:0]  imm_a_mux_sel_o,         // immediate selection for operand a
+@@ -158,7 +159,10 @@
+   output logic [1:0]  ctrl_transfer_target_mux_sel_o,        // jump target selection
+ 
+   // HPM related control signals
+-  input  logic [31:0] mcounteren_i
++  input  logic [31:0] mcounteren_i,
++  output logic qnt_dec_o,
++  output logic qnt_q4_o,
++  output logic qnt_en_o
+ );
+ 
+   // write enable/request control
+@@ -197,6 +201,8 @@
+ 
+   always_comb
+   begin: instruction_decoder
++    qnt_dec_o = 1'b0;
++    qnt_q4_o = 1'b0;
+     ctrl_transfer_insn             = BRANCH_NONE;
+     ctrl_transfer_target_mux_sel_o = JT_JAL;
+ 
+@@ -2157,6 +2163,85 @@
+ 
+           // now decode the instruction
+           unique case (instr_rdata_i[31:26])
++            // FYP local ABI v1: dual-channel threshold quantization.
++            6'h3d: begin
++              alu_en = 1'b0;
++              regfile_alu_we = 1'b0;
++              rega_used_o = 1'b0;
++              regb_used_o = 1'b0;
++              scalar_replication_o = 1'b0;
++              alu_vec_o = 1'b0;
++              alu_vec_mode_o = VEC_MODE32;
++              if (COREV_XPULPNN && !instr_rdata_i[25] && instr_rdata_i[14:13] == 2'b00) begin
++                qnt_dec_o = 1'b1;
++                qnt_q4_o = !instr_rdata_i[12];
++                rega_used_o = 1'b1;
++                regb_used_o = 1'b1;
++                regfile_alu_we = 1'b1;
++              end else begin
++                illegal_insn_o = 1'b1;
++              end
++            end
++            // 70 packed arithmetic forms.
++            6'h1e, 6'h1f, 6'h21, 6'h23, 6'h25, 6'h27,
++            6'h29, 6'h2b, 6'h2c, 6'h2d, 6'h2f, 6'h31,
++            6'h33, 6'h35, 6'h37, 6'h39, 6'h3a, 6'h3b: begin
++              alu_en = 1'b0;
++              regfile_alu_we = 1'b0;
++              rega_used_o = 1'b0;
++              regb_used_o = 1'b0;
++              scalar_replication_o = 1'b0;
++              alu_vec_o = 1'b0;
++              alu_vec_mode_o = VEC_MODE32;
++              if (COREV_XPULPNN && !instr_rdata_i[25] && !instr_rdata_i[13] &&
++                  (instr_rdata_i[31:26] != 6'h31 ||
++                   (!instr_rdata_i[14] && instr_rdata_i[24:20] == 5'b0))) begin
++                regfile_alu_we = 1'b1;
++                rega_used_o = 1'b1;
++                regb_used_o = instr_rdata_i[31:26] != 6'h31;
++                alu_vec_o = 1'b1;
++                scalar_replication_o = instr_rdata_i[14];
++                alu_vec_mode_o = instr_rdata_i[12] ? VEC_MODE2 : VEC_MODE4;
++                mult_operator_o = instr_rdata_i[12] ? MUL_DOT2 : MUL_DOT4;
++                if (instr_rdata_i[31:26] >= 6'h33) begin
++                  mult_dot_en = 1'b1;
++                  case (instr_rdata_i[31:26])
++                    6'h33, 6'h39: mult_dot_signed_o = 2'b00;
++                    6'h35, 6'h3a: mult_dot_signed_o = 2'b01;
++                    default: mult_dot_signed_o = 2'b11;
++                  endcase
++                  if (instr_rdata_i[31:26] >= 6'h39) begin
++                    regc_used_o = 1'b1;
++                    regc_mux_o = REGC_RD;
++                  end
++                end else begin
++                  alu_en = 1'b1;
++                  case (instr_rdata_i[31:26])
++                    6'h1e: alu_operator_o = ALU_ADD;
++                    6'h1f: alu_operator_o = ALU_SUB;
++                    6'h21: begin
++                      alu_operator_o = ALU_ADD;
++                      bmask_b_mux_o = BMASK_B_ONE;
++                    end
++                    6'h23: begin
++                      alu_operator_o = ALU_ADDU;
++                      bmask_b_mux_o = BMASK_B_ONE;
++                    end
++                    6'h25: alu_operator_o = ALU_MIN;
++                    6'h27: alu_operator_o = ALU_MINU;
++                    6'h29: alu_operator_o = ALU_MAX;
++                    6'h2b: alu_operator_o = ALU_MAXU;
++                    6'h2c: alu_operator_o = ALU_SRL;
++                    6'h2d: alu_operator_o = ALU_SRA;
++                    6'h2f: alu_operator_o = ALU_SLL;
++                    6'h31: alu_operator_o = ALU_ABS;
++                    default: ;
++                  endcase
++                end
++              end else begin
++                illegal_insn_o = 1'b1;
++              end
++            end
+             6'b00000_0: begin // cv.add
+               alu_operator_o = ALU_ADD;
+               imm_b_mux_sel_o = IMMB_VS;
+@@ -2995,6 +3080,7 @@
+ 
+   // deassert we signals (in case of stalls)
+   assign alu_en_o                    = (deassert_we_i) ? 1'b0          : alu_en;
++  assign qnt_en_o                    = qnt_dec_o && !deassert_we_i;
+   assign mult_int_en_o               = (deassert_we_i) ? 1'b0          : mult_int_en;
+   assign mult_dot_en_o               = (deassert_we_i) ? 1'b0          : mult_dot_en;
+   assign apu_en_o                    = (deassert_we_i) ? 1'b0          : apu_en;
+--- vendor/cv32e40p/rtl/cv32e40p_ex_stage.sv
++++ rtl/core/cv32e40p_ex_stage.sv
+@@ -34,6 +34,7 @@
+   import cv32e40p_apu_core_pkg::*;
+ #(
+     parameter COREV_PULP       = 0,
++    parameter COREV_XPULPNN = 0,  // FYP DATE2020 sub-byte extension
+     parameter FPU              = 0,
+     parameter APU_NARGS_CPU    = 3,
+     parameter APU_WOP_CPU      = 6,
+@@ -52,7 +53,7 @@
+     input logic        [ 4:0] bmask_a_i,
+     input logic        [ 4:0] bmask_b_i,
+     input logic        [ 1:0] imm_vec_ext_i,
+-    input logic        [ 1:0] alu_vec_mode_i,
++    input vec_mode_e alu_vec_mode_i,
+     input logic               alu_is_clpx_i,
+     input logic               alu_is_subrot_i,
+     input logic        [ 1:0] alu_clpx_shift_i,
+@@ -161,7 +162,22 @@
+ 
+     output logic ex_ready_o,  // EX stage ready for new data
+     output logic ex_valid_o,  // EX stage gets new data
+-    input  logic wb_ready_i  // WB stage ready for new data
++    input  logic wb_ready_i,  // WB stage ready for new data
++    input logic qnt_valid_i,
++    input logic qnt_q4_i,
++    input logic [31:0] qnt_activations_i,
++    input logic [31:0] qnt_base_i,
++    output logic normal_lsu_wb_pending_o,
++    output logic qnt_acquire_o,
++    input logic qnt_acquire_ready_i,
++    output logic qnt_release_o,
++    output logic qnt_req_valid_o,
++    input logic qnt_req_ready_i,
++    output logic [31:0] qnt_req_addr_o,
++    output logic [3:0] qnt_req_tag_o,
++    input logic qnt_rsp_valid_i,
++    input logic [31:0] qnt_rsp_data_i,
++    input logic [3:0] qnt_rsp_tag_i
+ );
+ 
+   logic [                31:0] alu_result;
+@@ -177,6 +193,47 @@
+   logic                        alu_ready;
+   logic                        mulh_active;
+   logic                        mult_ready;
++  logic qnt_started_q, qnt_start_ready, qnt_start_valid;
++  logic qnt_done_valid, qnt_done_ready, qnt_commit, qnt_mem_idle;
++  logic [31:0] qnt_result;
++
++  assign normal_lsu_wb_pending_o = regfile_we_lsu;
++  assign qnt_acquire_o = COREV_XPULPNN && qnt_valid_i && !qnt_started_q && qnt_start_ready;
++  assign qnt_start_valid = qnt_acquire_o && qnt_acquire_ready_i;
++  assign qnt_done_ready = qnt_valid_i && wb_ready_i && lsu_ready_ex_i;
++  assign qnt_commit = COREV_XPULPNN && qnt_done_valid && qnt_done_ready;
++  assign qnt_release_o = qnt_commit && qnt_mem_idle;
++
++  always_ff @(posedge clk or negedge rst_n) begin
++    if (!rst_n) qnt_started_q <= 1'b0;
++    else if (!qnt_valid_i || qnt_commit) qnt_started_q <= 1'b0;
++    else if (qnt_start_valid && qnt_start_ready) qnt_started_q <= 1'b1;
++  end
++
++  generate
++    if (COREV_XPULPNN) begin : gen_nn_quant
++      cv32e40p_nn_quant quant_i (
++        .clk_i(clk), .rst_ni(rst_n),
++        .start_valid_i(qnt_start_valid), .start_ready_o(qnt_start_ready),
++        .start_activations_i(qnt_activations_i), .start_table_base_i(qnt_base_i),
++        .start_q4_i(qnt_q4_i), .active_o(),
++        .done_valid_o(qnt_done_valid), .done_ready_i(qnt_done_ready),
++        .done_result_o(qnt_result),
++        .mem_req_valid_o(qnt_req_valid_o), .mem_req_ready_i(qnt_req_ready_i),
++        .mem_req_addr_o(qnt_req_addr_o), .mem_req_tag_o(qnt_req_tag_o),
++        .mem_rsp_valid_i(qnt_rsp_valid_i), .mem_rsp_data_i(qnt_rsp_data_i),
++        .mem_rsp_tag_i(qnt_rsp_tag_i), .mem_idle_o(qnt_mem_idle)
++      );
++    end else begin : gen_no_nn_quant
++      assign qnt_start_ready = 1'b0;
++      assign qnt_done_valid = 1'b0;
++      assign qnt_result = '0;
++      assign qnt_mem_idle = 1'b1;
++      assign qnt_req_valid_o = 1'b0;
++      assign qnt_req_addr_o = '0;
++      assign qnt_req_tag_o = '0;
++    end
++  endgenerate
+ 
+   // APU signals
+   logic                        apu_valid;
+@@ -202,7 +259,12 @@
+     wb_contention             = 1'b0;
+ 
+     // APU single cycle operations, and multicycle operations (> 2cycles) are written back on ALU port
+-    if (apu_valid & (apu_singlecycle | apu_multicycle)) begin
++    if (COREV_XPULPNN && qnt_valid_i) begin
++      regfile_alu_waddr_fw_o = regfile_alu_waddr_i;
++      regfile_alu_wdata_fw_o = qnt_result;
++      regfile_alu_we_fw_o = qnt_commit && regfile_alu_we_i && (regfile_alu_waddr_i != 0);
++      regfile_alu_we_fw_power_o = regfile_alu_we_fw_o;
++    end else if (apu_valid & (apu_singlecycle | apu_multicycle)) begin
+       regfile_alu_we_fw_o       = 1'b1;
+       regfile_alu_we_fw_power_o = 1'b1;
+       regfile_alu_waddr_fw_o    = apu_waddr;
+@@ -260,7 +322,7 @@
+   //                        //
+   ////////////////////////////
+ 
+-  cv32e40p_alu alu_i (
++  cv32e40p_alu #(.COREV_XPULPNN(COREV_XPULPNN)) alu_i (
+       .clk        (clk),
+       .rst_n      (rst_n),
+       .enable_i   (alu_en_i),
+@@ -295,7 +357,7 @@
+   //                                                            //
+   ////////////////////////////////////////////////////////////////
+ 
+-  cv32e40p_mult mult_i (
++  cv32e40p_mult #(.COREV_XPULPNN(COREV_XPULPNN)) mult_i (
+       .clk  (clk),
+       .rst_n(rst_n),
+ 
+@@ -471,9 +533,11 @@
+   // As valid always goes to the right and ready to the left, and we are able
+   // to finish branches without going to the WB stage, ex_valid does not
+   // depend on ex_ready.
+-  assign ex_ready_o = (~apu_stall & alu_ready & mult_ready & lsu_ready_ex_i
+-                       & wb_ready_i & ~wb_contention) | (branch_in_ex_i);
+-  assign ex_valid_o = (apu_valid | alu_en_i | mult_en_i | csr_access_i | lsu_en_i)
+-                       & (alu_ready & mult_ready & lsu_ready_ex_i & wb_ready_i);
++  assign ex_ready_o = (COREV_XPULPNN && qnt_valid_i) ? qnt_commit :
++                      ((~apu_stall & alu_ready & mult_ready & lsu_ready_ex_i
++                       & wb_ready_i & ~wb_contention) | (branch_in_ex_i));
++  assign ex_valid_o = (COREV_XPULPNN && qnt_valid_i) ? qnt_commit :
++                      ((apu_valid | alu_en_i | mult_en_i | csr_access_i | lsu_en_i)
++                       & (alu_ready & mult_ready & lsu_ready_ex_i & wb_ready_i));
+ 
+ endmodule
+--- vendor/cv32e40p/rtl/cv32e40p_id_stage.sv
++++ rtl/core/cv32e40p_id_stage.sv
+@@ -32,6 +32,7 @@
+   import cv32e40p_apu_core_pkg::*;
+ #(
+     parameter COREV_PULP =  1,  // PULP ISA Extension (including PULP specific CSRs and hardware loop, excluding cv.elw)
++    parameter COREV_XPULPNN = 0,  // FYP DATE2020 sub-byte extension
+     parameter COREV_CLUSTER = 0,
+     parameter N_HWLP = 2,
+     parameter N_HWLP_BITS = $clog2(N_HWLP),
+@@ -96,6 +97,10 @@
+ 
+     // Pipeline ID/EX
+     output logic [31:0] pc_ex_o,
++    output logic qnt_valid_ex_o,
++    output logic qnt_q4_ex_o,
++    output logic [31:0] qnt_activations_ex_o,
++    output logic [31:0] qnt_base_ex_o,
+ 
+     output logic [31:0] alu_operand_a_ex_o,
+     output logic [31:0] alu_operand_b_ex_o,
+@@ -103,7 +108,7 @@
+     output logic [ 4:0] bmask_a_ex_o,
+     output logic [ 4:0] bmask_b_ex_o,
+     output logic [ 1:0] imm_vec_ext_ex_o,
+-    output logic [ 1:0] alu_vec_mode_ex_o,
++    output vec_mode_e alu_vec_mode_ex_o,
+ 
+     output logic [5:0] regfile_waddr_ex_o,
+     output logic       regfile_we_ex_o,
+@@ -274,6 +279,7 @@
+   logic        deassert_we;
+ 
+   logic        illegal_insn_dec;
++  logic qnt_dec, qnt_q4, qnt_en, qnt_bad_base, illegal_insn_combined;
+   logic        ebrk_insn_dec;
+   logic        mret_insn_dec;
+   logic        uret_insn_dec;
+@@ -457,7 +463,7 @@
+   logic [ 4:0] mult_imm_id;
+ 
+   logic        alu_vec;
+-  logic [ 1:0] alu_vec_mode;
++  vec_mode_e alu_vec_mode;
+   logic        scalar_replication;
+   logic        scalar_replication_c;
+ 
+@@ -553,7 +559,10 @@
+ 
+   // kill instruction in the IF/ID stage by setting the instr_valid_id control
+   // signal to 0 for instructions that are done
+-  assign clear_instr_valid_o = id_ready_o | halt_id | branch_taken_ex;
++  // halt_id normally flushes IF/ID. During qnt it must retain the younger
++  // instruction, including the final response cycle.
++  assign clear_instr_valid_o = (COREV_XPULPNN && qnt_valid_ex_o) ? 1'b0 :
++                               (id_ready_o | halt_id | branch_taken_ex);
+ 
+   assign branch_taken_ex = branch_in_ex_o && branch_decision_i;
+ 
+@@ -666,7 +675,13 @@
+ 
+   // scalar replication for operand B and shuffle type
+   always_comb begin
+-    if (alu_vec_mode == VEC_MODE8) begin
++    if (COREV_XPULPNN && alu_vec_mode == VEC_MODE4) begin
++      operand_b_vec = {8{operand_b[3:0]}};
++      imm_shuffle_type = imm_shuffleh_type;
++    end else if (COREV_XPULPNN && alu_vec_mode == VEC_MODE2) begin
++      operand_b_vec = {16{operand_b[1:0]}};
++      imm_shuffle_type = imm_shuffleh_type;
++    end else if (alu_vec_mode == VEC_MODE8) begin
+       operand_b_vec    = {4{operand_b[7:0]}};
+       imm_shuffle_type = imm_shuffleb_type;
+     end else begin
+@@ -973,6 +988,7 @@
+   ///////////////////////////////////////////////
+ 
+   cv32e40p_decoder #(
++      .COREV_XPULPNN (COREV_XPULPNN),
+       .COREV_PULP      (COREV_PULP),
+       .COREV_CLUSTER   (COREV_CLUSTER),
+       .A_EXTENSION     (A_EXTENSION),
+@@ -989,6 +1005,9 @@
+       .deassert_we_i(deassert_we),
+ 
+       .illegal_insn_o(illegal_insn_dec),
++      .qnt_dec_o(qnt_dec),
++      .qnt_q4_o(qnt_q4),
++      .qnt_en_o(qnt_en),
+       .ebrk_insn_o   (ebrk_insn_dec),
+ 
+       .mret_insn_o(mret_insn_dec),
+@@ -1112,6 +1131,7 @@
+   ////////////////////////////////////////////////////////////////////
+ 
+   cv32e40p_controller #(
++      .COREV_XPULPNN(COREV_XPULPNN),
+       .COREV_CLUSTER(COREV_CLUSTER),
+       .COREV_PULP   (COREV_PULP),
+       .FPU          (FPU)
+@@ -1128,7 +1148,8 @@
+       // decoder related signals
+       .deassert_we_o(deassert_we),
+ 
+-      .illegal_insn_i(illegal_insn_dec),
++      .illegal_insn_i(illegal_insn_combined),
++      .qnt_block_i(qnt_valid_ex_o),
+       .ecall_insn_i  (ecall_insn_dec),
+       .mret_insn_i   (mret_insn_dec),
+       .uret_insn_i   (uret_insn_dec),
+@@ -1433,7 +1454,7 @@
+       bmask_a_ex_o           <= '0;
+       bmask_b_ex_o           <= '0;
+       imm_vec_ext_ex_o       <= '0;
+-      alu_vec_mode_ex_o      <= '0;
++      alu_vec_mode_ex_o      <= VEC_MODE32;
+       alu_clpx_shift_ex_o    <= 2'b0;
+       alu_is_clpx_ex_o       <= 1'b0;
+       alu_is_subrot_ex_o     <= 1'b0;
+@@ -1591,7 +1612,7 @@
+ 
+         data_misaligned_ex_o <= 1'b0;
+ 
+-        if ((ctrl_transfer_insn_in_id == BRANCH_COND) || data_req_id) begin
++        if ((ctrl_transfer_insn_in_id == BRANCH_COND) || data_req_id || qnt_en) begin
+           pc_ex_o <= pc_id_i;
+         end
+ 
+@@ -1631,12 +1652,38 @@
+     end
+   end
+ 
++  // Validate only when the actual forwarded operands are ready. In particular,
++  // a load-use stall must not turn the previous value of rs2 into an exception.
++  assign qnt_bad_base = COREV_XPULPNN && qnt_dec && id_ready_o &&
++                       ((operand_b_fw_id[5:0] != 0) ||
++                        (operand_b_fw_id > 32'hffffff80));
++  assign illegal_insn_combined = illegal_insn_dec || qnt_bad_base;
++
++  // Dedicated qnt packet: independent of ALU/mult operand update enables.
++  always_ff @(posedge clk or negedge rst_n) begin
++    if (!rst_n) begin
++      qnt_valid_ex_o <= 1'b0;
++      qnt_q4_ex_o <= 1'b0;
++      qnt_activations_ex_o <= '0;
++      qnt_base_ex_o <= '0;
++    end else if (id_valid_o) begin
++      qnt_valid_ex_o <= COREV_XPULPNN && qnt_en && instr_valid_i && is_decoding_o;
++      if (qnt_en && instr_valid_i && is_decoding_o) begin
++        qnt_q4_ex_o <= qnt_q4;
++        qnt_activations_ex_o <= operand_a_fw_id;
++        qnt_base_ex_o <= operand_b_fw_id;
++      end
++    end else if (ex_ready_i) begin
++      qnt_valid_ex_o <= 1'b0;
++    end
++  end
++
+   // Performance Counter Events
+ 
+   // Illegal/ebreak/ecall are never counted as retired instructions. Note that actually issued instructions
+   // are being counted; the manner in which CSR instructions access the performance counters guarantees
+   // that this count will correspond to the retired isntructions count.
+-  assign minstret = id_valid_o && is_decoding_o && !(illegal_insn_dec || ebrk_insn_dec || ecall_insn_dec);
++  assign minstret = id_valid_o && is_decoding_o && !(illegal_insn_combined || ebrk_insn_dec || ecall_insn_dec);
+ 
+   always_ff @(posedge clk, negedge rst_n) begin
+     if (rst_n == 1'b0) begin
+@@ -1801,7 +1848,7 @@
+ 
+       // Check that certain vector modes are not used when PULP extension is not enabled
+       property p_vector_mode;
+-        @(posedge clk) disable iff (!rst_n) (1'b1) |-> ( (alu_vec_mode != VEC_MODE8 ) && (alu_vec_mode != VEC_MODE16 ) );
++        @(posedge clk) disable iff (!rst_n) (1'b1) |-> ( (alu_vec_mode != VEC_MODE8 ) && (alu_vec_mode != VEC_MODE16 ) && (alu_vec_mode != VEC_MODE4) && (alu_vec_mode != VEC_MODE2) );
+       endproperty
+ 
+       a_vector_mode :
+--- vendor/cv32e40p/rtl/cv32e40p_load_store_unit.sv
++++ rtl/core/cv32e40p_load_store_unit.sv
+@@ -24,7 +24,8 @@
+ ////////////////////////////////////////////////////////////////////////////////
+ 
+ module cv32e40p_load_store_unit #(
+-    parameter PULP_OBI = 0  // Legacy PULP OBI behavior
++    parameter PULP_OBI = 0,  // Legacy PULP OBI behavior
++    parameter COREV_XPULPNN = 0
+ ) (
+     input logic clk,
+     input logic rst_n,
+@@ -69,10 +70,23 @@
+     output logic lsu_ready_ex_o,  // LSU ready for new data in EX stage
+     output logic lsu_ready_wb_o,  // LSU ready for new data in WB stage
+ 
+-    output logic busy_o
++    output logic busy_o,
++    input logic qnt_acquire_i,
++    output logic qnt_acquire_ready_o,
++    input logic normal_wb_pending_i,
++    output logic qnt_owned_o,
++    input logic qnt_release_i,
++    input logic qnt_req_valid_i,
++    output logic qnt_req_ready_o,
++    input logic [31:0] qnt_req_addr_i,
++    input logic [3:0] qnt_req_tag_i,
++    output logic qnt_rsp_valid_o,
++    output logic [31:0] qnt_rsp_data_o,
++    output logic [3:0] qnt_rsp_tag_o
+ );
+ 
+   localparam DEPTH = 2;  // Maximum number of outstanding transactions
++  logic [1:0] cnt_q;  // Normal LSU outstanding count, separate from qnt tags.
+ 
+   // Transaction request (to cv32e40p_obi_interface)
+   logic trans_valid;
+@@ -87,9 +101,60 @@
+   logic resp_valid;
+   logic [31:0] resp_rdata;
+   logic resp_err;  // Unused for now
++  logic obi_ready, obi_resp_valid;
++  logic [1:0] qnt_count_q, qnt_count_d;
++  logic [3:0] qnt_tags [0:1];
++  logic qnt_wptr_q, qnt_rptr_q;
++  logic qnt_push, qnt_pop;
++
++  // Ownership changes only after all normal data/WB traffic has drained.
++  // Threshold responses never enter normal load metadata or its counter.
++  assign qnt_acquire_ready_o = COREV_XPULPNN && !qnt_owned_o &&
++      (cnt_q == 0) && !trans_valid && !normal_wb_pending_i;
++  assign trans_ready = obi_ready && !qnt_owned_o;
++  assign resp_valid = obi_resp_valid && !qnt_owned_o;
++  assign qnt_req_ready_o = qnt_owned_o && (qnt_count_q < DEPTH) && obi_ready;
++  assign qnt_push = qnt_req_valid_i && qnt_req_ready_o;
++  assign qnt_pop = obi_resp_valid && qnt_owned_o;
++  assign qnt_rsp_valid_o = qnt_pop;
++  assign qnt_rsp_data_o = resp_rdata;
++  assign qnt_rsp_tag_o = qnt_tags[qnt_rptr_q];
++  always_comb begin
++    qnt_count_d = qnt_count_q;
++    case ({qnt_push,qnt_pop})
++      2'b10: qnt_count_d = qnt_count_q + 1'b1;
++      2'b01: qnt_count_d = qnt_count_q - 1'b1;
++      default: ;
++    endcase
++  end
++  always_ff @(posedge clk or negedge rst_n) begin
++    if (!rst_n) begin
++      qnt_owned_o <= 1'b0;
++      qnt_count_q <= '0;
++      qnt_wptr_q <= 1'b0;
++      qnt_rptr_q <= 1'b0;
++      qnt_tags[0] <= '0;
++      qnt_tags[1] <= '0;
++    end else begin
++      qnt_count_q <= qnt_count_d;
++      if (qnt_acquire_i && qnt_acquire_ready_o) qnt_owned_o <= 1'b1;
++      if (qnt_release_i && qnt_owned_o && (qnt_count_d == 0) && !qnt_req_valid_i)
++        qnt_owned_o <= 1'b0;
++      if (qnt_push) begin
++        qnt_tags[qnt_wptr_q] <= qnt_req_tag_i;
++        qnt_wptr_q <= ~qnt_wptr_q;
++      end
++      if (qnt_pop) qnt_rptr_q <= ~qnt_rptr_q;
++      // synthesis translate_off
++      if (qnt_pop && qnt_count_q == 0) $fatal(1,"qnt response without accepted request");
++      if (qnt_count_q > DEPTH) $fatal(1,"qnt transaction FIFO overflow");
++      if (qnt_release_i && qnt_owned_o && ((qnt_count_d != 0) || qnt_req_valid_i))
++        $fatal(1,"qnt release with pending traffic");
++      // synthesis translate_on
++    end
++  end
+ 
+   // Counter to count maximum number of outstanding transactions
+-  logic [1:0] cnt_q;  // Transaction counter
+   logic [1:0] next_cnt;  // Next value for cnt_q
+   logic         count_up;               // Increment outstanding transaction count by 1 (can happen at same time as count_down)
+   logic         count_down;             // Decrement outstanding transaction count by 1 (can happen at same time as count_up)
+@@ -200,8 +265,8 @@
+   end
+ 
+   // Load event starts when request is sent and finishes when (final) rvalid is received
+-  assign p_elw_start_o  = data_load_event_ex_i && data_req_o;
+-  assign p_elw_finish_o = data_load_event_q && data_rvalid_i && !data_misaligned_ex_i;
++  assign p_elw_start_o  = data_load_event_ex_i && data_req_o && !qnt_owned_o;
++  assign p_elw_finish_o = data_load_event_q && data_rvalid_i && !data_misaligned_ex_i && !qnt_owned_o;
+ 
+   ////////////////////////////////////////////////////////////////////////
+   //  ____  _               _____      _                 _              //
+@@ -346,7 +411,8 @@
+   assign data_addr_int = (addr_useincr_ex_i) ? (operand_a_ex_i + operand_b_ex_i) : operand_a_ex_i;
+ 
+   // Busy if there are ongoing (or potentially outstanding) transfers
+-  assign busy_o = (cnt_q != 2'b00) || trans_valid;
++  assign busy_o = (cnt_q != 2'b00) || trans_valid || qnt_owned_o ||
++                  (COREV_XPULPNN && qnt_acquire_i);
+ 
+   //////////////////////////////////////////////////////////////////////////////
+   // Transaction request generation
+@@ -458,15 +524,15 @@
+       .clk  (clk),
+       .rst_n(rst_n),
+ 
+-      .trans_valid_i(trans_valid),
+-      .trans_ready_o(trans_ready),
+-      .trans_addr_i (trans_addr),
+-      .trans_we_i   (trans_we),
+-      .trans_be_i   (trans_be),
+-      .trans_wdata_i(trans_wdata),
+-      .trans_atop_i (trans_atop),
+-
+-      .resp_valid_o(resp_valid),
++      .trans_valid_i(qnt_owned_o ? (qnt_req_valid_i && qnt_count_q < DEPTH) : trans_valid),
++      .trans_ready_o(obi_ready),
++      .trans_addr_i (qnt_owned_o ? qnt_req_addr_i : trans_addr),
++      .trans_we_i   (qnt_owned_o ? 1'b0 : trans_we),
++      .trans_be_i   (qnt_owned_o ? 4'b1111 : trans_be),
++      .trans_wdata_i(qnt_owned_o ? 32'b0 : trans_wdata),
++      .trans_atop_i (qnt_owned_o ? 6'b0 : trans_atop),
++
++      .resp_valid_o(obi_resp_valid),
+       .resp_rdata_o(resp_rdata),
+       .resp_err_o  (resp_err),  // Unused for now
+ 
+@@ -522,7 +588,7 @@
+ 
+   // Check that an rvalid only occurs when there are outstanding transaction(s)
+   property p_no_spurious_rvalid;
+-    @(posedge clk) (data_rvalid_i == 1'b1) |-> (cnt_q > 0);
++    @(posedge clk) (data_rvalid_i == 1'b1) |-> (qnt_owned_o ? (qnt_count_q > 0) : (cnt_q > 0));
+   endproperty
+ 
+   a_no_spurious_rvalid :
+--- vendor/cv32e40p/rtl/cv32e40p_mult.sv
++++ rtl/core/cv32e40p_mult.sv
+@@ -25,6 +25,7 @@
+ 
+ module cv32e40p_mult
+   import cv32e40p_pkg::*;
++#(parameter COREV_XPULPNN = 0)
+ (
+     input logic clk,
+     input logic rst_n,
+@@ -59,6 +60,8 @@
+     output logic ready_o,
+     input  logic ex_ready_i
+ );
++
++  logic [31:0] result_legacy, nn_result4, nn_result2;
+ 
+   ///////////////////////////////////////////////////////////////
+   //  ___ _  _ _____ ___ ___ ___ ___   __  __ _   _ _  _____   //
+@@ -321,25 +324,25 @@
+   ////////////////////////////////////////////////////////
+ 
+   always_comb begin
+-    result_o = '0;
++    result_legacy = '0;
+ 
+     unique case (operator_i)
+-      MUL_MAC32, MUL_MSU32: result_o = int_result[31:0];
+-
+-      MUL_I, MUL_IR, MUL_H: result_o = short_result[31:0];
+-
+-      MUL_DOT8: result_o = dot_char_result[31:0];
++      MUL_MAC32, MUL_MSU32: result_legacy = int_result[31:0];
++
++      MUL_I, MUL_IR, MUL_H: result_legacy = short_result[31:0];
++
++      MUL_DOT8: result_legacy = dot_char_result[31:0];
+       MUL_DOT16: begin
+         if (is_clpx_i) begin
+           if (clpx_img_i) begin
+-            result_o[31:16] = clpx_shift_result;
+-            result_o[15:0]  = dot_op_c_i[15:0];
++            result_legacy[31:16] = clpx_shift_result;
++            result_legacy[15:0]  = dot_op_c_i[15:0];
+           end else begin
+-            result_o[15:0]  = clpx_shift_result;
+-            result_o[31:16] = dot_op_c_i[31:16];
++            result_legacy[15:0]  = clpx_shift_result;
++            result_legacy[31:16] = dot_op_c_i[31:16];
+           end
+         end else begin
+-          result_o = dot_short_result[31:0];
++          result_legacy = dot_short_result[31:0];
+         end
+       end
+ 
+@@ -358,7 +361,7 @@
+   assert property (
+     @(posedge clk) ((mulh_CS == FINISH) && (operator_i == MUL_H) && (short_signed_i == 2'b11))
+     |->
+-    (result_o == (($signed(
++    (result_legacy == (($signed(
+       {{32{op_a_i[31]}}, op_a_i}
+   ) * $signed(
+       {{32{op_b_i[31]}}, op_b_i}
+@@ -368,7 +371,7 @@
+   assert property (
+     @(posedge clk) ((mulh_CS == FINISH) && (operator_i == MUL_H) && (short_signed_i == 2'b01))
+     |->
+-    (result_o == (($signed(
++    (result_legacy == (($signed(
+       {{32{op_a_i[31]}}, op_a_i}
+   ) * {
+     32'b0, op_b_i
+@@ -378,10 +381,23 @@
+   assert property (
+     @(posedge clk) ((mulh_CS == FINISH) && (operator_i == MUL_H) && (short_signed_i == 2'b00))
+     |->
+-    (result_o == (({
++    (result_legacy == (({
+     32'b0, op_a_i
+   } * {
+     32'b0, op_b_i
+   }) >> 32)));
+ `endif
++  if (COREV_XPULPNN) begin : gen_nn_dotp
++    cv32e40p_nn_dotp #(.ELEM_BITS(4)) nn4 (
++      .enable_i(enable_i && operator_i == MUL_DOT4), .signed_mode_i(dot_signed_i),
++      .operand_a_i(dot_op_a_i), .operand_b_i(dot_op_b_i), .acc_i(dot_op_c_i), .result_o(nn_result4));
++    cv32e40p_nn_dotp #(.ELEM_BITS(2)) nn2 (
++      .enable_i(enable_i && operator_i == MUL_DOT2), .signed_mode_i(dot_signed_i),
++      .operand_a_i(dot_op_a_i), .operand_b_i(dot_op_b_i), .acc_i(dot_op_c_i), .result_o(nn_result2));
++  end else begin : gen_no_nn_dotp
++    assign nn_result4 = '0;
++    assign nn_result2 = '0;
++  end
++  assign result_o = COREV_XPULPNN && operator_i == MUL_DOT4 ? nn_result4 :
++                    COREV_XPULPNN && operator_i == MUL_DOT2 ? nn_result2 : result_legacy;
+ endmodule
+--- vendor/cv32e40p/rtl/cv32e40p_top.sv
++++ rtl/core/cv32e40p_top.sv
+@@ -25,6 +25,7 @@
+ 
+ module cv32e40p_top #(
+     parameter COREV_PULP = 0, // PULP ISA Extension (incl. custom CSRs and hardware loop, excl. cv.elw)
++    parameter COREV_XPULPNN = 0,  // FYP DATE2020 sub-byte extension
+     parameter COREV_CLUSTER = 0,  // PULP Cluster interface (incl. cv.elw)
+     parameter FPU = 0,  // Floating Point Unit (interfaced via APU interface)
+     parameter FPU_ADDMUL_LAT = 0,  // Floating-Point ADDition/MULtiplication computing lane pipeline registers number
+@@ -98,6 +99,7 @@
+ 
+   // Instantiate the Core
+   cv32e40p_core #(
++      .COREV_XPULPNN (COREV_XPULPNN),
+       .COREV_PULP      (COREV_PULP),
+       .COREV_CLUSTER   (COREV_CLUSTER),
+       .FPU             (FPU),
+@@ -194,4 +196,7 @@
+     end
+   endgenerate
+ 
++  if (COREV_XPULPNN && (!COREV_PULP || COREV_CLUSTER || FPU || ZFINX)) begin : gen_bad_nn_config
++    initial $fatal(1, "COREV_XPULPNN requires PULP=1, CLUSTER=0, FPU=0, ZFINX=0");
++  end
+ endmodule
+--- vendor/cv32e40p/rtl/include/cv32e40p_pkg.sv
++++ rtl/core/include/cv32e40p_pkg.sv
+@@ -160,24 +160,31 @@
+ 
+   } alu_opcode_e;
+ 
+-  parameter MUL_OP_WIDTH = 3;
++  parameter MUL_OP_WIDTH = 4;
+ 
+   typedef enum logic [MUL_OP_WIDTH-1:0] {
+ 
+-    MUL_MAC32 = 3'b000,
+-    MUL_MSU32 = 3'b001,
+-    MUL_I     = 3'b010,
+-    MUL_IR    = 3'b011,
+-    MUL_DOT8  = 3'b100,
+-    MUL_DOT16 = 3'b101,
+-    MUL_H     = 3'b110
++    MUL_MAC32 = 4'b0000,
++    MUL_MSU32 = 4'b0001,
++    MUL_I     = 4'b0010,
++    MUL_IR    = 4'b0011,
++    MUL_DOT8  = 4'b0100,
++    MUL_DOT16 = 4'b0101,
++    MUL_H     = 4'b0110,
++    MUL_DOT4  = 4'b0111,
++    MUL_DOT2  = 4'b1000
+ 
+   } mul_opcode_e;
+ 
+   // vector modes
+-  parameter VEC_MODE32 = 2'b00;
+-  parameter VEC_MODE16 = 2'b10;
+-  parameter VEC_MODE8 = 2'b11;
++  parameter VEC_MODE_WIDTH = 3;
++  typedef enum logic [VEC_MODE_WIDTH-1:0] {
++    VEC_MODE32 = 3'b000,
++    VEC_MODE16 = 3'b010,
++    VEC_MODE8  = 3'b011,
++    VEC_MODE4  = 3'b100,
++    VEC_MODE2  = 3'b101
++  } vec_mode_e;
+ 
+ 
+   // FSM state encoding

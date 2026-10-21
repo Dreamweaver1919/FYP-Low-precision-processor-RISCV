@@ -1,0 +1,1 @@
+--generic_top "COREV_PULP=0" --generic_top "COREV_CLUSTER=0" --generic_top "FPU=0" --generic_top "ZFINX=0"

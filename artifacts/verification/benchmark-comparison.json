@@ -1,0 +1,1355 @@
+{
+  "status": "PASS",
+  "generated_at": "2026-10-21T12:26:59",
+  "reference": {
+    "directory": "C:\\Users\\CEG\\FYP\\artifacts\\verification\\overlay_nn1\\bench\\1\\20261021-114500-136671",
+    "result": {
+      "status": "PASS",
+      "datasets": [
+        {
+          "name": "matmul_q4",
+          "m": 8,
+          "k": 32,
+          "n": 8,
+          "q": 4,
+          "stride_words": 4,
+          "logical_macs": 2048,
+          "nn_physical_lane_macs": 2048,
+          "output_words": 32,
+          "preparation": {
+            "cycles": 33598,
+            "instructions": 11722
+          },
+          "legacy_dot8": {
+            "cycles": 99310,
+            "instructions": 57610
+          },
+          "native_nn": {
+            "cycles": 5409,
+            "instructions": 2540
+          },
+          "scalar": {
+            "cycles": 68437,
+            "instructions": 38067
+          },
+          "primary_speedup": 18.360140506563134,
+          "end_to_end_speedup": 3.407285871766606
+        },
+        {
+          "name": "conv_q4",
+          "m": 36,
+          "k": 72,
+          "n": 8,
+          "q": 4,
+          "stride_words": 9,
+          "logical_macs": 20736,
+          "nn_physical_lane_macs": 20736,
+          "output_words": 144,
+          "preparation": {
+            "cycles": 375030,
+            "instructions": 138642
+          },
+          "legacy_dot8": {
+            "cycles": 956448,
+            "instructions": 560039
+          },
+          "native_nn": {
+            "cycles": 39897,
+            "instructions": 19224
+          },
+          "scalar": {
+            "cycles": 641769,
+            "instructions": 361212
+          },
+          "primary_speedup": 23.972930295510942,
+          "end_to_end_speedup": 3.2089451879487236
+        },
+        {
+          "name": "tail_q4",
+          "m": 2,
+          "k": 35,
+          "n": 2,
+          "q": 4,
+          "stride_words": 5,
+          "logical_macs": 140,
+          "nn_physical_lane_macs": 160,
+          "output_words": 2,
+          "preparation": {
+            "cycles": 9310,
+            "instructions": 3254
+          },
+          "legacy_dot8": {
+            "cycles": 6900,
+            "instructions": 3987
+          },
+          "native_nn": {
+            "cycles": 467,
+            "instructions": 222
+          },
+          "scalar": {
+            "cycles": 4765,
+            "instructions": 2638
+          },
+          "primary_speedup": 14.775160599571734,
+          "end_to_end_speedup": 1.6579727932903754
+        },
+        {
+          "name": "matmul_q2",
+          "m": 8,
+          "k": 32,
+          "n": 8,
+          "q": 2,
+          "stride_words": 2,
+          "logical_macs": 2048,
+          "nn_physical_lane_macs": 2048,
+          "output_words": 32,
+          "preparation": {
+            "cycles": 33375,
+            "instructions": 10938
+          },
+          "legacy_dot8": {
+            "cycles": 96408,
+            "instructions": 54344
+          },
+          "native_nn": {
+            "cycles": 3713,
+            "instructions": 1804
+          },
+          "scalar": {
+            "cycles": 65535,
+            "instructions": 36849
+          },
+          "primary_speedup": 25.964987880420146,
+          "end_to_end_speedup": 3.4993259275237274
+        },
+        {
+          "name": "conv_q2",
+          "m": 36,
+          "k": 72,
+          "n": 8,
+          "q": 2,
+          "stride_words": 5,
+          "logical_macs": 20736,
+          "nn_physical_lane_macs": 23040,
+          "output_words": 144,
+          "preparation": {
+            "cycles": 375095,
+            "instructions": 132018
+          },
+          "legacy_dot8": {
+            "cycles": 945092,
+            "instructions": 533984
+          },
+          "native_nn": {
+            "cycles": 25929,
+            "instructions": 12744
+          },
+          "scalar": {
+            "cycles": 630571,
+            "instructions": 355893
+          },
+          "primary_speedup": 36.44922673454433,
+          "end_to_end_speedup": 3.292039877912544
+        },
+        {
+          "name": "tail_q2",
+          "m": 2,
+          "k": 35,
+          "n": 2,
+          "q": 2,
+          "stride_words": 3,
+          "logical_macs": 140,
+          "nn_physical_lane_macs": 192,
+          "output_words": 2,
+          "preparation": {
+            "cycles": 9261,
+            "instructions": 3046
+          },
+          "legacy_dot8": {
+            "cycles": 6754,
+            "instructions": 3774
+          },
+          "native_nn": {
+            "cycles": 361,
+            "instructions": 176
+          },
+          "scalar": {
+            "cycles": 4617,
+            "instructions": 2565
+          },
+          "primary_speedup": 18.709141274238227,
+          "end_to_end_speedup": 1.6644148825607983
+        }
+      ],
+      "empty_bracket": {
+        "cycles": 39,
+        "instructions": 4
+      },
+      "overhead_subtracted": false,
+      "throughput": [
+        {
+          "q": 4,
+          "dependent_sdot_instructions": 128,
+          "legacy_dot8": {
+            "cycles": 296,
+            "instructions": 133
+          },
+          "native_nn": {
+            "cycles": 306,
+            "instructions": 136
+          }
+        },
+        {
+          "q": 2,
+          "dependent_sdot_instructions": 128,
+          "legacy_dot8": {
+            "cycles": 296,
+            "instructions": 133
+          },
+          "native_nn": {
+            "cycles": 298,
+            "instructions": 135
+          }
+        }
+      ]
+    },
+    "build": {
+      "command": [
+        "D:\\fyp-xpulpnn\\tools\\xpack-riscv-none-elf-gcc-15.2.0-1\\bin\\riscv-none-elf-gcc.exe",
+        "-march=rv32imc_zicsr",
+        "-mabi=ilp32",
+        "-mcmodel=medany",
+        "-nostdlib",
+        "-nostartfiles",
+        "-ffreestanding",
+        "-fno-builtin",
+        "-fno-pic",
+        "-fno-pie",
+        "-msmall-data-limit=0",
+        "-mno-relax",
+        "-O2",
+        "-I",
+        "C:\\Users\\CEG\\FYP\\verification\\sw\\common",
+        "-I",
+        "C:\\Users\\CEG\\FYP\\artifacts\\verification\\overlay_nn1\\bench\\1\\20261021-114500-136671",
+        "-I",
+        "C:\\Users\\CEG\\FYP\\verification\\sw\\bench",
+        "-T",
+        "C:\\Users\\CEG\\FYP\\verification\\sw\\common\\link.ld",
+        "-Wl,-Map=C:\\Users\\CEG\\FYP\\artifacts\\verification\\overlay_nn1\\bench\\1\\20261021-114500-136671\\test.map",
+        "C:\\Users\\CEG\\FYP\\verification\\sw\\common\\crt0.S",
+        "C:\\Users\\CEG\\FYP\\verification\\sw\\common\\vectors.S",
+        "C:\\Users\\CEG\\FYP\\verification\\sw\\bench\\conv.c",
+        "C:\\Users\\CEG\\FYP\\verification\\sw\\bench\\matmul.c",
+        "C:\\Users\\CEG\\FYP\\verification\\sw\\bench\\kernels_xpulp.c",
+        "C:\\Users\\CEG\\FYP\\verification\\sw\\bench\\kernels_xpulpnn.c",
+        "C:\\Users\\CEG\\FYP\\verification\\sw\\bench\\kernels_scalar.c",
+        "-o",
+        "C:\\Users\\CEG\\FYP\\artifacts\\verification\\overlay_nn1\\bench\\1\\20261021-114500-136671\\test.elf"
+      ],
+      "elf_sha256": "3fac9907a4301808938536a79a92bbe536c9a68af9c0420595d68c8b3d810dd2",
+      "test": "bench_common",
+      "isa": "xpulpnn",
+      "seed": 1
+    },
+    "run": {
+      "config": "overlay_nn1",
+      "suite": "bench",
+      "seed": 1,
+      "max_cycles": 10000000,
+      "grant_max": 0,
+      "response_max": 1,
+      "sources": [
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\vendor\\pulp_platform_common_cells\\src\\cf_math_pkg.sv",
+          "sha256": "afc32fcae21f6cbb834c5ee602a1aaee1b518fc436a86d4fe1b97942473d35c8"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\core\\include\\cv32e40p_pkg.sv",
+          "sha256": "ccc0618f2c4a7f3bb5b48c7327061f439e7367e4d53b97e759a6b04e40dfa737"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\include\\cv32e40p_apu_core_pkg.sv",
+          "sha256": "33d7c06b0fef3ae2c8814b040abe3cdaa23065cf12643de20e8275f44f97abe1"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\include\\cv32e40p_fpu_pkg.sv",
+          "sha256": "ae738f408ba2ade41bfcf0488c8f611a2c39b26915191890dac907b8a7a518e5"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\vendor\\pulp_platform_fpnew\\src\\fpnew_pkg.sv",
+          "sha256": "468d7990971707d6621916898629068aa8ebace0ad24af5706e4b4f5fbc2f0a9"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_aligner.sv",
+          "sha256": "c78cd8c09fee10e45536dc5b8d1fb17c3a130e2270168279fcaa43a19580e4f3"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\core\\cv32e40p_alu.sv",
+          "sha256": "4f5d9f5e58935509ecfb82dbe1db6ea9a1c6eb26ebeec2482655d22f0ea7a975"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_alu_div.sv",
+          "sha256": "11035bcbb28447fa5a3e40d5cad4f257e763f75e49664ce8098ab6247a9a57cb"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_apu_disp.sv",
+          "sha256": "27931c8004e4d266c6ea02c9d5c19968c67d7e6ab86e57da4088531b13c8c48f"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\platform\\sim\\cv32e40p_clock_gate.sv",
+          "sha256": "6ae2e47b98f8129b67a05494826002d3db71f80a89e9caf038c197df1d548759"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_compressed_decoder.sv",
+          "sha256": "db90df2f8737aff29d73b3d242dd33aeb6750ae69ae7eb8e118b531180945d7f"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\core\\cv32e40p_controller.sv",
+          "sha256": "3607303d4e67fd8323a8ba5062331d75d9e666dc2b3bbf8b8a94476d90cf79b0"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\core\\cv32e40p_core.sv",
+          "sha256": "e64570e8873fd1cd3f0ebf8cd9c7bf03500fc953e4dce36bebdf9732af1efbb0"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_cs_registers.sv",
+          "sha256": "e2cec8f3d273748783275c60b1ec89101336608638d7e7783b03dd6b9dbb0345"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\core\\cv32e40p_decoder.sv",
+          "sha256": "8deb2ed9acef8a09f5e89058e61ac5c4f167e323d1b8632f664dcc8eddfdd13c"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\core\\cv32e40p_ex_stage.sv",
+          "sha256": "1f27fe6a7592d93f599defbdb5c152ef81511fe4c87cee545f617f0dac60b81a"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_ff_one.sv",
+          "sha256": "6b646e6aa931f8ab56b85ee27549a422450b456270a54d68a4130329823226b6"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_fifo.sv",
+          "sha256": "d910cbd0751f38d349e8975de22b43d0a2937f9e905b0d9b82894fd83c53fe8a"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_fp_wrapper.sv",
+          "sha256": "1579104bf82f2e18a13029a7e299d867415a660ccff24c20ca3bb4ee4e315e9d"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_hwloop_regs.sv",
+          "sha256": "c2a0787c07bcd6c198b6338c4c6ee372b4bce96ec4a4def467ff0ae03da4e43a"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\core\\cv32e40p_id_stage.sv",
+          "sha256": "db316462a27e928e380acd046807eaae83b47f04d7cd157a64fdaf4d7f2b3c99"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_if_stage.sv",
+          "sha256": "e2d1cc9bc433a093938f2d4e4268c611f9a9bf199101e85114d417ff04597626"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_int_controller.sv",
+          "sha256": "24df51d9cb33f5c8760a8cfbc7931aafc94c2ab0523c7df55b2635e7778af16f"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\core\\cv32e40p_load_store_unit.sv",
+          "sha256": "dcb8ed47a5ab27bfc3a80d405895ca2a3dfcbf99527df8fd36ce305c68c95809"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\core\\cv32e40p_mult.sv",
+          "sha256": "a1dcce57da3c0434d72da403b3442609a0f8a6a38c78f5dd47d2411295d4853c"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_obi_interface.sv",
+          "sha256": "2b0a58e5c2f758dbe5f6e8f786c547da5508ce466007517434e2f7d817b758ed"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_popcnt.sv",
+          "sha256": "7a2dbeded21929832b40fc8d068b35b7281c75a63c426feed207127d4da08e4e"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_prefetch_buffer.sv",
+          "sha256": "a2fcbe6b783659ebecaf25d105f30c68af9b68c2850b833af64a2cec3ec29262"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_prefetch_controller.sv",
+          "sha256": "66e6078ea3b3acd3ceea4b974c0488d25e02324935532de1f2d39cdc34c875a0"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_register_file_ff.sv",
+          "sha256": "cd04d46afbf778ff3f1573bdd390784e5461a09b33fd670fa126ae7d3c433e89"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_sleep_unit.sv",
+          "sha256": "1cf012a83b54472931ad9944e7774e311222641a0aa026229c19467f90bf5448"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\vendor\\pulp_platform_fpnew\\src\\fpnew_opgroup_block.sv",
+          "sha256": "20ba29a7d160470bd29206de04a3be265d1f0c137be73a2673fddc8d75f7557b"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\vendor\\pulp_platform_fpnew\\src\\fpnew_opgroup_fmt_slice.sv",
+          "sha256": "0f3e60cba5dfb4a5547b6c5945185bde57e7b5f5fbd891b6ab1465f0f3cfd7ec"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\vendor\\pulp_platform_fpnew\\src\\fpnew_top.sv",
+          "sha256": "3a2ae45ff95ca1e6a377b312cca0f04b9d75524fe17bed9cbe648319fa83ffda"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\vendor\\pulp_platform_common_cells\\src\\lzc.sv",
+          "sha256": "c47046cab67cd9e9ff46f9b2a4c055f301eabd0f135d76d96639eb41c9fa3609"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\vendor\\pulp_platform_common_cells\\src\\rr_arb_tree.sv",
+          "sha256": "a0df0ff9c26920f5bc17b4ed115600a4f0c745a62c0fb116c160c84abfc9191c"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\core\\cv32e40p_top.sv",
+          "sha256": "1d4fd0f283d2282e16de976a5578ca29ad855905365a527f56e8b73c1496aa4c"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\nn\\cv32e40p_nn_alu.sv",
+          "sha256": "ec42b036cbbb6d3de720c2eac8e707bd94f0cc371fb347ddce8de10affbcbf44"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\nn\\cv32e40p_nn_dotp.sv",
+          "sha256": "165b1cd125372da070682690c9e3252dad316a96990627c17f07b5209af44370"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\nn\\cv32e40p_nn_quant.sv",
+          "sha256": "8f1f14f2bdb80a9f18b3eaf0093636801cb57b4b7e2fdad5b0184b3a3499ac54"
+        }
+      ]
+    },
+    "datasets": {
+      "matmul_q4": {
+        "shape": {
+          "m": 8,
+          "k": 32,
+          "n": 8,
+          "q": 4,
+          "stride_words": 4,
+          "output_words": 32
+        },
+        "logical_macs": 2048,
+        "physical_lane_macs": 2048,
+        "padding_macs": 0,
+        "preparation": {
+          "cycles": 33598,
+          "instructions": 11722
+        },
+        "legacy_dot8": {
+          "cycles": 99310,
+          "instructions": 57610
+        },
+        "native_nn": {
+          "cycles": 5409,
+          "instructions": 2540
+        },
+        "scalar": {
+          "cycles": 68437,
+          "instructions": 38067
+        },
+        "primary_speedup": 18.360140506563134,
+        "end_to_end_speedup": 3.407285871766606,
+        "scalar_vs_native": 12.652431133296357
+      },
+      "conv_q4": {
+        "shape": {
+          "m": 36,
+          "k": 72,
+          "n": 8,
+          "q": 4,
+          "stride_words": 9,
+          "output_words": 144
+        },
+        "logical_macs": 20736,
+        "physical_lane_macs": 20736,
+        "padding_macs": 0,
+        "preparation": {
+          "cycles": 375030,
+          "instructions": 138642
+        },
+        "legacy_dot8": {
+          "cycles": 956448,
+          "instructions": 560039
+        },
+        "native_nn": {
+          "cycles": 39897,
+          "instructions": 19224
+        },
+        "scalar": {
+          "cycles": 641769,
+          "instructions": 361212
+        },
+        "primary_speedup": 23.972930295510942,
+        "end_to_end_speedup": 3.2089451879487236,
+        "scalar_vs_native": 16.08564553725844
+      },
+      "tail_q4": {
+        "shape": {
+          "m": 2,
+          "k": 35,
+          "n": 2,
+          "q": 4,
+          "stride_words": 5,
+          "output_words": 2
+        },
+        "logical_macs": 140,
+        "physical_lane_macs": 160,
+        "padding_macs": 20,
+        "preparation": {
+          "cycles": 9310,
+          "instructions": 3254
+        },
+        "legacy_dot8": {
+          "cycles": 6900,
+          "instructions": 3987
+        },
+        "native_nn": {
+          "cycles": 467,
+          "instructions": 222
+        },
+        "scalar": {
+          "cycles": 4765,
+          "instructions": 2638
+        },
+        "primary_speedup": 14.775160599571734,
+        "end_to_end_speedup": 1.6579727932903754,
+        "scalar_vs_native": 10.203426124197001
+      },
+      "matmul_q2": {
+        "shape": {
+          "m": 8,
+          "k": 32,
+          "n": 8,
+          "q": 2,
+          "stride_words": 2,
+          "output_words": 32
+        },
+        "logical_macs": 2048,
+        "physical_lane_macs": 2048,
+        "padding_macs": 0,
+        "preparation": {
+          "cycles": 33375,
+          "instructions": 10938
+        },
+        "legacy_dot8": {
+          "cycles": 96408,
+          "instructions": 54344
+        },
+        "native_nn": {
+          "cycles": 3713,
+          "instructions": 1804
+        },
+        "scalar": {
+          "cycles": 65535,
+          "instructions": 36849
+        },
+        "primary_speedup": 25.964987880420146,
+        "end_to_end_speedup": 3.4993259275237274,
+        "scalar_vs_native": 17.65014812819822
+      },
+      "conv_q2": {
+        "shape": {
+          "m": 36,
+          "k": 72,
+          "n": 8,
+          "q": 2,
+          "stride_words": 5,
+          "output_words": 144
+        },
+        "logical_macs": 20736,
+        "physical_lane_macs": 23040,
+        "padding_macs": 2304,
+        "preparation": {
+          "cycles": 375095,
+          "instructions": 132018
+        },
+        "legacy_dot8": {
+          "cycles": 945092,
+          "instructions": 533984
+        },
+        "native_nn": {
+          "cycles": 25929,
+          "instructions": 12744
+        },
+        "scalar": {
+          "cycles": 630571,
+          "instructions": 355893
+        },
+        "primary_speedup": 36.44922673454433,
+        "end_to_end_speedup": 3.292039877912544,
+        "scalar_vs_native": 24.319140730456247
+      },
+      "tail_q2": {
+        "shape": {
+          "m": 2,
+          "k": 35,
+          "n": 2,
+          "q": 2,
+          "stride_words": 3,
+          "output_words": 2
+        },
+        "logical_macs": 140,
+        "physical_lane_macs": 192,
+        "padding_macs": 52,
+        "preparation": {
+          "cycles": 9261,
+          "instructions": 3046
+        },
+        "legacy_dot8": {
+          "cycles": 6754,
+          "instructions": 3774
+        },
+        "native_nn": {
+          "cycles": 361,
+          "instructions": 176
+        },
+        "scalar": {
+          "cycles": 4617,
+          "instructions": 2565
+        },
+        "primary_speedup": 18.709141274238227,
+        "end_to_end_speedup": 1.6644148825607983,
+        "scalar_vs_native": 12.789473684210526
+      }
+    },
+    "empty_bracket": {
+      "cycles": 39,
+      "instructions": 4
+    },
+    "throughput": [
+      {
+        "q": 4,
+        "dependent_sdot_instructions": 128,
+        "legacy_dot8": {
+          "cycles": 296,
+          "instructions": 133
+        },
+        "native_nn": {
+          "cycles": 306,
+          "instructions": 136
+        }
+      },
+      {
+        "q": 2,
+        "dependent_sdot_instructions": 128,
+        "legacy_dot8": {
+          "cycles": 296,
+          "instructions": 133
+        },
+        "native_nn": {
+          "cycles": 298,
+          "instructions": 135
+        }
+      }
+    ]
+  },
+  "candidate": {
+    "directory": "C:\\Users\\CEG\\FYP\\artifacts\\verification\\overlay_nn1\\bench_wait\\1\\20261021-121801-710872",
+    "result": {
+      "status": "PASS",
+      "datasets": [
+        {
+          "name": "matmul_q4",
+          "m": 8,
+          "k": 32,
+          "n": 8,
+          "q": 4,
+          "stride_words": 4,
+          "logical_macs": 2048,
+          "nn_physical_lane_macs": 2048,
+          "output_words": 32,
+          "preparation": {
+            "cycles": 76969,
+            "instructions": 11722
+          },
+          "legacy_dot8": {
+            "cycles": 346049,
+            "instructions": 57610
+          },
+          "native_nn": {
+            "cycles": 18593,
+            "instructions": 2540
+          },
+          "scalar": {
+            "cycles": 237589,
+            "instructions": 38067
+          },
+          "primary_speedup": 18.61178938310117,
+          "end_to_end_speedup": 4.426634017705783
+        },
+        {
+          "name": "conv_q4",
+          "m": 36,
+          "k": 72,
+          "n": 8,
+          "q": 4,
+          "stride_words": 9,
+          "logical_macs": 20736,
+          "nn_physical_lane_macs": 20736,
+          "output_words": 144,
+          "preparation": {
+            "cycles": 850165,
+            "instructions": 138642
+          },
+          "legacy_dot8": {
+            "cycles": 3336413,
+            "instructions": 560039
+          },
+          "native_nn": {
+            "cycles": 138265,
+            "instructions": 19224
+          },
+          "scalar": {
+            "cycles": 2237524,
+            "instructions": 361212
+          },
+          "primary_speedup": 24.13056811195892,
+          "end_to_end_speedup": 4.235583703448904
+        },
+        {
+          "name": "tail_q4",
+          "m": 2,
+          "k": 35,
+          "n": 2,
+          "q": 4,
+          "stride_words": 5,
+          "logical_macs": 140,
+          "nn_physical_lane_macs": 160,
+          "output_words": 2,
+          "preparation": {
+            "cycles": 21379,
+            "instructions": 3254
+          },
+          "legacy_dot8": {
+            "cycles": 23991,
+            "instructions": 3987
+          },
+          "native_nn": {
+            "cycles": 1563,
+            "instructions": 222
+          },
+          "scalar": {
+            "cycles": 16494,
+            "instructions": 2638
+          },
+          "primary_speedup": 15.349328214971209,
+          "end_to_end_speedup": 1.9775956760526545
+        },
+        {
+          "name": "matmul_q2",
+          "m": 8,
+          "k": 32,
+          "n": 8,
+          "q": 2,
+          "stride_words": 2,
+          "logical_macs": 2048,
+          "nn_physical_lane_macs": 2048,
+          "output_words": 32,
+          "preparation": {
+            "cycles": 74618,
+            "instructions": 10938
+          },
+          "legacy_dot8": {
+            "cycles": 336354,
+            "instructions": 54344
+          },
+          "native_nn": {
+            "cycles": 13074,
+            "instructions": 1804
+          },
+          "scalar": {
+            "cycles": 228342,
+            "instructions": 36849
+          },
+          "primary_speedup": 25.726938962826985,
+          "end_to_end_speedup": 4.686539251014916
+        },
+        {
+          "name": "conv_q2",
+          "m": 36,
+          "k": 72,
+          "n": 8,
+          "q": 2,
+          "stride_words": 5,
+          "logical_macs": 20736,
+          "nn_physical_lane_macs": 23040,
+          "output_words": 144,
+          "preparation": {
+            "cycles": 833734,
+            "instructions": 132018
+          },
+          "legacy_dot8": {
+            "cycles": 3297612,
+            "instructions": 533984
+          },
+          "native_nn": {
+            "cycles": 94302,
+            "instructions": 12744
+          },
+          "scalar": {
+            "cycles": 2201292,
+            "instructions": 355893
+          },
+          "primary_speedup": 34.96863269071706,
+          "end_to_end_speedup": 4.451708769918408
+        },
+        {
+          "name": "tail_q2",
+          "m": 2,
+          "k": 35,
+          "n": 2,
+          "q": 2,
+          "stride_words": 3,
+          "logical_macs": 140,
+          "nn_physical_lane_macs": 192,
+          "output_words": 2,
+          "preparation": {
+            "cycles": 20774,
+            "instructions": 3046
+          },
+          "legacy_dot8": {
+            "cycles": 23487,
+            "instructions": 3774
+          },
+          "native_nn": {
+            "cycles": 1236,
+            "instructions": 176
+          },
+          "scalar": {
+            "cycles": 16011,
+            "instructions": 2565
+          },
+          "primary_speedup": 19.00242718446602,
+          "end_to_end_speedup": 2.01094956837801
+        }
+      ],
+      "empty_bracket": {
+        "cycles": 84,
+        "instructions": 4
+      },
+      "overhead_subtracted": false,
+      "throughput": [
+        {
+          "q": 4,
+          "dependent_sdot_instructions": 128,
+          "legacy_dot8": {
+            "cycles": 987,
+            "instructions": 133
+          },
+          "native_nn": {
+            "cycles": 1015,
+            "instructions": 136
+          }
+        },
+        {
+          "q": 2,
+          "dependent_sdot_instructions": 128,
+          "legacy_dot8": {
+            "cycles": 987,
+            "instructions": 133
+          },
+          "native_nn": {
+            "cycles": 994,
+            "instructions": 135
+          }
+        }
+      ]
+    },
+    "build": {
+      "command": [
+        "D:\\fyp-xpulpnn\\tools\\xpack-riscv-none-elf-gcc-15.2.0-1\\bin\\riscv-none-elf-gcc.exe",
+        "-march=rv32imc_zicsr",
+        "-mabi=ilp32",
+        "-mcmodel=medany",
+        "-nostdlib",
+        "-nostartfiles",
+        "-ffreestanding",
+        "-fno-builtin",
+        "-fno-pic",
+        "-fno-pie",
+        "-msmall-data-limit=0",
+        "-mno-relax",
+        "-O2",
+        "-I",
+        "C:\\Users\\CEG\\FYP\\verification\\sw\\common",
+        "-I",
+        "C:\\Users\\CEG\\FYP\\artifacts\\verification\\overlay_nn1\\bench_wait\\1\\20261021-121801-710872",
+        "-I",
+        "C:\\Users\\CEG\\FYP\\verification\\sw\\bench",
+        "-T",
+        "C:\\Users\\CEG\\FYP\\verification\\sw\\common\\link.ld",
+        "-Wl,-Map=C:\\Users\\CEG\\FYP\\artifacts\\verification\\overlay_nn1\\bench_wait\\1\\20261021-121801-710872\\test.map",
+        "C:\\Users\\CEG\\FYP\\verification\\sw\\common\\crt0.S",
+        "C:\\Users\\CEG\\FYP\\verification\\sw\\common\\vectors.S",
+        "C:\\Users\\CEG\\FYP\\verification\\sw\\bench\\conv.c",
+        "C:\\Users\\CEG\\FYP\\verification\\sw\\bench\\matmul.c",
+        "C:\\Users\\CEG\\FYP\\verification\\sw\\bench\\kernels_xpulp.c",
+        "C:\\Users\\CEG\\FYP\\verification\\sw\\bench\\kernels_xpulpnn.c",
+        "C:\\Users\\CEG\\FYP\\verification\\sw\\bench\\kernels_scalar.c",
+        "-o",
+        "C:\\Users\\CEG\\FYP\\artifacts\\verification\\overlay_nn1\\bench_wait\\1\\20261021-121801-710872\\test.elf"
+      ],
+      "elf_sha256": "463bb92437c571d047177074db77e5d4891bf56795522962972b8b589b3c236e",
+      "test": "bench_common",
+      "isa": "xpulpnn",
+      "seed": 1
+    },
+    "run": {
+      "config": "overlay_nn1",
+      "suite": "bench_wait",
+      "seed": 1,
+      "max_cycles": 50000000,
+      "grant_max": 2,
+      "response_max": 4,
+      "fixed_wait": true,
+      "sources": [
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\vendor\\pulp_platform_common_cells\\src\\cf_math_pkg.sv",
+          "sha256": "afc32fcae21f6cbb834c5ee602a1aaee1b518fc436a86d4fe1b97942473d35c8"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\core\\include\\cv32e40p_pkg.sv",
+          "sha256": "ccc0618f2c4a7f3bb5b48c7327061f439e7367e4d53b97e759a6b04e40dfa737"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\include\\cv32e40p_apu_core_pkg.sv",
+          "sha256": "33d7c06b0fef3ae2c8814b040abe3cdaa23065cf12643de20e8275f44f97abe1"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\include\\cv32e40p_fpu_pkg.sv",
+          "sha256": "ae738f408ba2ade41bfcf0488c8f611a2c39b26915191890dac907b8a7a518e5"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\vendor\\pulp_platform_fpnew\\src\\fpnew_pkg.sv",
+          "sha256": "468d7990971707d6621916898629068aa8ebace0ad24af5706e4b4f5fbc2f0a9"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_aligner.sv",
+          "sha256": "c78cd8c09fee10e45536dc5b8d1fb17c3a130e2270168279fcaa43a19580e4f3"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\core\\cv32e40p_alu.sv",
+          "sha256": "4f5d9f5e58935509ecfb82dbe1db6ea9a1c6eb26ebeec2482655d22f0ea7a975"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_alu_div.sv",
+          "sha256": "11035bcbb28447fa5a3e40d5cad4f257e763f75e49664ce8098ab6247a9a57cb"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_apu_disp.sv",
+          "sha256": "27931c8004e4d266c6ea02c9d5c19968c67d7e6ab86e57da4088531b13c8c48f"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\platform\\sim\\cv32e40p_clock_gate.sv",
+          "sha256": "6ae2e47b98f8129b67a05494826002d3db71f80a89e9caf038c197df1d548759"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_compressed_decoder.sv",
+          "sha256": "db90df2f8737aff29d73b3d242dd33aeb6750ae69ae7eb8e118b531180945d7f"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\core\\cv32e40p_controller.sv",
+          "sha256": "3607303d4e67fd8323a8ba5062331d75d9e666dc2b3bbf8b8a94476d90cf79b0"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\core\\cv32e40p_core.sv",
+          "sha256": "e64570e8873fd1cd3f0ebf8cd9c7bf03500fc953e4dce36bebdf9732af1efbb0"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_cs_registers.sv",
+          "sha256": "e2cec8f3d273748783275c60b1ec89101336608638d7e7783b03dd6b9dbb0345"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\core\\cv32e40p_decoder.sv",
+          "sha256": "8deb2ed9acef8a09f5e89058e61ac5c4f167e323d1b8632f664dcc8eddfdd13c"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\core\\cv32e40p_ex_stage.sv",
+          "sha256": "1f27fe6a7592d93f599defbdb5c152ef81511fe4c87cee545f617f0dac60b81a"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_ff_one.sv",
+          "sha256": "6b646e6aa931f8ab56b85ee27549a422450b456270a54d68a4130329823226b6"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_fifo.sv",
+          "sha256": "d910cbd0751f38d349e8975de22b43d0a2937f9e905b0d9b82894fd83c53fe8a"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_fp_wrapper.sv",
+          "sha256": "1579104bf82f2e18a13029a7e299d867415a660ccff24c20ca3bb4ee4e315e9d"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_hwloop_regs.sv",
+          "sha256": "c2a0787c07bcd6c198b6338c4c6ee372b4bce96ec4a4def467ff0ae03da4e43a"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\core\\cv32e40p_id_stage.sv",
+          "sha256": "db316462a27e928e380acd046807eaae83b47f04d7cd157a64fdaf4d7f2b3c99"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_if_stage.sv",
+          "sha256": "e2d1cc9bc433a093938f2d4e4268c611f9a9bf199101e85114d417ff04597626"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_int_controller.sv",
+          "sha256": "24df51d9cb33f5c8760a8cfbc7931aafc94c2ab0523c7df55b2635e7778af16f"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\core\\cv32e40p_load_store_unit.sv",
+          "sha256": "dcb8ed47a5ab27bfc3a80d405895ca2a3dfcbf99527df8fd36ce305c68c95809"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\core\\cv32e40p_mult.sv",
+          "sha256": "a1dcce57da3c0434d72da403b3442609a0f8a6a38c78f5dd47d2411295d4853c"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_obi_interface.sv",
+          "sha256": "2b0a58e5c2f758dbe5f6e8f786c547da5508ce466007517434e2f7d817b758ed"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_popcnt.sv",
+          "sha256": "7a2dbeded21929832b40fc8d068b35b7281c75a63c426feed207127d4da08e4e"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_prefetch_buffer.sv",
+          "sha256": "a2fcbe6b783659ebecaf25d105f30c68af9b68c2850b833af64a2cec3ec29262"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_prefetch_controller.sv",
+          "sha256": "66e6078ea3b3acd3ceea4b974c0488d25e02324935532de1f2d39cdc34c875a0"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_register_file_ff.sv",
+          "sha256": "cd04d46afbf778ff3f1573bdd390784e5461a09b33fd670fa126ae7d3c433e89"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\cv32e40p_sleep_unit.sv",
+          "sha256": "1cf012a83b54472931ad9944e7774e311222641a0aa026229c19467f90bf5448"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\vendor\\pulp_platform_fpnew\\src\\fpnew_opgroup_block.sv",
+          "sha256": "20ba29a7d160470bd29206de04a3be265d1f0c137be73a2673fddc8d75f7557b"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\vendor\\pulp_platform_fpnew\\src\\fpnew_opgroup_fmt_slice.sv",
+          "sha256": "0f3e60cba5dfb4a5547b6c5945185bde57e7b5f5fbd891b6ab1465f0f3cfd7ec"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\vendor\\pulp_platform_fpnew\\src\\fpnew_top.sv",
+          "sha256": "3a2ae45ff95ca1e6a377b312cca0f04b9d75524fe17bed9cbe648319fa83ffda"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\vendor\\pulp_platform_common_cells\\src\\lzc.sv",
+          "sha256": "c47046cab67cd9e9ff46f9b2a4c055f301eabd0f135d76d96639eb41c9fa3609"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\vendor\\cv32e40p\\rtl\\vendor\\pulp_platform_common_cells\\src\\rr_arb_tree.sv",
+          "sha256": "a0df0ff9c26920f5bc17b4ed115600a4f0c745a62c0fb116c160c84abfc9191c"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\core\\cv32e40p_top.sv",
+          "sha256": "1d4fd0f283d2282e16de976a5578ca29ad855905365a527f56e8b73c1496aa4c"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\nn\\cv32e40p_nn_alu.sv",
+          "sha256": "ec42b036cbbb6d3de720c2eac8e707bd94f0cc371fb347ddce8de10affbcbf44"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\nn\\cv32e40p_nn_dotp.sv",
+          "sha256": "165b1cd125372da070682690c9e3252dad316a96990627c17f07b5209af44370"
+        },
+        {
+          "path": "C:\\Users\\CEG\\FYP\\rtl\\nn\\cv32e40p_nn_quant.sv",
+          "sha256": "8f1f14f2bdb80a9f18b3eaf0093636801cb57b4b7e2fdad5b0184b3a3499ac54"
+        }
+      ]
+    },
+    "datasets": {
+      "matmul_q4": {
+        "shape": {
+          "m": 8,
+          "k": 32,
+          "n": 8,
+          "q": 4,
+          "stride_words": 4,
+          "output_words": 32
+        },
+        "logical_macs": 2048,
+        "physical_lane_macs": 2048,
+        "padding_macs": 0,
+        "preparation": {
+          "cycles": 76969,
+          "instructions": 11722
+        },
+        "legacy_dot8": {
+          "cycles": 346049,
+          "instructions": 57610
+        },
+        "native_nn": {
+          "cycles": 18593,
+          "instructions": 2540
+        },
+        "scalar": {
+          "cycles": 237589,
+          "instructions": 38067
+        },
+        "primary_speedup": 18.61178938310117,
+        "end_to_end_speedup": 4.426634017705783,
+        "scalar_vs_native": 12.778411230032807
+      },
+      "conv_q4": {
+        "shape": {
+          "m": 36,
+          "k": 72,
+          "n": 8,
+          "q": 4,
+          "stride_words": 9,
+          "output_words": 144
+        },
+        "logical_macs": 20736,
+        "physical_lane_macs": 20736,
+        "padding_macs": 0,
+        "preparation": {
+          "cycles": 850165,
+          "instructions": 138642
+        },
+        "legacy_dot8": {
+          "cycles": 3336413,
+          "instructions": 560039
+        },
+        "native_nn": {
+          "cycles": 138265,
+          "instructions": 19224
+        },
+        "scalar": {
+          "cycles": 2237524,
+          "instructions": 361212
+        },
+        "primary_speedup": 24.13056811195892,
+        "end_to_end_speedup": 4.235583703448904,
+        "scalar_vs_native": 16.182866235128195
+      },
+      "tail_q4": {
+        "shape": {
+          "m": 2,
+          "k": 35,
+          "n": 2,
+          "q": 4,
+          "stride_words": 5,
+          "output_words": 2
+        },
+        "logical_macs": 140,
+        "physical_lane_macs": 160,
+        "padding_macs": 20,
+        "preparation": {
+          "cycles": 21379,
+          "instructions": 3254
+        },
+        "legacy_dot8": {
+          "cycles": 23991,
+          "instructions": 3987
+        },
+        "native_nn": {
+          "cycles": 1563,
+          "instructions": 222
+        },
+        "scalar": {
+          "cycles": 16494,
+          "instructions": 2638
+        },
+        "primary_speedup": 15.349328214971209,
+        "end_to_end_speedup": 1.9775956760526545,
+        "scalar_vs_native": 10.55278310940499
+      },
+      "matmul_q2": {
+        "shape": {
+          "m": 8,
+          "k": 32,
+          "n": 8,
+          "q": 2,
+          "stride_words": 2,
+          "output_words": 32
+        },
+        "logical_macs": 2048,
+        "physical_lane_macs": 2048,
+        "padding_macs": 0,
+        "preparation": {
+          "cycles": 74618,
+          "instructions": 10938
+        },
+        "legacy_dot8": {
+          "cycles": 336354,
+          "instructions": 54344
+        },
+        "native_nn": {
+          "cycles": 13074,
+          "instructions": 1804
+        },
+        "scalar": {
+          "cycles": 228342,
+          "instructions": 36849
+        },
+        "primary_speedup": 25.726938962826985,
+        "end_to_end_speedup": 4.686539251014916,
+        "scalar_vs_native": 17.465351078476367
+      },
+      "conv_q2": {
+        "shape": {
+          "m": 36,
+          "k": 72,
+          "n": 8,
+          "q": 2,
+          "stride_words": 5,
+          "output_words": 144
+        },
+        "logical_macs": 20736,
+        "physical_lane_macs": 23040,
+        "padding_macs": 2304,
+        "preparation": {
+          "cycles": 833734,
+          "instructions": 132018
+        },
+        "legacy_dot8": {
+          "cycles": 3297612,
+          "instructions": 533984
+        },
+        "native_nn": {
+          "cycles": 94302,
+          "instructions": 12744
+        },
+        "scalar": {
+          "cycles": 2201292,
+          "instructions": 355893
+        },
+        "primary_speedup": 34.96863269071706,
+        "end_to_end_speedup": 4.451708769918408,
+        "scalar_vs_native": 23.343004390150792
+      },
+      "tail_q2": {
+        "shape": {
+          "m": 2,
+          "k": 35,
+          "n": 2,
+          "q": 2,
+          "stride_words": 3,
+          "output_words": 2
+        },
+        "logical_macs": 140,
+        "physical_lane_macs": 192,
+        "padding_macs": 52,
+        "preparation": {
+          "cycles": 20774,
+          "instructions": 3046
+        },
+        "legacy_dot8": {
+          "cycles": 23487,
+          "instructions": 3774
+        },
+        "native_nn": {
+          "cycles": 1236,
+          "instructions": 176
+        },
+        "scalar": {
+          "cycles": 16011,
+          "instructions": 2565
+        },
+        "primary_speedup": 19.00242718446602,
+        "end_to_end_speedup": 2.01094956837801,
+        "scalar_vs_native": 12.95388349514563
+      }
+    },
+    "empty_bracket": {
+      "cycles": 84,
+      "instructions": 4
+    },
+    "throughput": [
+      {
+        "q": 4,
+        "dependent_sdot_instructions": 128,
+        "legacy_dot8": {
+          "cycles": 987,
+          "instructions": 133
+        },
+        "native_nn": {
+          "cycles": 1015,
+          "instructions": 136
+        }
+      },
+      {
+        "q": 2,
+        "dependent_sdot_instructions": 128,
+        "legacy_dot8": {
+          "cycles": 987,
+          "instructions": 133
+        },
+        "native_nn": {
+          "cycles": 994,
+          "instructions": 135
+        }
+      }
+    ]
+  },
+  "same_build_command": true,
+  "reference_profile": {
+    "config": "overlay_nn1",
+    "seed": 1,
+    "grant_max": 0,
+    "response_max": 1,
+    "fixed_wait": null
+  },
+  "candidate_profile": {
+    "config": "overlay_nn1",
+    "seed": 1,
+    "grant_max": 2,
+    "response_max": 4,
+    "fixed_wait": true
+  },
+  "code_size": {
+    "reference": {
+      "available": true,
+      "elf_bytes": 15160,
+      "text_bytes": 4442,
+      "sections": {
+        ".vectors": 128,
+        ".init": 102,
+        ".debug": 4,
+        ".debug_exception": 4,
+        ".text": 4442,
+        ".rodata": 6208,
+        ".signature": 1888,
+        ".bss": 1584,
+        ".riscv.attributes": 67,
+        ".comment": 51
+      }
+    },
+    "candidate": {
+      "available": true,
+      "elf_bytes": 15160,
+      "text_bytes": 4442,
+      "sections": {
+        ".vectors": 128,
+        ".init": 102,
+        ".debug": 4,
+        ".debug_exception": 4,
+        ".text": 4442,
+        ".rodata": 6208,
+        ".signature": 1888,
+        ".bss": 1584,
+        ".riscv.attributes": 67,
+        ".comment": 51
+      }
+    }
+  },
+  "method": {
+    "primary_denominator": "legacy_dot8 kernel interval",
+    "primary_numerator": "native_nn kernel interval",
+    "total_program_cycles_used": false,
+    "empty_bracket_subtracted": false
+  },
+  "same_run_profile": false
+}

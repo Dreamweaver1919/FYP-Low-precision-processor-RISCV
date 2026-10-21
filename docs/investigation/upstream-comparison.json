@@ -1,0 +1,80 @@
+{
+  "upstream_repository": "https://github.com/openhwfoundation/cv32e40p",
+  "upstream_ref": "master",
+  "upstream_commit": "b353438ff469c030c89f6804f3b24a2852880e8b",
+  "upstream_commit_date": "2026-10-13T00:39:23Z",
+  "local_root": "E:\\cv32e40p-master\\cv32e40p-master",
+  "comparisons": [
+    {
+      "path": "rtl/cv32e40p_top.sv",
+      "local_sha256": "2467f6b3c2745e687edad1a0c88ab5267b4ba8642c91e1fc0f282cf4223e5dc3",
+      "upstream_sha256": "2467f6b3c2745e687edad1a0c88ab5267b4ba8642c91e1fc0f282cf4223e5dc3",
+      "exact_match": true,
+      "match_normalized_line_endings": true
+    },
+    {
+      "path": "rtl/cv32e40p_core.sv",
+      "local_sha256": "6a78a0d77d32e6795f63e5149f77b98320ce504c67c44a2e359c9aea70989224",
+      "upstream_sha256": "6a78a0d77d32e6795f63e5149f77b98320ce504c67c44a2e359c9aea70989224",
+      "exact_match": true,
+      "match_normalized_line_endings": true
+    },
+    {
+      "path": "rtl/cv32e40p_alu.sv",
+      "local_sha256": "6eca8d4c2e299adcc498417220478360cc22898ba9037cdad6a1b81e80373c7b",
+      "upstream_sha256": "6eca8d4c2e299adcc498417220478360cc22898ba9037cdad6a1b81e80373c7b",
+      "exact_match": true,
+      "match_normalized_line_endings": true
+    },
+    {
+      "path": "rtl/cv32e40p_mult.sv",
+      "local_sha256": "6a0cf2f15c69886ad5497222aa203f6f5b1fdd004b32a4ab87b36a0960ba2254",
+      "upstream_sha256": "6a0cf2f15c69886ad5497222aa203f6f5b1fdd004b32a4ab87b36a0960ba2254",
+      "exact_match": true,
+      "match_normalized_line_endings": true
+    },
+    {
+      "path": "rtl/cv32e40p_decoder.sv",
+      "local_sha256": "6e12f673e05380e34a35c38d8ee8b6878935d96b6f2dfda72c67f8a6e92a6e4e",
+      "upstream_sha256": "6e12f673e05380e34a35c38d8ee8b6878935d96b6f2dfda72c67f8a6e92a6e4e",
+      "exact_match": true,
+      "match_normalized_line_endings": true
+    },
+    {
+      "path": "rtl/cv32e40p_id_stage.sv",
+      "local_sha256": "98b246d9ada45a7073d217d5c3bbc86941ee76bb00e7e0edda61d3bbec83728e",
+      "upstream_sha256": "98b246d9ada45a7073d217d5c3bbc86941ee76bb00e7e0edda61d3bbec83728e",
+      "exact_match": true,
+      "match_normalized_line_endings": true
+    },
+    {
+      "path": "rtl/cv32e40p_ex_stage.sv",
+      "local_sha256": "1510df315721b370c2d86b1c1d134a3ff6beefba2d072de7a4a611e3ecffb753",
+      "upstream_sha256": "1510df315721b370c2d86b1c1d134a3ff6beefba2d072de7a4a611e3ecffb753",
+      "exact_match": true,
+      "match_normalized_line_endings": true
+    },
+    {
+      "path": "rtl/cv32e40p_load_store_unit.sv",
+      "local_sha256": "857962513fc5bd3eb3d6b28c55fdfb15ef53f8ce8a59173a7d583efb8caee66f",
+      "upstream_sha256": "857962513fc5bd3eb3d6b28c55fdfb15ef53f8ce8a59173a7d583efb8caee66f",
+      "exact_match": true,
+      "match_normalized_line_endings": true
+    },
+    {
+      "path": "rtl/cv32e40p_controller.sv",
+      "local_sha256": "858b172963e17529de0b40a5be6ddfdadfc60bdca967819e4fc558b0ed6d7b87",
+      "upstream_sha256": "858b172963e17529de0b40a5be6ddfdadfc60bdca967819e4fc558b0ed6d7b87",
+      "exact_match": true,
+      "match_normalized_line_endings": true
+    },
+    {
+      "path": "rtl/include/cv32e40p_pkg.sv",
+      "local_sha256": "3fee39d262ef44bff6ee00b591fe08830e5e35cdd1b9e5eb9eb06da6f6525805",
+      "upstream_sha256": "3fee39d262ef44bff6ee00b591fe08830e5e35cdd1b9e5eb9eb06da6f6525805",
+      "exact_match": true,
+      "match_normalized_line_endings": true
+    }
+  ],
+  "note": "Equality for selected files does not identify provenance or establish equivalence for the whole source tree."
+}

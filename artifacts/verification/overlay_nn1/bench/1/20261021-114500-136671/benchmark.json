@@ -1,0 +1,77 @@
+{
+  "datasets": [
+    {
+      "name": "matmul_q4",
+      "m": 8,
+      "k": 32,
+      "n": 8,
+      "q": 4,
+      "stride_words": 4,
+      "logical_macs": 2048,
+      "nn_physical_lane_macs": 2048,
+      "output_words": 32
+    },
+    {
+      "name": "conv_q4",
+      "m": 36,
+      "k": 72,
+      "n": 8,
+      "q": 4,
+      "stride_words": 9,
+      "logical_macs": 20736,
+      "nn_physical_lane_macs": 20736,
+      "output_words": 144
+    },
+    {
+      "name": "tail_q4",
+      "m": 2,
+      "k": 35,
+      "n": 2,
+      "q": 4,
+      "stride_words": 5,
+      "logical_macs": 140,
+      "nn_physical_lane_macs": 160,
+      "output_words": 2
+    },
+    {
+      "name": "matmul_q2",
+      "m": 8,
+      "k": 32,
+      "n": 8,
+      "q": 2,
+      "stride_words": 2,
+      "logical_macs": 2048,
+      "nn_physical_lane_macs": 2048,
+      "output_words": 32
+    },
+    {
+      "name": "conv_q2",
+      "m": 36,
+      "k": 72,
+      "n": 8,
+      "q": 2,
+      "stride_words": 5,
+      "logical_macs": 20736,
+      "nn_physical_lane_macs": 23040,
+      "output_words": 144
+    },
+    {
+      "name": "tail_q2",
+      "m": 2,
+      "k": 35,
+      "n": 2,
+      "q": 2,
+      "stride_words": 3,
+      "logical_macs": 140,
+      "nn_physical_lane_macs": 192,
+      "output_words": 2
+    }
+  ],
+  "output_words": 356,
+  "metrics_offset": 356,
+  "metrics_per_dataset": 16,
+  "throughput_offset": 456,
+  "primary_denominator": "legacy dot8 including packed input unpack/sign extension and software binary-search quantization",
+  "preparation": "MatMul packed input copy; Conv im2col and packing from packed NHWC image; zero-padded final reduction block",
+  "seed": 1
+}

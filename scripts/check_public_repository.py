@@ -3,9 +3,11 @@
 from __future__ import annotations
 
 import argparse
+import json
+import re
 import subprocess
 import sys
-from pathlib import PurePosixPath
+from pathlib import Path, PurePosixPath
 
 
 REQUIRED_PATHS = {
@@ -40,7 +42,10 @@ FORBIDDEN_SUFFIXES = {".bit", ".bin", ".dcp", ".jou", ".log", ".pb", ".pyc"}
 
 
 def normalize(path: str) -> str:
-    return path.replace("\\", "/").strip().lstrip("./")
+    normalized = path.replace("\\", "/").strip()
+    while normalized.startswith("./"):
+        normalized = normalized[2:]
+    return normalized
 
 
 def forbidden_reason(path: str) -> str | None:
@@ -78,6 +83,21 @@ def tracked_paths() -> list[str]:
     return result.stdout.splitlines()
 
 
+def portable_evidence_errors() -> list[str]:
+    evidence_path = Path("artifacts/delivery/release-evidence.json")
+    try:
+        evidence = json.loads(evidence_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        return [f"unreadable release evidence: {error}"]
+    payload = json.dumps(evidence)
+    errors = []
+    if re.search(r"[A-Za-z]:[\\/]", payload):
+        errors.append("release evidence contains a machine-absolute path")
+    if evidence.get("fpga_summary") != "artifacts/fpga/summary.json":
+        errors.append("release evidence must reference the tracked FPGA summary")
+    return errors
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     source = parser.add_mutually_exclusive_group()
@@ -89,8 +109,10 @@ def main() -> int:
             errors = validate(args.paths.splitlines())
         elif args.index:
             errors = validate(tracked_paths(), require_complete=True)
+            errors.extend(portable_evidence_errors())
         else:
             errors = validate(tracked_paths(), require_complete=True)
+            errors.extend(portable_evidence_errors())
     except RuntimeError as error:
         print(f"public repository audit failed: {error}", file=sys.stderr)
         return 2

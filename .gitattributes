@@ -1,0 +1,2 @@
+# Frozen HDL and provenance are checked by byte-level SHA-256; never apply EOL conversion.
+* -text

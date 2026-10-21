@@ -1,0 +1,6 @@
+{
+  "frozen_orig_latch": {"overlay": false, "nn": 0, "rf": "latch", "platform": "fpga"},
+  "frozen_ff_pulp1": {"overlay": false, "nn": 0, "rf": "ff", "platform": "sim"},
+  "overlay_nn0": {"overlay": true, "nn": 0, "rf": "ff", "platform": "sim"},
+  "overlay_nn1": {"overlay": true, "nn": 1, "rf": "ff", "platform": "sim"}
+}

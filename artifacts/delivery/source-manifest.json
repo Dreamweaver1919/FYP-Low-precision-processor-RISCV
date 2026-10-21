@@ -1,0 +1,1981 @@
+{
+  "original_integrity": "PASS",
+  "originals": [
+    {
+      "snapshot_path": "vendor/cv32e40p/LICENSE",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "LICENSE",
+      "sha256": "6527a46225891b976fa94f634f6ee0cd22e1c7129d6f11c5c98c997627625fc7",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_aligner.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_aligner.sv",
+      "sha256": "c78cd8c09fee10e45536dc5b8d1fb17c3a130e2270168279fcaa43a19580e4f3",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_alu.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_alu.sv",
+      "sha256": "6eca8d4c2e299adcc498417220478360cc22898ba9037cdad6a1b81e80373c7b",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_alu_div.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_alu_div.sv",
+      "sha256": "11035bcbb28447fa5a3e40d5cad4f257e763f75e49664ce8098ab6247a9a57cb",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_apu_disp.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_apu_disp.sv",
+      "sha256": "27931c8004e4d266c6ea02c9d5c19968c67d7e6ab86e57da4088531b13c8c48f",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_compressed_decoder.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_compressed_decoder.sv",
+      "sha256": "db90df2f8737aff29d73b3d242dd33aeb6750ae69ae7eb8e118b531180945d7f",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_controller.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_controller.sv",
+      "sha256": "858b172963e17529de0b40a5be6ddfdadfc60bdca967819e4fc558b0ed6d7b87",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_core.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_core.sv",
+      "sha256": "6a78a0d77d32e6795f63e5149f77b98320ce504c67c44a2e359c9aea70989224",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_cs_registers.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_cs_registers.sv",
+      "sha256": "e2cec8f3d273748783275c60b1ec89101336608638d7e7783b03dd6b9dbb0345",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_decoder.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_decoder.sv",
+      "sha256": "6e12f673e05380e34a35c38d8ee8b6878935d96b6f2dfda72c67f8a6e92a6e4e",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_ex_stage.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_ex_stage.sv",
+      "sha256": "1510df315721b370c2d86b1c1d134a3ff6beefba2d072de7a4a611e3ecffb753",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_ff_one.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_ff_one.sv",
+      "sha256": "6b646e6aa931f8ab56b85ee27549a422450b456270a54d68a4130329823226b6",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_fifo.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_fifo.sv",
+      "sha256": "d910cbd0751f38d349e8975de22b43d0a2937f9e905b0d9b82894fd83c53fe8a",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_fp_wrapper.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_fp_wrapper.sv",
+      "sha256": "1579104bf82f2e18a13029a7e299d867415a660ccff24c20ca3bb4ee4e315e9d",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_hwloop_regs.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_hwloop_regs.sv",
+      "sha256": "c2a0787c07bcd6c198b6338c4c6ee372b4bce96ec4a4def467ff0ae03da4e43a",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_id_stage.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_id_stage.sv",
+      "sha256": "98b246d9ada45a7073d217d5c3bbc86941ee76bb00e7e0edda61d3bbec83728e",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_if_stage.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_if_stage.sv",
+      "sha256": "e2d1cc9bc433a093938f2d4e4268c611f9a9bf199101e85114d417ff04597626",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_int_controller.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_int_controller.sv",
+      "sha256": "24df51d9cb33f5c8760a8cfbc7931aafc94c2ab0523c7df55b2635e7778af16f",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_load_store_unit.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_load_store_unit.sv",
+      "sha256": "857962513fc5bd3eb3d6b28c55fdfb15ef53f8ce8a59173a7d583efb8caee66f",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_mult.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_mult.sv",
+      "sha256": "6a0cf2f15c69886ad5497222aa203f6f5b1fdd004b32a4ab87b36a0960ba2254",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_obi_interface.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_obi_interface.sv",
+      "sha256": "2b0a58e5c2f758dbe5f6e8f786c547da5508ce466007517434e2f7d817b758ed",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_popcnt.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_popcnt.sv",
+      "sha256": "7a2dbeded21929832b40fc8d068b35b7281c75a63c426feed207127d4da08e4e",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_prefetch_buffer.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_prefetch_buffer.sv",
+      "sha256": "a2fcbe6b783659ebecaf25d105f30c68af9b68c2850b833af64a2cec3ec29262",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_prefetch_controller.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_prefetch_controller.sv",
+      "sha256": "66e6078ea3b3acd3ceea4b974c0488d25e02324935532de1f2d39cdc34c875a0",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_register_file_ff.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_register_file_ff.sv",
+      "sha256": "cd04d46afbf778ff3f1573bdd390784e5461a09b33fd670fa126ae7d3c433e89",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_register_file_latch.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_register_file_latch.sv",
+      "sha256": "70acb0166bca598d138e8ab48fac4bb030e55b11c9e578dd0396423e89e841d4",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_sleep_unit.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_sleep_unit.sv",
+      "sha256": "1cf012a83b54472931ad9944e7774e311222641a0aa026229c19467f90bf5448",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/cv32e40p_top.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/cv32e40p_top.sv",
+      "sha256": "2467f6b3c2745e687edad1a0c88ab5267b4ba8642c91e1fc0f282cf4223e5dc3",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/include/cv32e40p_apu_core_pkg.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/include/cv32e40p_apu_core_pkg.sv",
+      "sha256": "33d7c06b0fef3ae2c8814b040abe3cdaa23065cf12643de20e8275f44f97abe1",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/include/cv32e40p_fpu_pkg.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/include/cv32e40p_fpu_pkg.sv",
+      "sha256": "ae738f408ba2ade41bfcf0488c8f611a2c39b26915191890dac907b8a7a518e5",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/include/cv32e40p_pkg.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/include/cv32e40p_pkg.sv",
+      "sha256": "3fee39d262ef44bff6ee00b591fe08830e5e35cdd1b9e5eb9eb06da6f6525805",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/common_cells.core",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/common_cells.core",
+      "sha256": "502ed08443e7c3b0ea92c43fba869efc46b6bebb57c400dc35ae67ce0336d3a9",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/include/common_cells/assertions.svh",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/include/common_cells/assertions.svh",
+      "sha256": "d44ed5ffbbfb69c65f5b398428c6b5b5a1103883b925040cbc7bece257d13b1a",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/include/common_cells/registers.svh",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/include/common_cells/registers.svh",
+      "sha256": "4958be84265b95bf22983f5698d657239f1d9e4eae635163a63186b6b2a6ba08",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/addr_decode.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/addr_decode.sv",
+      "sha256": "84e2b6d49c834b21f13b12d94919efd9a7d541b191a0651d2cca97435a5ca85a",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/binary_to_gray.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/binary_to_gray.sv",
+      "sha256": "99e8a0bac473921d7e2c0f5e248f88705e3f44f9aeaa4d637cecf5fbf2a4d511",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/cb_filter.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/cb_filter.sv",
+      "sha256": "3c428a355ed7f2a2445acf633237f9c875c9fcc08df7c9c41d34a811f83b7b22",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/cb_filter_pkg.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/cb_filter_pkg.sv",
+      "sha256": "d0643663ab95ad5fd162586e8e5af6f6a762e171ee8e563e233cbb43245a2994",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/cdc_2phase.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/cdc_2phase.sv",
+      "sha256": "3720278ce00b5591a1a63fe5515528dd4223a35070303e58cf2e48bd0b56c8c1",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/cdc_fifo_2phase.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/cdc_fifo_2phase.sv",
+      "sha256": "7a73fa189db52831fb6d313f445b6d781fcd6f6e875b92608352e5d0c5a6e35e",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/cdc_fifo_gray.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/cdc_fifo_gray.sv",
+      "sha256": "46a6f4b6b4ca00dd7132fa9d24be8f386325ba0332ff8499ae22ff277e351885",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/cf_math_pkg.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/cf_math_pkg.sv",
+      "sha256": "afc32fcae21f6cbb834c5ee602a1aaee1b518fc436a86d4fe1b97942473d35c8",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/clk_div.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/clk_div.sv",
+      "sha256": "a07d8003633c4f7a073680cc6049d48bf60f4f9142906592463dce929f4314fc",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/counter.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/counter.sv",
+      "sha256": "b7a9b5fc11ce4def51133f27ec0470a18ae7c8c6b1161f21c948ae848b693f58",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/delta_counter.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/delta_counter.sv",
+      "sha256": "698851a015f2b093d5688faa02ae60f0b3ed4324a7584846a99726e1c93732f7",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/deprecated/clock_divider.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/deprecated/clock_divider.sv",
+      "sha256": "c4f7bb329a40a8f3f588c0b105a1a3214aedeb59a6b6b402a9f3cd7567d93d1b",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/deprecated/clock_divider_counter.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/deprecated/clock_divider_counter.sv",
+      "sha256": "33a30c8218ec5363025da8e3b1dc4cf184efb5a78077ab72cc21068d87651a6a",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/deprecated/fifo_v1.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/deprecated/fifo_v1.sv",
+      "sha256": "9076b370e08abc522e00252edc274372909740ebd8ac4920725a5f6dec34e081",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/deprecated/fifo_v2.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/deprecated/fifo_v2.sv",
+      "sha256": "cff163332b28e84904955e88691f973a47f90a4209b3f0ae0d2afe94f6a49921",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/deprecated/find_first_one.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/deprecated/find_first_one.sv",
+      "sha256": "94a9fc3d10c55b4171ef8b5a260281c5487e9b751210d9b8aa37478fb207f623",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/deprecated/generic_fifo.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/deprecated/generic_fifo.sv",
+      "sha256": "b7f2e5f1b29f3426bb3a765af09fb78ba2ab2f0670aed4daa6879acfc0884af1",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/deprecated/generic_fifo_adv.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/deprecated/generic_fifo_adv.sv",
+      "sha256": "54b83dcf3a83b83b446fb9077fd54dcd4880abfdcf9d8563804a4b9e3d862224",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/deprecated/generic_LFSR_8bit.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/deprecated/generic_LFSR_8bit.sv",
+      "sha256": "df66d7152be286e0e05a06643c0f52bc9aed77ca93cc28547c87c6bb38a4cec5",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/deprecated/prioarbiter.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/deprecated/prioarbiter.sv",
+      "sha256": "7b678d4787ce01ab2ac219164ad7b6bc3a20cccd81a6072159522ba970715b11",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/deprecated/pulp_sync.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/deprecated/pulp_sync.sv",
+      "sha256": "50384a923b6c33b8920bac421e28e46ef4af0accac51f7b6bfecdda23a72a203",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/deprecated/pulp_sync_wedge.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/deprecated/pulp_sync_wedge.sv",
+      "sha256": "aa9d764e186ee1649a6aeac3a1b51d0d9283ec0a4d88727029c40f4cf2cfb0a6",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/deprecated/rrarbiter.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/deprecated/rrarbiter.sv",
+      "sha256": "6b286bebaf3dfb5a98c99bc5d63c8b6e592edd87b4ec77303b23648a93895fa1",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/deprecated/sram.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/deprecated/sram.sv",
+      "sha256": "df76c6231666c99ac0cd8201ec91c7aeb5188f11c538099842e8e3bc5de9c3f0",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/ecc_decode.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/ecc_decode.sv",
+      "sha256": "bc2934cf595252186391e184f637eeb5461285fedce188cbc5f7ef2752a7e8e5",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/ecc_encode.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/ecc_encode.sv",
+      "sha256": "2921fe9d29cb4d5d7a35e7a3792bc665b22d866f099ad6026fe9b173759deb71",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/ecc_pkg.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/ecc_pkg.sv",
+      "sha256": "7aefdb7b2e15af3154821b68847f91e31a09f5828553f294b88d358ef68bb41f",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/edge_detect.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/edge_detect.sv",
+      "sha256": "19a0f7b1139701c6f2d718a24f0775062011372a1ab42e377079275d5abd7411",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/edge_propagator.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/edge_propagator.sv",
+      "sha256": "6db19ca2c0035f64612ca91a5192e96b9a08d5fd0ab295e81d563746735c1b6f",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/edge_propagator_rx.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/edge_propagator_rx.sv",
+      "sha256": "2d73f35952ec22d16754b928ddb560d7854be23ffa608d9f5652d30f1befe82a",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/edge_propagator_tx.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/edge_propagator_tx.sv",
+      "sha256": "8b4cd6b8539ad6f8ee47993870675eca92937d6bc892a0c5baf14664a1a4281b",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/exp_backoff.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/exp_backoff.sv",
+      "sha256": "fb3bff5787bf454bae844982f946bbd693aff49abe8ac4c85099742c272b8238",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/fall_through_register.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/fall_through_register.sv",
+      "sha256": "2ba886585636e1f47d8420b408b5b40a468149ad80a71fd4ba782f1859936661",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/fifo_v3.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/fifo_v3.sv",
+      "sha256": "0b33c4ca3d81eb0af72772aa8f064d655974627841e4ba5aca5634cbb46147ce",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/gray_to_binary.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/gray_to_binary.sv",
+      "sha256": "e8cc57b3e6a6accb91a5f204d0f71a95ec7383f9975c727b70fa49fa6bc72470",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/id_queue.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/id_queue.sv",
+      "sha256": "186e78e9aafc435b23e526289d3f59e3a86be738f7b8b129ac91884e72ea9ed6",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/isochronous_spill_register.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/isochronous_spill_register.sv",
+      "sha256": "d6f57e48c503c3e67a43c316df40f8b307d902b60c00d0375e99b5bc39afd469",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/lfsr.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/lfsr.sv",
+      "sha256": "91f6c37be706ca7648cb66635e3f46a210e517f7addb8569ec28e4738599f7d7",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/lfsr_16bit.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/lfsr_16bit.sv",
+      "sha256": "5fac16efd0f8cbd4ea3781959972b419c1665282d05f343976715e0abe6138de",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/lfsr_8bit.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/lfsr_8bit.sv",
+      "sha256": "b6caa6223650523ccf68435e0718fdd2c6942cca031a445cd427f749ad416e06",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/lzc.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/lzc.sv",
+      "sha256": "c47046cab67cd9e9ff46f9b2a4c055f301eabd0f135d76d96639eb41c9fa3609",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/max_counter.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/max_counter.sv",
+      "sha256": "9308c7cb67ff40667b13ccf452dc3166070d4dd1e73ccb71b3e2ed967ab82eb0",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/mv_filter.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/mv_filter.sv",
+      "sha256": "25c7134be40999f48c7736dc01a2c69810a012690d1d51ca6042df5b6c05fd83",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/onehot_to_bin.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/onehot_to_bin.sv",
+      "sha256": "8fce5326140de7a1a67d8afe816e45d745f70d12ef67ae5d27cd9e4a61faa989",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/plru_tree.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/plru_tree.sv",
+      "sha256": "a57c545f2f3d140471953bb5fa549da2e9e17f4f7a384deaa090cb223afc464a",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/popcount.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/popcount.sv",
+      "sha256": "849f4d3b661b519ee9079c5339efad6f2dec70bdd87e1c8c82a7b9ca706a28cb",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/rr_arb_tree.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/rr_arb_tree.sv",
+      "sha256": "a0df0ff9c26920f5bc17b4ed115600a4f0c745a62c0fb116c160c84abfc9191c",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/rstgen.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/rstgen.sv",
+      "sha256": "83d9f70bab3b514062a7a79a581919afd5de466167dfcd08733c773f36ba094a",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/rstgen_bypass.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/rstgen_bypass.sv",
+      "sha256": "51322d03a0479f16a4acb66cccee48003e2e224c02a7d3188cbaea9b2f8b2756",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/serial_deglitch.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/serial_deglitch.sv",
+      "sha256": "f42086f7b3ab93fa67182f3e0cf5a37970761779467d50fad871c2856b1e12f4",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/shift_reg.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/shift_reg.sv",
+      "sha256": "73fd475108016aa3ff5f940324e6bbf627a13bb8404e285b86876d3e948ff622",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/spill_register.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/spill_register.sv",
+      "sha256": "692cb74f9f419f8751c43b0713ee759d4bbec24250bb23cf4d8aa6a50d8686ee",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_arbiter.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/stream_arbiter.sv",
+      "sha256": "727cfd2af43220b85c91f4098f9372d10aca1a0115cd614fe98a8730fb5bb1f8",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_arbiter_flushable.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/stream_arbiter_flushable.sv",
+      "sha256": "8a6ffd292fde633bcfba55ca5a0e89f367aa65406978d5947914979b6096a6d4",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_delay.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/stream_delay.sv",
+      "sha256": "85d0f12b02c1a926d25e80915a53f57bf9c78ab1ebdf58bdd02fe19d70901f5c",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_demux.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/stream_demux.sv",
+      "sha256": "210695a35a6107e1c6ec74e15ca535d57a766be1f81d1aa060787e79699443a2",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_fifo.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/stream_fifo.sv",
+      "sha256": "b24dbfeff17323b339fcf38854e5dfadd8b8e15489936d4a029988ece240eac3",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_filter.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/stream_filter.sv",
+      "sha256": "3171a71a63e08c8075690b03268b128e0128f8a9c043aa6d51727472b02097ff",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_fork.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/stream_fork.sv",
+      "sha256": "35e9910301d34b3e2da4521e7406fd35175fe64c9931b498ac4bfdda8c612a5b",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_fork_dynamic.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/stream_fork_dynamic.sv",
+      "sha256": "840c5c72dd91189e5a03873193f7ab1aac5fca7738d87a342cd580efb7ad1b86",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_intf.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/stream_intf.sv",
+      "sha256": "cdb1c9477daa30c18c236c13745aaf0e262a6be3d53f7d8ad643408a4eef90c3",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_join.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/stream_join.sv",
+      "sha256": "daa10d6cd451bc9bba1302619e38f39a3af95c62ff74ebe7e0c0030248e65e3b",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_mux.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/stream_mux.sv",
+      "sha256": "7d6dfee4ed1ef3cd8f57731facc92bd6993072ad6bed48cdb6d5addd6e59b9c4",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_omega_net.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/stream_omega_net.sv",
+      "sha256": "b6fb7f33a08fc487e8eff44ce2a5623156048cada487c93f7268fab3b4183da6",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_register.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/stream_register.sv",
+      "sha256": "b4292350fdfaf9471b736dbd610d4cb0a450ed757e9f13431e4b195c53834b1c",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_to_mem.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/stream_to_mem.sv",
+      "sha256": "61d7f6ee830887d2cf077990c794727a30c13a8b7e87e00a1d9585e171bdd854",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_xbar.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/stream_xbar.sv",
+      "sha256": "545344057d55593dc0a8d1401e39e5727a6f662471ca45d1bc31393988a595e6",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/sub_per_hash.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/sub_per_hash.sv",
+      "sha256": "c7ab35771aa080b3600bdbd6626aa2afef7b25769b74d8633e419e98958ebd95",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/sync.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/sync.sv",
+      "sha256": "aa2d4b1bf9be00b1763a1c8beef0033dfcadf3e52f51af79f3af922faf717a03",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/sync_wedge.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/sync_wedge.sv",
+      "sha256": "7cbe0d3337f4d8a3c18c40d3d4ed2826b5190edc3776a69b64a87e7656d1fa75",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/unread.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells/src/unread.sv",
+      "sha256": "430bd1218854da3032104f5da6fd4bd6cc5b4c9569b85bfea8e805f9ebfc8cf7",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells.lock.hjson",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells.lock.hjson",
+      "sha256": "8cf3fd161b08b649fc83daf33e642d24fb8f47581d828dcfd92f78b3d4b63e48",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells.vendor.hjson",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_common_cells.vendor.hjson",
+      "sha256": "90093750178d428e21a1c4794266cdfeb7c4e15dbb0ca995fb74fcccc496851c",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/LICENSE.apache",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/LICENSE.apache",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/LICENSE.solderpad",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/LICENSE.solderpad",
+      "sha256": "93b73d82e2a9049adbee0a6c4c3327fdcaa5acdb2217e669e196bb3c60c2b0e1",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/README.license.md",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/README.license.md",
+      "sha256": "30aec2d9b238a1d686fe524be82b04b860ee04c7edbf950ca86cc3f7230d1674",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/src/fpnew_cast_multi.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/src/fpnew_cast_multi.sv",
+      "sha256": "112d82f64b323fb82a1f1473c84ac32587851015a2420c8ac5d85035a8075d7c",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/src/fpnew_classifier.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/src/fpnew_classifier.sv",
+      "sha256": "cfff43772aea7d918cb0ab3c2e0e996ea34b8740d8edb43f359582ce9978546f",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/src/fpnew_divsqrt_multi.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/src/fpnew_divsqrt_multi.sv",
+      "sha256": "825e97b95da343a2d3394817e88851c2fc9284d959b9ad84052f5487fd34974f",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/src/fpnew_divsqrt_th_32.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/src/fpnew_divsqrt_th_32.sv",
+      "sha256": "2dc7f5b6ca17214e5ff05ccd832224b0c78801f4249b43894ff3ff64cbca6ead",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/src/fpnew_fma.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/src/fpnew_fma.sv",
+      "sha256": "3ba0186080bd7465d7b2ad622721ac09c26249a24c2e80195007dd49efeb951b",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/src/fpnew_fma_multi.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/src/fpnew_fma_multi.sv",
+      "sha256": "dbba2a529a931d7bfb2062612e08b53cca1e6bce7694e035e47818d01c021327",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/src/fpnew_noncomp.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/src/fpnew_noncomp.sv",
+      "sha256": "5ddf8aefceb3db2968befcbe3ced41541d52a980809e4d072ca7bc186861d742",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/src/fpnew_opgroup_block.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/src/fpnew_opgroup_block.sv",
+      "sha256": "20ba29a7d160470bd29206de04a3be265d1f0c137be73a2673fddc8d75f7557b",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/src/fpnew_opgroup_fmt_slice.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/src/fpnew_opgroup_fmt_slice.sv",
+      "sha256": "0f3e60cba5dfb4a5547b6c5945185bde57e7b5f5fbd891b6ab1465f0f3cfd7ec",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/src/fpnew_opgroup_multifmt_slice.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/src/fpnew_opgroup_multifmt_slice.sv",
+      "sha256": "328d2e2907d0c0e081671d42f63e300d4968502359cbfdc55dc23c0591e7dd40",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/src/fpnew_pkg.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/src/fpnew_pkg.sv",
+      "sha256": "468d7990971707d6621916898629068aa8ebace0ad24af5706e4b4f5fbc2f0a9",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/src/fpnew_rounding.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/src/fpnew_rounding.sv",
+      "sha256": "67d0a15d9e418159eea18a4b521e5d30a563f251e058049041cb2a0cbb0327bd",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/src/fpnew_top.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/src/fpnew_top.sv",
+      "sha256": "3a2ae45ff95ca1e6a377b312cca0f04b9d75524fe17bed9cbe648319fa83ffda",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/clk/rtl/gated_clk_cell.v",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/clk/rtl/gated_clk_cell.v",
+      "sha256": "22a4a5f41c7733bd4935adc8a036870a110a8e2f2a70f1f3cf64476b7a49eb9e",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_ctrl.v",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_ctrl.v",
+      "sha256": "082c8019b9191c700eeef514e1879b808f77acb85c825f0706f121151821b827",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_ff1.v",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_ff1.v",
+      "sha256": "1338016c22e25d93288bc7ade14c07a9f21d29c3d1541863787cc6ce96d4e49c",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_pack_single.v",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_pack_single.v",
+      "sha256": "e30b8a6d666bcce6d1fc2922c939aabb138a5ace4471c7f17c165ae7c89e67ec",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_prepare.v",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_prepare.v",
+      "sha256": "18cc2887533030d2049a518c0ad6b7afce03485d239bf6444b2e2a1f4c185339",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_round_single.v",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_round_single.v",
+      "sha256": "ba09bdc5e5b1bdfec7698f1bfdc6473bef5e7bdc2dfce884d9bc0dcb24855f1a",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_special.v",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_special.v",
+      "sha256": "dc74933f7b288a66240d1bbc7a6b8838d1bb819f9b08802d27b5846f64187ee3",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_srt_single.v",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_srt_single.v",
+      "sha256": "a336b8c70e5afc188122ededfa90b1d1390a2cdb974c8a1633a5f8861062c89b",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_top.v",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_top.v",
+      "sha256": "029a9a42c1a82501ce5a4cb546b399f5de922b0be7b8ce3bd9cee370ca90dbe8",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fpu/rtl/pa_fpu_dp.v",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fpu/rtl/pa_fpu_dp.v",
+      "sha256": "904561370d3130ca05d5a57a153b153af1b342c8bb8f9cd872e27c3975dfa4c8",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fpu/rtl/pa_fpu_frbus.v",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fpu/rtl/pa_fpu_frbus.v",
+      "sha256": "d347df146bae61e7b098d1d680baf06f0dc4f76779d39023708b49ba86832605",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fpu/rtl/pa_fpu_src_type.v",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fpu/rtl/pa_fpu_src_type.v",
+      "sha256": "2f31dbe04cb7f151a76eca5c698eddae8eaa773bf94f8906582762cd146cd4a7",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/vendor/opene906/LICENSE",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew/vendor/opene906/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew.lock.hjson",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew.lock.hjson",
+      "sha256": "d1c7a0cf9742b8fbd62c478aea0c635e29c45bdf7dfaad7032d5ce6348ccc308",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew.vendor.hjson",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "rtl/vendor/pulp_platform_fpnew.vendor.hjson",
+      "sha256": "8aa4c4074dd257e02043134bf737145cb155dc8e9ed06f25628a2bfa50c5ed44",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "rtl/platform/fpga/cv32e40p_clock_gate.sv",
+      "origin_kind": "original_fyp_project",
+      "origin_relative_path": "FYP.srcs/sources_1/new/cv32e40p_clock_gate.sv",
+      "sha256": "d17e917d57ef013aadb6284fa92149e8118b15ea891d1ac354c16f1e0d52a803",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "rtl/platform/sim/cv32e40p_clock_gate.sv",
+      "origin_kind": "external_cv32e40p_checkout",
+      "origin_relative_path": "bhv/cv32e40p_sim_clock_gate.sv",
+      "sha256": "6ae2e47b98f8129b67a05494826002d3db71f80a89e9caf038c197df1d548759",
+      "matches_snapshot": true
+    },
+    {
+      "snapshot_path": "FYP.xpr",
+      "origin_kind": "original_fyp_project",
+      "origin_relative_path": "FYP.xpr",
+      "sha256": "9d348bcda279dbd563006ed12d1ae816f06b0ff66022e54145c753f7af3f0e82",
+      "matches_initial": true
+    }
+  ],
+  "sources": [
+    {
+      "path": ".superpowers/sdd/2026-10-20-xpulpnn-cv32e40p/progress.md",
+      "sha256": "70374641ccc0f522c83d47e3f8dcdb5e60906b6c02c2d032f4249e55cff1bc37"
+    },
+    {
+      "path": "artifacts/delivery/release-evidence.json",
+      "sha256": "2175e053aba465fc348cc17eb8bfa50d31093ba0f410c5e4d92221a0ce2f61ea"
+    },
+    {
+      "path": "artifacts/fpga/summary.json",
+      "sha256": "ed14b13b7b541e9a7b3a8497aa1724ff4221ff4d8577ec93e46a7759978ad114"
+    },
+    {
+      "path": "artifacts/verification/benchmark-comparison.json",
+      "sha256": "d4d0975d5904f4d90959abf407b3b5d88a049fc7454c0b987d960ecbf4a9a50e"
+    },
+    {
+      "path": "artifacts/verification/overlay_nn1/bench/1/20261021-114500-136671/benchmark.json",
+      "sha256": "01ed992d7e8c8d2661bdebbe129dc5ed2e0e431eca597a30583c5bc24551983c"
+    },
+    {
+      "path": "artifacts/verification/overlay_nn1/bench/1/20261021-114500-136671/build.json",
+      "sha256": "c5a96a49f1e515ee14bd4f235924c29e80da60c8a23b26142bfa8c80260210fa"
+    },
+    {
+      "path": "artifacts/verification/overlay_nn1/bench/1/20261021-114500-136671/dmem.hex",
+      "sha256": "591eb7ddfc7ae37061e60600eba5d524ff64e8aa515dde8ab41f2ea1a8154d10"
+    },
+    {
+      "path": "artifacts/verification/overlay_nn1/bench/1/20261021-114500-136671/expected.json",
+      "sha256": "548e907532ec67670f65286a5ef6ff5974572e6fe041608e4644785e51801b8e"
+    },
+    {
+      "path": "artifacts/verification/overlay_nn1/bench/1/20261021-114500-136671/imem.hex",
+      "sha256": "48763bbe9aaa8a77dea7fe0103f143106381714fca78c1fce4fe2fca4359089a"
+    },
+    {
+      "path": "artifacts/verification/overlay_nn1/bench/1/20261021-114500-136671/test.disasm",
+      "sha256": "4647e671de73d77db96705105f358ed202b67eda56319204a5bf7b95d87b320f"
+    },
+    {
+      "path": "artifacts/verification/overlay_nn1/bench/1/20261021-114500-136671/test.elf",
+      "sha256": "3fac9907a4301808938536a79a92bbe536c9a68af9c0420595d68c8b3d810dd2"
+    },
+    {
+      "path": "artifacts/verification/overlay_nn1/bench/1/20261021-114500-136671/test.map",
+      "sha256": "01d89f952579de43eccebc6998b7bd7018379cd7726079b43d67c21a380572af"
+    },
+    {
+      "path": "artifacts/verification/summary.json",
+      "sha256": "5b7061df2a06b974ccc3c4e3f1a452f8ec1c15ce154874252af5cabc3b81a46f"
+    },
+    {
+      "path": "docs/investigation/2026-10-20-xpulpnn-feasibility-review-zh.md",
+      "sha256": "1b28fbc7a7a9f5334f29232c042925ede330bf9fd7c8c196774d08a797f7681a"
+    },
+    {
+      "path": "docs/investigation/baseline/baseline.prj",
+      "sha256": "a5ce803dbae2b9050c0f4cce2415a50e7fa4ca8fad330d01570db0d362701108"
+    },
+    {
+      "path": "docs/investigation/paper-analysis.md",
+      "sha256": "fba20d3e876576be87e0e1f3e83c33b7a7b5d68bdf95730090986525f6c5a50d"
+    },
+    {
+      "path": "docs/investigation/upstream-comparison.json",
+      "sha256": "4a4e33bd62c390dd0dddcf34a0bdb291ee76cb864095680813e686061e9716d6"
+    },
+    {
+      "path": "docs/investigation/verification-progress.md",
+      "sha256": "b2531d689fe377b02d5ee1ed176e1b1bbb59708f615bf1146e73c0b201aae33e"
+    },
+    {
+      "path": "docs/results/benchmark-comparison.md",
+      "sha256": "4f81e8420fb28cc5a2a06f2a021c069ac66167eb67df26ba467f6089e818843c"
+    },
+    {
+      "path": "docs/results/independent-review.md",
+      "sha256": "20feb364c930ef51a9dfbcaa4cd628fcc9a07570bae01d64b9927c6bd6e9c2eb"
+    },
+    {
+      "path": "docs/results/verification-index.md",
+      "sha256": "40af53e7ea6d6bf83dadf635fe06d8646530672e6c5b373bbbfb541850f239b6"
+    },
+    {
+      "path": "docs/results/xpulpnn-route-a-validation.md",
+      "sha256": "5e7f714cb29969659f8ba45f24d1e309cfdbcbaa892ff19d34987ccad18aa009"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-10-20-xpulpnn-cv32e40p.md",
+      "sha256": "2cea34dc66e6e36d34955b2c4d8d81124935e769fd8687281266b36a50f98da1"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-10-21-github-publication.md",
+      "sha256": "efc99220fba4b609ef36ae1d119e4ddb906c9f30bc57d2f80aa6655eb850858d"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-10-20-xpulpnn-cv32e40p-design.md",
+      "sha256": "5e630a09889f116a4a7367af5b0e26155044cd42132bc4c281acd89b8fd50673"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-10-21-github-publication-design.md",
+      "sha256": "4f032773b11d2e4a0b2e6e877dd01ebd2d7bd82589c12361ce55d8f85496f29b"
+    },
+    {
+      "path": "FYP.xpr",
+      "sha256": "9d348bcda279dbd563006ed12d1ae816f06b0ff66022e54145c753f7af3f0e82"
+    },
+    {
+      "path": "README-xpulpnn.md",
+      "sha256": "081d084b077f88618e0c593418aaa2dd8d71b8aa6c4f53115ed232923cc09c87"
+    },
+    {
+      "path": "rtl/core/cv32e40p_alu.sv",
+      "sha256": "4f5d9f5e58935509ecfb82dbe1db6ea9a1c6eb26ebeec2482655d22f0ea7a975"
+    },
+    {
+      "path": "rtl/core/cv32e40p_controller.sv",
+      "sha256": "3607303d4e67fd8323a8ba5062331d75d9e666dc2b3bbf8b8a94476d90cf79b0"
+    },
+    {
+      "path": "rtl/core/cv32e40p_core.sv",
+      "sha256": "e64570e8873fd1cd3f0ebf8cd9c7bf03500fc953e4dce36bebdf9732af1efbb0"
+    },
+    {
+      "path": "rtl/core/cv32e40p_decoder.sv",
+      "sha256": "8deb2ed9acef8a09f5e89058e61ac5c4f167e323d1b8632f664dcc8eddfdd13c"
+    },
+    {
+      "path": "rtl/core/cv32e40p_ex_stage.sv",
+      "sha256": "1f27fe6a7592d93f599defbdb5c152ef81511fe4c87cee545f617f0dac60b81a"
+    },
+    {
+      "path": "rtl/core/cv32e40p_id_stage.sv",
+      "sha256": "db316462a27e928e380acd046807eaae83b47f04d7cd157a64fdaf4d7f2b3c99"
+    },
+    {
+      "path": "rtl/core/cv32e40p_load_store_unit.sv",
+      "sha256": "dcb8ed47a5ab27bfc3a80d405895ca2a3dfcbf99527df8fd36ce305c68c95809"
+    },
+    {
+      "path": "rtl/core/cv32e40p_mult.sv",
+      "sha256": "a1dcce57da3c0434d72da403b3442609a0f8a6a38c78f5dd47d2411295d4853c"
+    },
+    {
+      "path": "rtl/core/cv32e40p_top.sv",
+      "sha256": "1d4fd0f283d2282e16de976a5578ca29ad855905365a527f56e8b73c1496aa4c"
+    },
+    {
+      "path": "rtl/core/include/cv32e40p_pkg.sv",
+      "sha256": "ccc0618f2c4a7f3bb5b48c7327061f439e7367e4d53b97e759a6b04e40dfa737"
+    },
+    {
+      "path": "rtl/nn/cv32e40p_nn_alu.sv",
+      "sha256": "ec42b036cbbb6d3de720c2eac8e707bd94f0cc371fb347ddce8de10affbcbf44"
+    },
+    {
+      "path": "rtl/nn/cv32e40p_nn_dotp.sv",
+      "sha256": "165b1cd125372da070682690c9e3252dad316a96990627c17f07b5209af44370"
+    },
+    {
+      "path": "rtl/nn/cv32e40p_nn_quant.sv",
+      "sha256": "8f1f14f2bdb80a9f18b3eaf0093636801cb57b4b7e2fdad5b0184b3a3499ac54"
+    },
+    {
+      "path": "rtl/platform/fpga/cv32e40p_clock_gate.sv",
+      "sha256": "d17e917d57ef013aadb6284fa92149e8118b15ea891d1ac354c16f1e0d52a803"
+    },
+    {
+      "path": "rtl/platform/fpga/fyp_nn_system.sv",
+      "sha256": "997c150d41a1edd9dc9c8ace0f16e604a9c84682d70d97faebecf7e041567768"
+    },
+    {
+      "path": "rtl/platform/sim/cv32e40p_clock_gate.sv",
+      "sha256": "6ae2e47b98f8129b67a05494826002d3db71f80a89e9caf038c197df1d548759"
+    },
+    {
+      "path": "scripts/check_public_repository.py",
+      "sha256": "917b45da393ca4702214e6ad0cba1187cce6b7dbef919349c0d0a160f326ddac"
+    },
+    {
+      "path": "scripts/check_saved_project.tcl",
+      "sha256": "17eb19e0a3931e4063f78a701ff0d1221fc1b5996a84fb1315febb54f4ddca16"
+    },
+    {
+      "path": "scripts/create_vivado_project.tcl",
+      "sha256": "b070d88659c387d0ee03829a7575b514f9edbacbbdfbb318591c196e56b57adb"
+    },
+    {
+      "path": "scripts/run_ooc.tcl",
+      "sha256": "00e1351b245c2582f108927111a32b2a77bb6ed526140873dfa99fbdbe0d12f8"
+    },
+    {
+      "path": "vendor/cv32e40p/LICENSE",
+      "sha256": "6527a46225891b976fa94f634f6ee0cd22e1c7129d6f11c5c98c997627625fc7"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_aligner.sv",
+      "sha256": "c78cd8c09fee10e45536dc5b8d1fb17c3a130e2270168279fcaa43a19580e4f3"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_alu.sv",
+      "sha256": "6eca8d4c2e299adcc498417220478360cc22898ba9037cdad6a1b81e80373c7b"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_alu_div.sv",
+      "sha256": "11035bcbb28447fa5a3e40d5cad4f257e763f75e49664ce8098ab6247a9a57cb"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_apu_disp.sv",
+      "sha256": "27931c8004e4d266c6ea02c9d5c19968c67d7e6ab86e57da4088531b13c8c48f"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_compressed_decoder.sv",
+      "sha256": "db90df2f8737aff29d73b3d242dd33aeb6750ae69ae7eb8e118b531180945d7f"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_controller.sv",
+      "sha256": "858b172963e17529de0b40a5be6ddfdadfc60bdca967819e4fc558b0ed6d7b87"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_core.sv",
+      "sha256": "6a78a0d77d32e6795f63e5149f77b98320ce504c67c44a2e359c9aea70989224"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_cs_registers.sv",
+      "sha256": "e2cec8f3d273748783275c60b1ec89101336608638d7e7783b03dd6b9dbb0345"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_decoder.sv",
+      "sha256": "6e12f673e05380e34a35c38d8ee8b6878935d96b6f2dfda72c67f8a6e92a6e4e"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_ex_stage.sv",
+      "sha256": "1510df315721b370c2d86b1c1d134a3ff6beefba2d072de7a4a611e3ecffb753"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_ff_one.sv",
+      "sha256": "6b646e6aa931f8ab56b85ee27549a422450b456270a54d68a4130329823226b6"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_fifo.sv",
+      "sha256": "d910cbd0751f38d349e8975de22b43d0a2937f9e905b0d9b82894fd83c53fe8a"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_fp_wrapper.sv",
+      "sha256": "1579104bf82f2e18a13029a7e299d867415a660ccff24c20ca3bb4ee4e315e9d"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_hwloop_regs.sv",
+      "sha256": "c2a0787c07bcd6c198b6338c4c6ee372b4bce96ec4a4def467ff0ae03da4e43a"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_id_stage.sv",
+      "sha256": "98b246d9ada45a7073d217d5c3bbc86941ee76bb00e7e0edda61d3bbec83728e"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_if_stage.sv",
+      "sha256": "e2d1cc9bc433a093938f2d4e4268c611f9a9bf199101e85114d417ff04597626"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_int_controller.sv",
+      "sha256": "24df51d9cb33f5c8760a8cfbc7931aafc94c2ab0523c7df55b2635e7778af16f"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_load_store_unit.sv",
+      "sha256": "857962513fc5bd3eb3d6b28c55fdfb15ef53f8ce8a59173a7d583efb8caee66f"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_mult.sv",
+      "sha256": "6a0cf2f15c69886ad5497222aa203f6f5b1fdd004b32a4ab87b36a0960ba2254"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_obi_interface.sv",
+      "sha256": "2b0a58e5c2f758dbe5f6e8f786c547da5508ce466007517434e2f7d817b758ed"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_popcnt.sv",
+      "sha256": "7a2dbeded21929832b40fc8d068b35b7281c75a63c426feed207127d4da08e4e"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_prefetch_buffer.sv",
+      "sha256": "a2fcbe6b783659ebecaf25d105f30c68af9b68c2850b833af64a2cec3ec29262"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_prefetch_controller.sv",
+      "sha256": "66e6078ea3b3acd3ceea4b974c0488d25e02324935532de1f2d39cdc34c875a0"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_register_file_ff.sv",
+      "sha256": "cd04d46afbf778ff3f1573bdd390784e5461a09b33fd670fa126ae7d3c433e89"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_register_file_latch.sv",
+      "sha256": "70acb0166bca598d138e8ab48fac4bb030e55b11c9e578dd0396423e89e841d4"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_sleep_unit.sv",
+      "sha256": "1cf012a83b54472931ad9944e7774e311222641a0aa026229c19467f90bf5448"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/cv32e40p_top.sv",
+      "sha256": "2467f6b3c2745e687edad1a0c88ab5267b4ba8642c91e1fc0f282cf4223e5dc3"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/include/cv32e40p_apu_core_pkg.sv",
+      "sha256": "33d7c06b0fef3ae2c8814b040abe3cdaa23065cf12643de20e8275f44f97abe1"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/include/cv32e40p_fpu_pkg.sv",
+      "sha256": "ae738f408ba2ade41bfcf0488c8f611a2c39b26915191890dac907b8a7a518e5"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/include/cv32e40p_pkg.sv",
+      "sha256": "3fee39d262ef44bff6ee00b591fe08830e5e35cdd1b9e5eb9eb06da6f6525805"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/common_cells.core",
+      "sha256": "502ed08443e7c3b0ea92c43fba869efc46b6bebb57c400dc35ae67ce0336d3a9"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/include/common_cells/assertions.svh",
+      "sha256": "d44ed5ffbbfb69c65f5b398428c6b5b5a1103883b925040cbc7bece257d13b1a"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/include/common_cells/registers.svh",
+      "sha256": "4958be84265b95bf22983f5698d657239f1d9e4eae635163a63186b6b2a6ba08"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/addr_decode.sv",
+      "sha256": "84e2b6d49c834b21f13b12d94919efd9a7d541b191a0651d2cca97435a5ca85a"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/binary_to_gray.sv",
+      "sha256": "99e8a0bac473921d7e2c0f5e248f88705e3f44f9aeaa4d637cecf5fbf2a4d511"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/cb_filter.sv",
+      "sha256": "3c428a355ed7f2a2445acf633237f9c875c9fcc08df7c9c41d34a811f83b7b22"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/cb_filter_pkg.sv",
+      "sha256": "d0643663ab95ad5fd162586e8e5af6f6a762e171ee8e563e233cbb43245a2994"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/cdc_2phase.sv",
+      "sha256": "3720278ce00b5591a1a63fe5515528dd4223a35070303e58cf2e48bd0b56c8c1"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/cdc_fifo_2phase.sv",
+      "sha256": "7a73fa189db52831fb6d313f445b6d781fcd6f6e875b92608352e5d0c5a6e35e"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/cdc_fifo_gray.sv",
+      "sha256": "46a6f4b6b4ca00dd7132fa9d24be8f386325ba0332ff8499ae22ff277e351885"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/cf_math_pkg.sv",
+      "sha256": "afc32fcae21f6cbb834c5ee602a1aaee1b518fc436a86d4fe1b97942473d35c8"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/clk_div.sv",
+      "sha256": "a07d8003633c4f7a073680cc6049d48bf60f4f9142906592463dce929f4314fc"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/counter.sv",
+      "sha256": "b7a9b5fc11ce4def51133f27ec0470a18ae7c8c6b1161f21c948ae848b693f58"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/delta_counter.sv",
+      "sha256": "698851a015f2b093d5688faa02ae60f0b3ed4324a7584846a99726e1c93732f7"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/deprecated/clock_divider.sv",
+      "sha256": "c4f7bb329a40a8f3f588c0b105a1a3214aedeb59a6b6b402a9f3cd7567d93d1b"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/deprecated/clock_divider_counter.sv",
+      "sha256": "33a30c8218ec5363025da8e3b1dc4cf184efb5a78077ab72cc21068d87651a6a"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/deprecated/fifo_v1.sv",
+      "sha256": "9076b370e08abc522e00252edc274372909740ebd8ac4920725a5f6dec34e081"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/deprecated/fifo_v2.sv",
+      "sha256": "cff163332b28e84904955e88691f973a47f90a4209b3f0ae0d2afe94f6a49921"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/deprecated/find_first_one.sv",
+      "sha256": "94a9fc3d10c55b4171ef8b5a260281c5487e9b751210d9b8aa37478fb207f623"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/deprecated/generic_fifo.sv",
+      "sha256": "b7f2e5f1b29f3426bb3a765af09fb78ba2ab2f0670aed4daa6879acfc0884af1"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/deprecated/generic_fifo_adv.sv",
+      "sha256": "54b83dcf3a83b83b446fb9077fd54dcd4880abfdcf9d8563804a4b9e3d862224"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/deprecated/generic_LFSR_8bit.sv",
+      "sha256": "df66d7152be286e0e05a06643c0f52bc9aed77ca93cc28547c87c6bb38a4cec5"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/deprecated/prioarbiter.sv",
+      "sha256": "7b678d4787ce01ab2ac219164ad7b6bc3a20cccd81a6072159522ba970715b11"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/deprecated/pulp_sync.sv",
+      "sha256": "50384a923b6c33b8920bac421e28e46ef4af0accac51f7b6bfecdda23a72a203"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/deprecated/pulp_sync_wedge.sv",
+      "sha256": "aa9d764e186ee1649a6aeac3a1b51d0d9283ec0a4d88727029c40f4cf2cfb0a6"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/deprecated/rrarbiter.sv",
+      "sha256": "6b286bebaf3dfb5a98c99bc5d63c8b6e592edd87b4ec77303b23648a93895fa1"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/deprecated/sram.sv",
+      "sha256": "df76c6231666c99ac0cd8201ec91c7aeb5188f11c538099842e8e3bc5de9c3f0"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/ecc_decode.sv",
+      "sha256": "bc2934cf595252186391e184f637eeb5461285fedce188cbc5f7ef2752a7e8e5"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/ecc_encode.sv",
+      "sha256": "2921fe9d29cb4d5d7a35e7a3792bc665b22d866f099ad6026fe9b173759deb71"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/ecc_pkg.sv",
+      "sha256": "7aefdb7b2e15af3154821b68847f91e31a09f5828553f294b88d358ef68bb41f"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/edge_detect.sv",
+      "sha256": "19a0f7b1139701c6f2d718a24f0775062011372a1ab42e377079275d5abd7411"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/edge_propagator.sv",
+      "sha256": "6db19ca2c0035f64612ca91a5192e96b9a08d5fd0ab295e81d563746735c1b6f"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/edge_propagator_rx.sv",
+      "sha256": "2d73f35952ec22d16754b928ddb560d7854be23ffa608d9f5652d30f1befe82a"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/edge_propagator_tx.sv",
+      "sha256": "8b4cd6b8539ad6f8ee47993870675eca92937d6bc892a0c5baf14664a1a4281b"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/exp_backoff.sv",
+      "sha256": "fb3bff5787bf454bae844982f946bbd693aff49abe8ac4c85099742c272b8238"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/fall_through_register.sv",
+      "sha256": "2ba886585636e1f47d8420b408b5b40a468149ad80a71fd4ba782f1859936661"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/fifo_v3.sv",
+      "sha256": "0b33c4ca3d81eb0af72772aa8f064d655974627841e4ba5aca5634cbb46147ce"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/gray_to_binary.sv",
+      "sha256": "e8cc57b3e6a6accb91a5f204d0f71a95ec7383f9975c727b70fa49fa6bc72470"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/id_queue.sv",
+      "sha256": "186e78e9aafc435b23e526289d3f59e3a86be738f7b8b129ac91884e72ea9ed6"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/isochronous_spill_register.sv",
+      "sha256": "d6f57e48c503c3e67a43c316df40f8b307d902b60c00d0375e99b5bc39afd469"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/lfsr.sv",
+      "sha256": "91f6c37be706ca7648cb66635e3f46a210e517f7addb8569ec28e4738599f7d7"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/lfsr_16bit.sv",
+      "sha256": "5fac16efd0f8cbd4ea3781959972b419c1665282d05f343976715e0abe6138de"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/lfsr_8bit.sv",
+      "sha256": "b6caa6223650523ccf68435e0718fdd2c6942cca031a445cd427f749ad416e06"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/lzc.sv",
+      "sha256": "c47046cab67cd9e9ff46f9b2a4c055f301eabd0f135d76d96639eb41c9fa3609"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/max_counter.sv",
+      "sha256": "9308c7cb67ff40667b13ccf452dc3166070d4dd1e73ccb71b3e2ed967ab82eb0"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/mv_filter.sv",
+      "sha256": "25c7134be40999f48c7736dc01a2c69810a012690d1d51ca6042df5b6c05fd83"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/onehot_to_bin.sv",
+      "sha256": "8fce5326140de7a1a67d8afe816e45d745f70d12ef67ae5d27cd9e4a61faa989"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/plru_tree.sv",
+      "sha256": "a57c545f2f3d140471953bb5fa549da2e9e17f4f7a384deaa090cb223afc464a"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/popcount.sv",
+      "sha256": "849f4d3b661b519ee9079c5339efad6f2dec70bdd87e1c8c82a7b9ca706a28cb"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/rr_arb_tree.sv",
+      "sha256": "a0df0ff9c26920f5bc17b4ed115600a4f0c745a62c0fb116c160c84abfc9191c"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/rstgen.sv",
+      "sha256": "83d9f70bab3b514062a7a79a581919afd5de466167dfcd08733c773f36ba094a"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/rstgen_bypass.sv",
+      "sha256": "51322d03a0479f16a4acb66cccee48003e2e224c02a7d3188cbaea9b2f8b2756"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/serial_deglitch.sv",
+      "sha256": "f42086f7b3ab93fa67182f3e0cf5a37970761779467d50fad871c2856b1e12f4"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/shift_reg.sv",
+      "sha256": "73fd475108016aa3ff5f940324e6bbf627a13bb8404e285b86876d3e948ff622"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/spill_register.sv",
+      "sha256": "692cb74f9f419f8751c43b0713ee759d4bbec24250bb23cf4d8aa6a50d8686ee"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_arbiter.sv",
+      "sha256": "727cfd2af43220b85c91f4098f9372d10aca1a0115cd614fe98a8730fb5bb1f8"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_arbiter_flushable.sv",
+      "sha256": "8a6ffd292fde633bcfba55ca5a0e89f367aa65406978d5947914979b6096a6d4"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_delay.sv",
+      "sha256": "85d0f12b02c1a926d25e80915a53f57bf9c78ab1ebdf58bdd02fe19d70901f5c"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_demux.sv",
+      "sha256": "210695a35a6107e1c6ec74e15ca535d57a766be1f81d1aa060787e79699443a2"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_fifo.sv",
+      "sha256": "b24dbfeff17323b339fcf38854e5dfadd8b8e15489936d4a029988ece240eac3"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_filter.sv",
+      "sha256": "3171a71a63e08c8075690b03268b128e0128f8a9c043aa6d51727472b02097ff"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_fork.sv",
+      "sha256": "35e9910301d34b3e2da4521e7406fd35175fe64c9931b498ac4bfdda8c612a5b"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_fork_dynamic.sv",
+      "sha256": "840c5c72dd91189e5a03873193f7ab1aac5fca7738d87a342cd580efb7ad1b86"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_intf.sv",
+      "sha256": "cdb1c9477daa30c18c236c13745aaf0e262a6be3d53f7d8ad643408a4eef90c3"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_join.sv",
+      "sha256": "daa10d6cd451bc9bba1302619e38f39a3af95c62ff74ebe7e0c0030248e65e3b"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_mux.sv",
+      "sha256": "7d6dfee4ed1ef3cd8f57731facc92bd6993072ad6bed48cdb6d5addd6e59b9c4"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_omega_net.sv",
+      "sha256": "b6fb7f33a08fc487e8eff44ce2a5623156048cada487c93f7268fab3b4183da6"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_register.sv",
+      "sha256": "b4292350fdfaf9471b736dbd610d4cb0a450ed757e9f13431e4b195c53834b1c"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_to_mem.sv",
+      "sha256": "61d7f6ee830887d2cf077990c794727a30c13a8b7e87e00a1d9585e171bdd854"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/stream_xbar.sv",
+      "sha256": "545344057d55593dc0a8d1401e39e5727a6f662471ca45d1bc31393988a595e6"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/sub_per_hash.sv",
+      "sha256": "c7ab35771aa080b3600bdbd6626aa2afef7b25769b74d8633e419e98958ebd95"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/sync.sv",
+      "sha256": "aa2d4b1bf9be00b1763a1c8beef0033dfcadf3e52f51af79f3af922faf717a03"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/sync_wedge.sv",
+      "sha256": "7cbe0d3337f4d8a3c18c40d3d4ed2826b5190edc3776a69b64a87e7656d1fa75"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells/src/unread.sv",
+      "sha256": "430bd1218854da3032104f5da6fd4bd6cc5b4c9569b85bfea8e805f9ebfc8cf7"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells.lock.hjson",
+      "sha256": "8cf3fd161b08b649fc83daf33e642d24fb8f47581d828dcfd92f78b3d4b63e48"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_common_cells.vendor.hjson",
+      "sha256": "90093750178d428e21a1c4794266cdfeb7c4e15dbb0ca995fb74fcccc496851c"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/LICENSE.apache",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/LICENSE.solderpad",
+      "sha256": "93b73d82e2a9049adbee0a6c4c3327fdcaa5acdb2217e669e196bb3c60c2b0e1"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/README.license.md",
+      "sha256": "30aec2d9b238a1d686fe524be82b04b860ee04c7edbf950ca86cc3f7230d1674"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/src/fpnew_cast_multi.sv",
+      "sha256": "112d82f64b323fb82a1f1473c84ac32587851015a2420c8ac5d85035a8075d7c"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/src/fpnew_classifier.sv",
+      "sha256": "cfff43772aea7d918cb0ab3c2e0e996ea34b8740d8edb43f359582ce9978546f"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/src/fpnew_divsqrt_multi.sv",
+      "sha256": "825e97b95da343a2d3394817e88851c2fc9284d959b9ad84052f5487fd34974f"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/src/fpnew_divsqrt_th_32.sv",
+      "sha256": "2dc7f5b6ca17214e5ff05ccd832224b0c78801f4249b43894ff3ff64cbca6ead"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/src/fpnew_fma.sv",
+      "sha256": "3ba0186080bd7465d7b2ad622721ac09c26249a24c2e80195007dd49efeb951b"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/src/fpnew_fma_multi.sv",
+      "sha256": "dbba2a529a931d7bfb2062612e08b53cca1e6bce7694e035e47818d01c021327"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/src/fpnew_noncomp.sv",
+      "sha256": "5ddf8aefceb3db2968befcbe3ced41541d52a980809e4d072ca7bc186861d742"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/src/fpnew_opgroup_block.sv",
+      "sha256": "20ba29a7d160470bd29206de04a3be265d1f0c137be73a2673fddc8d75f7557b"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/src/fpnew_opgroup_fmt_slice.sv",
+      "sha256": "0f3e60cba5dfb4a5547b6c5945185bde57e7b5f5fbd891b6ab1465f0f3cfd7ec"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/src/fpnew_opgroup_multifmt_slice.sv",
+      "sha256": "328d2e2907d0c0e081671d42f63e300d4968502359cbfdc55dc23c0591e7dd40"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/src/fpnew_pkg.sv",
+      "sha256": "468d7990971707d6621916898629068aa8ebace0ad24af5706e4b4f5fbc2f0a9"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/src/fpnew_rounding.sv",
+      "sha256": "67d0a15d9e418159eea18a4b521e5d30a563f251e058049041cb2a0cbb0327bd"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/src/fpnew_top.sv",
+      "sha256": "3a2ae45ff95ca1e6a377b312cca0f04b9d75524fe17bed9cbe648319fa83ffda"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/clk/rtl/gated_clk_cell.v",
+      "sha256": "22a4a5f41c7733bd4935adc8a036870a110a8e2f2a70f1f3cf64476b7a49eb9e"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_ctrl.v",
+      "sha256": "082c8019b9191c700eeef514e1879b808f77acb85c825f0706f121151821b827"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_ff1.v",
+      "sha256": "1338016c22e25d93288bc7ade14c07a9f21d29c3d1541863787cc6ce96d4e49c"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_pack_single.v",
+      "sha256": "e30b8a6d666bcce6d1fc2922c939aabb138a5ace4471c7f17c165ae7c89e67ec"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_prepare.v",
+      "sha256": "18cc2887533030d2049a518c0ad6b7afce03485d239bf6444b2e2a1f4c185339"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_round_single.v",
+      "sha256": "ba09bdc5e5b1bdfec7698f1bfdc6473bef5e7bdc2dfce884d9bc0dcb24855f1a"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_special.v",
+      "sha256": "dc74933f7b288a66240d1bbc7a6b8838d1bb819f9b08802d27b5846f64187ee3"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_srt_single.v",
+      "sha256": "a336b8c70e5afc188122ededfa90b1d1390a2cdb974c8a1633a5f8861062c89b"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_top.v",
+      "sha256": "029a9a42c1a82501ce5a4cb546b399f5de922b0be7b8ce3bd9cee370ca90dbe8"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fpu/rtl/pa_fpu_dp.v",
+      "sha256": "904561370d3130ca05d5a57a153b153af1b342c8bb8f9cd872e27c3975dfa4c8"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fpu/rtl/pa_fpu_frbus.v",
+      "sha256": "d347df146bae61e7b098d1d680baf06f0dc4f76779d39023708b49ba86832605"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/vendor/opene906/E906_RTL_FACTORY/gen_rtl/fpu/rtl/pa_fpu_src_type.v",
+      "sha256": "2f31dbe04cb7f151a76eca5c698eddae8eaa773bf94f8906582762cd146cd4a7"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew/vendor/opene906/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew.lock.hjson",
+      "sha256": "d1c7a0cf9742b8fbd62c478aea0c635e29c45bdf7dfaad7032d5ce6348ccc308"
+    },
+    {
+      "path": "vendor/cv32e40p/rtl/vendor/pulp_platform_fpnew.vendor.hjson",
+      "sha256": "8aa4c4074dd257e02043134bf737145cb155dc8e9ed06f25628a2bfa50c5ed44"
+    },
+    {
+      "path": "vendor/cv32e40p/SOURCE.json",
+      "sha256": "73ff43fb937ccb7ead204d459f685c583fc48ce20d8d69a3cdf7d3831b402894"
+    },
+    {
+      "path": "verification/manifests/configs.json",
+      "sha256": "c914fc6315f61c3a9c4f64bfcf6b7d5c0d934f719a284e466b86aeb6eef2cbad"
+    },
+    {
+      "path": "verification/manifests/xpulpnn_isa.json",
+      "sha256": "dcfeafb93908f92bf8e1bf069a735b4e3f91a4057d8ba7e13536bfdbfb3e60c2"
+    },
+    {
+      "path": "verification/model/isa.py",
+      "sha256": "52087c3d5df5ff956b9b488a354cbc74a390492078752af86ce566892852b064"
+    },
+    {
+      "path": "verification/model/kernels.py",
+      "sha256": "fa8068bb2cf75ba2e25fce3ac9a1fa670fcb3bf9b2a5ac98f16b82dc7b5b867a"
+    },
+    {
+      "path": "verification/model/packed.py",
+      "sha256": "741e29a2ef4f1a7c9a4e8976cfa5fc5f711a4ee65a84c640fe073b52f4a49e45"
+    },
+    {
+      "path": "verification/model/quant.py",
+      "sha256": "9a7d66c8ca9395aeb41785dcb7061f707a8cb67713b2a057a9711a13ff1aca8f"
+    },
+    {
+      "path": "verification/scripts/build_sw.py",
+      "sha256": "b335c7d950e969997b8b518c629b234365d2ad1bdc675262d113937b0294298e"
+    },
+    {
+      "path": "verification/scripts/check_results.py",
+      "sha256": "f060cf24315a4dcac644c668c627f836fe098e23be8fefe162879ee23d0674ec"
+    },
+    {
+      "path": "verification/scripts/compare_benchmarks.py",
+      "sha256": "95d39799a25602eba28b2755d94380267bb977bf4ae3965497d5340b0def2deb"
+    },
+    {
+      "path": "verification/scripts/extra_cases.py",
+      "sha256": "f5a1c0f023853fe73313960698efe5ffc87a049dec5d872fb9f01a9fbdb99cd2"
+    },
+    {
+      "path": "verification/scripts/finalize_report.py",
+      "sha256": "269c4d4d9b46b91bb89f024012f261c3c748a16f58e14f1a0596370dc1025249"
+    },
+    {
+      "path": "verification/scripts/generate_arithmetic_supplement.py",
+      "sha256": "631bfca527ae1343a04e52e33def2d33a5ce4fe48741542ceb880f24ac3457e0"
+    },
+    {
+      "path": "verification/scripts/generate_isa.py",
+      "sha256": "450f6e8cfcb86000b52754cbc5d93581570b5682c763ac2d98b1cb6b7015fa2e"
+    },
+    {
+      "path": "verification/scripts/generate_vectors.py",
+      "sha256": "f98a631175651b7a78e860f5a442afcca6e0f00b7ba321368d0f5f1fdb439f3b"
+    },
+    {
+      "path": "verification/scripts/generate_xpulpnn_helpers.py",
+      "sha256": "45c33a970dc7efd21dd368400241a26e2ecc73a292de683ea4b7227431adb4e0"
+    },
+    {
+      "path": "verification/scripts/package_delivery.py",
+      "sha256": "aef3b65a2d22d2212981d896ec858ed5b0549fdc58393e51b33e47c13a6342c5"
+    },
+    {
+      "path": "verification/scripts/prepare_sources.py",
+      "sha256": "78b2623db20fb54cb9e0ab028abae4ce2878596a2b580328426db3c5d947d4c6"
+    },
+    {
+      "path": "verification/scripts/run_arithmetic_matrix.py",
+      "sha256": "e135fa54ba92ea80d5672951e98ee4e58668c67ae6273a1c26ae8228a5d5fc9e"
+    },
+    {
+      "path": "verification/scripts/run_arithmetic_units.ps1",
+      "sha256": "786b81499a0422d8032c3501af20d9fcfe4837a9b45c30dc284cd86604b58020"
+    },
+    {
+      "path": "verification/scripts/run_controller_unit.py",
+      "sha256": "924ce944effdc01060a42a92627328382061b7e6b0d2190cef8703ded5e7592a"
+    },
+    {
+      "path": "verification/scripts/run_fpga.ps1",
+      "sha256": "1b5a029a74ae5ecf34ad8bdf7c3788dc4b24546f368c3b0ba8686c4e33b9fa37"
+    },
+    {
+      "path": "verification/scripts/run_fpga.py",
+      "sha256": "cc5ad87a9d458a3c99c592084283012d205caa80cebfc6ac363244fe66abc062"
+    },
+    {
+      "path": "verification/scripts/run_lsu_unit.py",
+      "sha256": "09a59675c3a88b0d8f8475650739aeeaaaaccaabe444c7ae8851dd45df0622c8"
+    },
+    {
+      "path": "verification/scripts/run_quant_unit.py",
+      "sha256": "c4fd5e9a8b71d6a3a3960cccbb2738b54432efb91d062590049594f83651cc1d"
+    },
+    {
+      "path": "verification/scripts/run_system_unit.py",
+      "sha256": "f9455b08dd64e939b2c42db159e9343501ad5545f7f8c584bae7f069ca12b4cd"
+    },
+    {
+      "path": "verification/scripts/run_tests.ps1",
+      "sha256": "4142d443d9eb0a78b349f88dae91106f3f1f5ca4d5c1f03777b340b9d3ef5157"
+    },
+    {
+      "path": "verification/scripts/run_tests.py",
+      "sha256": "682865ae17ff86926958a6fc49a6663a661f0e79b0b245620771f9e289e2cea7"
+    },
+    {
+      "path": "verification/scripts/summarize_fpga.py",
+      "sha256": "3af8b6dbe897da9adc7af19942c136cf4f12968256ea706faba584cb8b2b76ef"
+    },
+    {
+      "path": "verification/scripts/summarize_verification.py",
+      "sha256": "78760988629c3aea4fda62fb5e6ccf189015f2de33e34d85c56c33513582cf9d"
+    },
+    {
+      "path": "verification/sw/bench/conv.c",
+      "sha256": "c93601ff8a837cdbb562b8556db6b37916dcb191f5464da615c4cff3a0057bad"
+    },
+    {
+      "path": "verification/sw/bench/kernels.h",
+      "sha256": "005031eb07782e46e40250fb3c0ef770cfa9599545464ad5f7e86f6e4f0cf421"
+    },
+    {
+      "path": "verification/sw/bench/kernels_scalar.c",
+      "sha256": "2755eb6d488f26d59e7d0f1649f9526c01f359cb0c7c590e6f9b017dda3a4420"
+    },
+    {
+      "path": "verification/sw/bench/kernels_xpulp.c",
+      "sha256": "4ad1cdab9272d1eee6e97262c8fed86d312c540c116da55b07bae254f1560868"
+    },
+    {
+      "path": "verification/sw/bench/kernels_xpulpnn.c",
+      "sha256": "a89790d5be81d62604b30da79be36231b353cc3dab8c4e74c88a604650463a2a"
+    },
+    {
+      "path": "verification/sw/bench/matmul.c",
+      "sha256": "0017bac63d4320cd17daa5750142a9778e1748245d360b2ed5861130565904f6"
+    },
+    {
+      "path": "verification/sw/common/crt0.S",
+      "sha256": "972e071e0a9b9c5fc0978d5a833b26debae73835551a0987a68d083abb54d4d5"
+    },
+    {
+      "path": "verification/sw/common/link.ld",
+      "sha256": "bb88c02425eb630ca332465043e9259f5306c98ce71de96fb189a102a9dc8a95"
+    },
+    {
+      "path": "verification/sw/common/mailbox.h",
+      "sha256": "3d52c7f5aaa33902b2ae7b7265a3107eb0661aa5c8fafe761b9090ae9505fbdf"
+    },
+    {
+      "path": "verification/sw/common/vectors.S",
+      "sha256": "394756f5b181b53d110887080de716994324abc9f202aaf18aa240179adb7f5e"
+    },
+    {
+      "path": "verification/sw/common/xpulpnn.h",
+      "sha256": "9de685bb813887afe7840b09d3bf7ef8b46f7c41b1c783be0fd13a0d97cf4ee9"
+    },
+    {
+      "path": "verification/sw/common/xpulpnn_words.h",
+      "sha256": "21240fe3129d86bb92933f70512a794433823a91bc06be947b6280fd38c606d8"
+    },
+    {
+      "path": "verification/sw/tests/rv32_smoke.S",
+      "sha256": "12b9d2f13db0ca673ee318ea724df1b401ef732e0e23adff7af5f4913340501d"
+    },
+    {
+      "path": "verification/tb/obi_memory_agent.sv",
+      "sha256": "cde7e363939a312329e5c6852f483e1b441615d026478af6756bd0ac02e8f2c6"
+    },
+    {
+      "path": "verification/tb/tb_core_program.sv",
+      "sha256": "b776ccc228cfcdbee4a14cd5ca6190e3c56a6df57e4746446f36c28fb15e35c9"
+    },
+    {
+      "path": "verification/tb/tb_fyp_nn_system.sv",
+      "sha256": "021c049a0d9c571b378c59aa050097d41fc7cc321c703711547c22b430cadadb"
+    },
+    {
+      "path": "verification/tb/tb_nn_alu.sv",
+      "sha256": "a3ad0a328f4cfcc0aa2aba9fb6a6db6f7e036df03e02dbaa3605904bef9308bc"
+    },
+    {
+      "path": "verification/tb/tb_nn_config.sv",
+      "sha256": "7967906a8c9786c8ec6f97bc5cb2786e7998fe29cb6c4d55881800cea2b68bd3"
+    },
+    {
+      "path": "verification/tb/tb_nn_controller.sv",
+      "sha256": "b5fa9a4e2d2fa71c41d792c5e9eb9e0900c8002d8b7d061154937d46506d932a"
+    },
+    {
+      "path": "verification/tb/tb_nn_decoder.sv",
+      "sha256": "30b2008fa94cbd5572dea679c790ad7736975c9e2162a39912f430140c6865e3"
+    },
+    {
+      "path": "verification/tb/tb_nn_dotp.sv",
+      "sha256": "877a60e7491687b0d42fdd045f224eb3ae65852d8d045d4e1377d218c1b825eb"
+    },
+    {
+      "path": "verification/tb/tb_nn_lsu.sv",
+      "sha256": "31b20082685a8a5c14c821f69ff82c09e55849b539d87521d9a22d7d2c13ce04"
+    },
+    {
+      "path": "verification/tb/tb_nn_quant.sv",
+      "sha256": "65e9ad6bb759e7915a0e883413cb6bec1d7964f20e1f05c486f07f12cdc4e124"
+    },
+    {
+      "path": "verification/tests/test_build_and_results.py",
+      "sha256": "45f57a1134c5064d2b16b9663987d7e7ee048cd34bbf524c6a84e74383404ea4"
+    },
+    {
+      "path": "verification/tests/test_fpga_inputs.py",
+      "sha256": "84c8d9f102bcacb81233928b6db52a9a2ccb9ded2f956811dfabc0fc8d74833d"
+    },
+    {
+      "path": "verification/tests/test_kernels.py",
+      "sha256": "5765c47bb7d94219d19210ef274c32d895a4b3d64620e359569cde040eb5a955"
+    },
+    {
+      "path": "verification/tests/test_models.py",
+      "sha256": "bb683fd7f3cdc5fa1db45f5a1a2dbc52aacf3682fd0f45fdc0f27f89faa0a59d"
+    },
+    {
+      "path": "verification/tests/test_public_repository.py",
+      "sha256": "7c6a7ecc6e039691f272d09407a42f79a637d16c8fdf01bb832636a664866c45"
+    },
+    {
+      "path": "verification/tests/test_sources_and_images.py",
+      "sha256": "58650b3d829fe6aa96fb077757d7e56f17437c210295f9b9c8e17ba9146b331c"
+    },
+    {
+      "path": "verification/tests/test_xpulpnn_helpers.py",
+      "sha256": "de684791863ba3d922d93f29307a613ab1bdfda74bb57851dbdab455da3a9946"
+    }
+  ],
+  "scope": "Local functional reproduction, DATE2020-local-v1; no author binary compatibility claim",
+  "archive_scope": "Sources, approved specification/plan, reports, pinned common ROM and evidence indexes. Full historical simulation logs and Vivado checkpoints remain in the original workspace; regenerate projects after relocation.",
+  "external_D_prototype": "not included and never written by this implementation; no initial whole-tree hash was recorded"
+}
