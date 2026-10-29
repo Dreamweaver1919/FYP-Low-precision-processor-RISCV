@@ -1,0 +1,278 @@
+{
+  "status": "PASS",
+  "date": "2026-10-29",
+  "nominal_clock_hz": 50000000,
+  "clock_basis": "PS register-derived; no oscilloscope measurement",
+  "signature_words": 472,
+  "deterministic_words": 356,
+  "configurations": {
+    "baseline": {
+      "config": "frozen_ff_pulp1",
+      "build_id": "ea507b7d",
+      "bitstream_sha256": "3f446305665c4017bc64b6b391cb759ea8cb75dc5accbe6d1606691408324a03",
+      "implementation": {
+        "period_ns": 20.0,
+        "wns_ns": 7.693,
+        "whs_ns": 0.01,
+        "drc_errors": 0
+      },
+      "trials_passed": 2,
+      "repeat_all_472_words_identical": true,
+      "elapsed_cycles": 2874743,
+      "metrics": [
+        {
+          "name": "matmul_q4",
+          "logical_macs": 2048,
+          "physical_lane_macs": 2048,
+          "preparation_cycles": 27598,
+          "preparation_instret": 11722,
+          "legacy_cycles": 61152,
+          "legacy_instret": 57610,
+          "native_cycles": 0,
+          "native_instret": 0,
+          "scalar_cycles": 41577,
+          "scalar_instret": 38067
+        },
+        {
+          "name": "conv_q4",
+          "logical_macs": 20736,
+          "physical_lane_macs": 20736,
+          "preparation_cycles": 323822,
+          "preparation_instret": 138642,
+          "legacy_cycles": 587429,
+          "legacy_instret": 560039,
+          "native_cycles": 0,
+          "native_instret": 0,
+          "scalar_cycles": 388458,
+          "scalar_instret": 361212
+        },
+        {
+          "name": "tail_q4",
+          "logical_macs": 140,
+          "physical_lane_macs": 160,
+          "preparation_cycles": 7648,
+          "preparation_instret": 3254,
+          "legacy_cycles": 4265,
+          "legacy_instret": 3987,
+          "native_cycles": 0,
+          "native_instret": 0,
+          "scalar_cycles": 2906,
+          "scalar_instret": 2638
+        },
+        {
+          "name": "matmul_q2",
+          "logical_macs": 2048,
+          "physical_lane_macs": 2048,
+          "preparation_cycles": 26751,
+          "preparation_instret": 10938,
+          "legacy_cycles": 59286,
+          "legacy_instret": 54344,
+          "native_cycles": 0,
+          "native_instret": 0,
+          "scalar_cycles": 39711,
+          "scalar_instret": 36849
+        },
+        {
+          "name": "conv_q2",
+          "logical_macs": 20736,
+          "physical_lane_macs": 23040,
+          "preparation_cycles": 316847,
+          "preparation_instret": 132018,
+          "legacy_cycles": 579842,
+          "legacy_instret": 533984,
+          "native_cycles": 0,
+          "native_instret": 0,
+          "scalar_cycles": 380871,
+          "scalar_instret": 355893
+        },
+        {
+          "name": "tail_q2",
+          "logical_macs": 140,
+          "physical_lane_macs": 192,
+          "preparation_cycles": 7425,
+          "preparation_instret": 3046,
+          "legacy_cycles": 4164,
+          "legacy_instret": 3774,
+          "native_cycles": 0,
+          "native_instret": 0,
+          "scalar_cycles": 2805,
+          "scalar_instret": 2565
+        }
+      ]
+    },
+    "nn": {
+      "config": "overlay_nn1",
+      "build_id": "f584e920",
+      "bitstream_sha256": "641ca4b902c58485450b20e76b1fe69829246fbe0d77343963866d235d6b0c4c",
+      "implementation": {
+        "period_ns": 20.0,
+        "wns_ns": 0.338,
+        "whs_ns": 0.012,
+        "drc_errors": 0
+      },
+      "trials_passed": 2,
+      "repeat_all_472_words_identical": true,
+      "elapsed_cycles": 2927425,
+      "metrics": [
+        {
+          "name": "matmul_q4",
+          "logical_macs": 2048,
+          "physical_lane_macs": 2048,
+          "preparation_cycles": 27598,
+          "preparation_instret": 11722,
+          "legacy_cycles": 61152,
+          "legacy_instret": 57610,
+          "native_cycles": 3498,
+          "native_instret": 2540,
+          "scalar_cycles": 41577,
+          "scalar_instret": 38067
+        },
+        {
+          "name": "conv_q4",
+          "logical_macs": 20736,
+          "physical_lane_macs": 20736,
+          "preparation_cycles": 323822,
+          "preparation_instret": 138642,
+          "legacy_cycles": 587429,
+          "legacy_instret": 560039,
+          "native_cycles": 25562,
+          "native_instret": 19224,
+          "scalar_cycles": 388458,
+          "scalar_instret": 361212
+        },
+        {
+          "name": "tail_q4",
+          "logical_macs": 140,
+          "physical_lane_macs": 160,
+          "preparation_cycles": 7648,
+          "preparation_instret": 3254,
+          "legacy_cycles": 4265,
+          "legacy_instret": 3987,
+          "native_cycles": 322,
+          "native_instret": 222,
+          "scalar_cycles": 2906,
+          "scalar_instret": 2638
+        },
+        {
+          "name": "matmul_q2",
+          "logical_macs": 2048,
+          "physical_lane_macs": 2048,
+          "preparation_cycles": 26751,
+          "preparation_instret": 10938,
+          "legacy_cycles": 59286,
+          "legacy_instret": 54344,
+          "native_cycles": 2378,
+          "native_instret": 1804,
+          "scalar_cycles": 39711,
+          "scalar_instret": 36849
+        },
+        {
+          "name": "conv_q2",
+          "logical_macs": 20736,
+          "physical_lane_macs": 23040,
+          "preparation_cycles": 316847,
+          "preparation_instret": 132018,
+          "legacy_cycles": 579842,
+          "legacy_instret": 533984,
+          "native_cycles": 16058,
+          "native_instret": 12744,
+          "scalar_cycles": 380871,
+          "scalar_instret": 355893
+        },
+        {
+          "name": "tail_q2",
+          "logical_macs": 140,
+          "physical_lane_macs": 192,
+          "preparation_cycles": 7425,
+          "preparation_instret": 3046,
+          "legacy_cycles": 4164,
+          "legacy_instret": 3774,
+          "native_cycles": 250,
+          "native_instret": 176,
+          "scalar_cycles": 2805,
+          "scalar_instret": 2565
+        }
+      ]
+    }
+  },
+  "comparison": [
+    {
+      "name": "matmul_q4",
+      "logical_macs": 2048,
+      "physical_lane_macs": 2048,
+      "baseline_legacy_cycles": 61152,
+      "baseline_scalar_cycles": 41577,
+      "native_cycles": 3498,
+      "legacy_over_native": 17.481989708404804,
+      "scalar_over_native": 11.885934819897084,
+      "preparation_plus_legacy_over_preparation_plus_native": 2.8540648314895805,
+      "preparation_plus_scalar_over_preparation_plus_native": 2.2245626447131466,
+      "native_us_at_nominal_50mhz": 69.96
+    },
+    {
+      "name": "conv_q4",
+      "logical_macs": 20736,
+      "physical_lane_macs": 20736,
+      "baseline_legacy_cycles": 587429,
+      "baseline_scalar_cycles": 388458,
+      "native_cycles": 25562,
+      "legacy_over_native": 22.98055707691104,
+      "scalar_over_native": 15.196698223926141,
+      "preparation_plus_legacy_over_preparation_plus_native": 2.60816465550798,
+      "preparation_plus_scalar_over_preparation_plus_native": 2.0386737801387587,
+      "native_us_at_nominal_50mhz": 511.24
+    },
+    {
+      "name": "tail_q4",
+      "logical_macs": 140,
+      "physical_lane_macs": 160,
+      "baseline_legacy_cycles": 4265,
+      "baseline_scalar_cycles": 2906,
+      "native_cycles": 322,
+      "legacy_over_native": 13.245341614906833,
+      "scalar_over_native": 9.024844720496894,
+      "preparation_plus_legacy_over_preparation_plus_native": 1.4947302383939773,
+      "preparation_plus_scalar_over_preparation_plus_native": 1.324215809284818,
+      "native_us_at_nominal_50mhz": 6.44
+    },
+    {
+      "name": "matmul_q2",
+      "logical_macs": 2048,
+      "physical_lane_macs": 2048,
+      "baseline_legacy_cycles": 59286,
+      "baseline_scalar_cycles": 39711,
+      "native_cycles": 2378,
+      "legacy_over_native": 24.93103448275862,
+      "scalar_over_native": 16.69932716568545,
+      "preparation_plus_legacy_over_preparation_plus_native": 2.9536544337258404,
+      "preparation_plus_scalar_over_preparation_plus_native": 2.2816437227505237,
+      "native_us_at_nominal_50mhz": 47.56
+    },
+    {
+      "name": "conv_q2",
+      "logical_macs": 20736,
+      "physical_lane_macs": 23040,
+      "baseline_legacy_cycles": 579842,
+      "baseline_scalar_cycles": 380871,
+      "native_cycles": 16058,
+      "legacy_over_native": 36.10922904471292,
+      "scalar_over_native": 23.71845808942583,
+      "preparation_plus_legacy_over_preparation_plus_native": 2.693528183716075,
+      "preparation_plus_scalar_over_preparation_plus_native": 2.095847163605233,
+      "native_us_at_nominal_50mhz": 321.16
+    },
+    {
+      "name": "tail_q2",
+      "logical_macs": 140,
+      "physical_lane_macs": 192,
+      "baseline_legacy_cycles": 4164,
+      "baseline_scalar_cycles": 2805,
+      "native_cycles": 250,
+      "legacy_over_native": 16.656,
+      "scalar_over_native": 11.22,
+      "preparation_plus_legacy_over_preparation_plus_native": 1.5099674267100978,
+      "preparation_plus_scalar_over_preparation_plus_native": 1.332899022801303,
+      "native_us_at_nominal_50mhz": 5.0
+    }
+  ]
+}

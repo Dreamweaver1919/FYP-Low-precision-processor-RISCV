@@ -10,7 +10,12 @@ module fyp_nn_system #(
   input  logic start_i,
   output logic done_o,
   output logic pass_o,
-  output logic [31:0] signature_o
+  output logic [31:0] signature_o,
+  // Passive post-execution stream for board readback; no CPU/LSU arbitration.
+  output logic result_valid_o,
+  output logic [13:0] result_index_o,
+  output logic [31:0] result_data_o,
+  output logic [31:0] result_count_o
 );
   typedef enum logic [1:0] {WAIT_START, RUN_CPU, SCAN_READ, SCAN_ACCUM} state_e;
   state_e state_q;
@@ -49,6 +54,10 @@ module fyp_nn_system #(
   assign ram_address = state_q == SCAN_READ ? scan_address : data_addr[15:2];
   assign ram_write = data_gnt && data_is_ram && data_we;
   assign folded = {signature_o[26:0], signature_o[31:27]} ^ ram_data_q;
+  assign result_valid_o = state_q == SCAN_ACCUM && !done_o;
+  assign result_index_o = scan_index_q[13:0];
+  assign result_data_o = ram_data_q;
+  assign result_count_o = signature_words_q;
   assign signature_range_valid = signature_base_q >= 32'h10000000 &&
       signature_base_q <= 32'h10010000 && signature_base_q[1:0] == 0 &&
       signature_words_q <= 32'd16384 &&

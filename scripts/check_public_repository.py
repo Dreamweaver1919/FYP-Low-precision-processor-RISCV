@@ -32,6 +32,12 @@ REQUIRED_PATHS = {
     "artifacts/verification/overlay_nn1/bench/1/20261021-114500-136671/expected.json",
     "artifacts/verification/overlay_nn1/bench/1/20261021-114500-136671/build.json",
     "artifacts/fpga/summary.json",
+    "docs/results/kv260-board-validation.md",
+    "docs/results/board-2026-10-29/summary.json",
+    "verification/scripts/summarize_board.py",
+    "verification/scripts/run_board.py",
+    "rtl/platform/fpga/fyp_board_top.sv",
+    "rtl/platform/fpga/fyp_board_capture.sv",
 }
 
 GENERATED_TOP_LEVEL = {"FYP.cache", "FYP.hw", "FYP.ip_user_files", "FYP.runs", "FYP.sim"}

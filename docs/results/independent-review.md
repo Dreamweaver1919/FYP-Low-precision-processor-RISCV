@@ -48,3 +48,11 @@ The eight routed OOC records have also been checked: both core and system config
 - FPGA evidence must be read from its matching routed reports and source snapshot.  The 20 ns OOC results do not establish board pins, board-clock hookup, bitstream programming, hardware execution, or power.
 - Performance ratios remain measurements of the local unpacking-heavy dot8 baseline and matched kernel intervals.  They are not a claim of the DATE-paper optimized baseline or a board-measured speedup.
 
+## 2026-10-29 board-validation supplement
+
+The preceding verdict and limitations describe the 2026-10-21 release. A new read-only review by the existing 5.6 Terra reviewer covered the board adapter, build/program/capture scripts, clock evidence, final manifests, cycle calculations, and the [physical validation report](kv260-board-validation.md).
+
+The review checked that both configurations meet 20 ns, each final trial starts with fresh programming, identities agree through USR_ACCESS and VIO, repeated 472-word captures match exactly, and speedups use matching kernel intervals. It requested unsigned VIO readback handling and a regenerated final receipt, portable report headers, and correction of historical NOT_RUN wording. Those changes were applied and four final trials were rerun. Published report provenance records both original and normalized report hashes. The review accepted the already-active PL state with recorded register snapshots; unnecessary isolation writes were not added.
+
+Final reviewer verdict: **Approved; no blocking inconsistency found.** This is an independent code/evidence review, not an independent laboratory repetition. The new board evidence establishes the limited benchmark execution claim; power, real-model accuracy and an independently measured physical clock remain outside scope.
+

@@ -1,0 +1,9 @@
+Published trial1 is local final trial3; preceded by preliminary trials.
+  **** Start of session at: Thu Oct 29 19:13:11 2026
+INFO: [Labtools 27-2302] Device xck26 (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+BOARD_PROGRAMMED id=f584e920
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 29 19:13:27 2026...
+  **** Start of session at: Thu Oct 29 19:13:27 2026
+INFO: [Labtools 27-2302] Device xck26 (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+BOARD_CAPTURE_COMPLETE id=f584e920 status=19 count=472 fold=39a7d0b7 elapsed=2927425
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 29 19:13:46 2026...

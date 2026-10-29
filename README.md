@@ -1,6 +1,6 @@
 # FYP: Low-Precision RISC-V Processor
 
-> 中文摘要：本项目基于 OpenHW CV32E40P 实现 DATE 2020 XpulpNN 范围内的 4/2-bit packed ALU、dot/sdot 与双通道阈值量化，并提供独立模型、整核仿真、FPGA OOC 和可复现证据。
+> 中文摘要：本项目基于 OpenHW CV32E40P 实现 DATE 2020 XpulpNN 范围内的 4/2-bit packed ALU、dot/sdot 与双通道阈值量化，并提供独立模型、整核仿真、FPGA 实现及 KV260 实板运行证据。
 
 This Final Year Project extends a frozen CV32E40P baseline with a local `DATE2020-local-v1` low-precision ABI. It implements 72 instruction forms: packed 4-bit and 2-bit arithmetic, dot/sdot operations, and two quantization forms. It does not claim binary compatibility with the paper authors' compiler or include later MAC&LOAD, NN-RF, or unequal-width dot-product extensions.
 
@@ -41,9 +41,12 @@ The portable test suite requires Python 3.12 or later and no proprietary FPGA to
 ```powershell
 python -m unittest discover -s verification/tests -v
 python scripts/check_public_repository.py --index
+python verification/scripts/summarize_board.py
 ```
 
 These checks validate the local ABI/model, source hashes, fixed ROM inputs and public repository boundary. They do not run XSim, Vivado, or a physical FPGA.
+
+The board audit recomputes the published hardware comparison from raw captures and checks the recorded source/ROM identity. The helper encoding test uses a RISC-V GCC/objdump pair from `RISCV_GCC_PREFIX` or PATH (`riscv-none-elf-`, `riscv64-unknown-elf-`, or `riscv32-unknown-elf-`). It skips locally if unavailable; CI installs and requires the toolchain.
 
 For a Windows host with compatible installed tools, run the full core regression:
 
@@ -57,11 +60,16 @@ Adjust the local tool paths in the scripts for another machine. The shared FPGA-
 
 ## Results
 
+**KV260 hardware validation, 2026-10-29: PASS.** Both frozen baseline and XPulpNN images passed two fresh JTAG programming trials at register-derived nominal 50 MHz. Each trial captured 472 words, including 356 matching deterministic outputs. Native kernels took 9.025–23.718× fewer cycles than this project's scalar kernels; for the main MatMul/Conv workloads, preparation plus kernel speedup was 2.039–2.282×. The full NN board design meets 20 ns with WNS +0.338 ns and WHS +0.012 ns. See the [physical board report and reproduction steps](docs/results/kv260-board-validation.md) and [raw evidence](docs/results/board-2026-10-29).
+
+The following OOC and functional figures are the historical 2026-10-21 release snapshot:
+
 Functional release evidence reports PASS for 19 top-level groups and 42 leaf tests; three OBI stress seeds have current RTL/testbench hashes. The full expanded system OOC implementation meets 20 ns (50 MHz): 8,745 LUT, 2,863 FF, 7 DSP, 32 BRAM tiles, WNS +0.594 ns and WHS +0.025 ns. The NN-enabled 10 ns OOC implementation does not meet timing and remains recorded as a failure.
 
 The main benchmark comparison is the project’s portable legacy XPULP dot8 path against the native low-precision path. It includes the legacy path's required unpack/sign-extension and software quantization. It is not the paper authors' optimized baseline, and whole-program cycles are not used as speedup.
 
 - [Final validation report](docs/results/xpulpnn-route-a-validation.md)
+- [KV260 physical validation report](docs/results/kv260-board-validation.md)
 - [Verification evidence index](docs/results/verification-index.md)
 - [Benchmark comparison](docs/results/benchmark-comparison.md)
 - [Independent RTL review](docs/results/independent-review.md)
@@ -69,7 +77,7 @@ The main benchmark comparison is the project’s portable legacy XPULP dot8 path
 
 ## Scope limits
 
-The results establish functional simulation and OOC implementation evidence. They do not establish KV260 pin assignments, board-clock hookup, bitstream programming, hardware execution, or power consumption.
+The results include physical execution of the fixed benchmark on KV260 through a PS-clocked, JTAG-controlled top. The FPGA image is volatile; QSPI/boot media were not programmed. The clock is register-derived nominal 50 MHz, without an oscilloscope measurement. Power consumption, long-duration reliability, and real-model accuracy remain unmeasured. The historical delivery source manifest describes the 2026-10-21 snapshot; board build manifests cover the new hardware sources.
 
 ## License and third-party code
 

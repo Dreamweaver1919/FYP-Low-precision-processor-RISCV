@@ -13,7 +13,18 @@ jobs:
         with:
           python-version: "3.12"
       # Vivado, XSim and hardware execution are intentionally outside CI scope.
+      - name: Install RISC-V compiler for emitted instruction checks
+        run: sudo apt-get update && sudo apt-get install -y gcc-riscv64-unknown-elf binutils-riscv64-unknown-elf
+      - name: Require the compiler and disassembler
+        run: |
+          riscv64-unknown-elf-gcc --version
+          riscv64-unknown-elf-objdump --version
       - name: Run portable verification
+        env:
+          RISCV_GCC_PREFIX: riscv64-unknown-elf-
+          REQUIRE_RISCV_TOOLCHAIN: "1"
         run: python -m unittest discover -s verification/tests -v
       - name: Check tracked public boundary
         run: python scripts/check_public_repository.py --index
+      - name: Audit published physical captures and recalculate metrics
+        run: python verification/scripts/summarize_board.py

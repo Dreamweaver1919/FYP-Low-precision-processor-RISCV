@@ -8,12 +8,25 @@ module tb_fyp_nn_system #(
   logic clk_i=0, rst_ni=0, start_i=0;
   logic done_o, pass_o;
   logic [31:0] signature_o;
+  logic result_valid_o;
+  logic [13:0] result_index_o;
+  logic [31:0] result_data_o, result_count_o;
+  integer streamed_words=0;
   logic [31:0] expected[0:16383];
   logic [31:0] expected_mask[0:16383];
   logic [31:0] folded, observed;
   integer fd, cycles;
   fyp_nn_system #(.COREV_XPULPNN(NN_ENABLE), .SIGNATURE_DIGEST_WORDS(DIGEST_WORDS)) dut(.*);
   always #5 clk_i=~clk_i;
+  always @(posedge clk_i) if (rst_ni && result_valid_o) begin
+    if (result_index_o !== streamed_words || result_count_o != EXPECTED_WORDS)
+      $fatal(1,"stream index/count mismatch");
+    if ($isunknown(result_data_o) ||
+        (result_data_o & expected_mask[result_index_o]) !==
+        (expected[result_index_o] & expected_mask[result_index_o]))
+      $fatal(1,"stream data mismatch at %0d",result_index_o);
+    streamed_words=streamed_words+1;
+  end
   initial begin
     $readmemh("expected.hex",expected);
     $readmemh("expected_mask.hex",expected_mask);
@@ -27,6 +40,7 @@ module tb_fyp_nn_system #(
     while(!done_o && cycles<MAX_CYCLES) begin @(negedge clk_i); cycles++; end
     if(!done_o) $fatal(1,"wrapper watchdog cycles=%0d",cycles);
     if(!pass_o) $fatal(1,"wrapper reported failure");
+    if(streamed_words != EXPECTED_WORDS) $fatal(1,"incomplete signature stream");
     if(dut.signature_words_q != EXPECTED_WORDS) $fatal(1,"signature length mismatch");
     folded=0;
     fd=$fopen("actual.hex","w");

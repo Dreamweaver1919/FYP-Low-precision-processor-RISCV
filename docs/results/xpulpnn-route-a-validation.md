@@ -2,6 +2,8 @@
 
 日期：2026-10-21。本文按用户已批准的 Route A 与 `DATE2020-local-v1` 规格记录实现。功能回归 PASS，核心及完整封装的两组 20 ns OOC 实现均满足时序；扩展核的 10 ns 时序未闭合。
 
+2026-10-29 补充：已完成 KV260 完整器件构建、实际 JTAG 编程及 baseline/XPulpNN 各两次重新烧录验证，四次均 PASS。新板级 top 在 20 ns 下闭合时序；每次核对 356 字确定性输出并采集全部 472 字。实测周期、源码/bitstream 身份、原始读回及复现命令见 [实板验证报告](kv260-board-validation.md)。下文 2026-10-21 的仿真/OOC 数据继续保留为历史记录。
+
 ## 1. 实现内容与论文的对应关系
 
 | 项目 | 本地实现与依据 |
@@ -116,7 +118,7 @@ FPGA 封装使用不同于 core TB 的存储器服务，因此 [FPGA 汇总](../
 
 RAM 地址选择最初阻碍 BRAM 推断，原综合警告已保留。修正为读端口前统一选择 CPU/扫描地址后，两组封装仿真通过，综合确认 Block RAM、无 LUTRAM。初版 Vivado 工作目录中的 memory 文件在运行过程中消失；归档按已记录 SHA 恢复相同映像，后续工程把永久输入保存到独立 `memory/` 目录，并检查运行后完整性。
 
-OOC 未设置板级 input/output delay、管脚与 I/O standard；这些未约束端点保留在报告中，没有用全局 false path 掩盖。当前 top 没有外部总线错误输入且关闭 PMP，故相应精确访存故障扩展为 NOT_APPLICABLE。bitstream、KV260 编程、板级运行与功耗测量均为 NOT_RUN。
+OOC 未设置板级 input/output delay、管脚与 I/O standard；这些未约束端点保留在报告中，没有用全局 false path 掩盖。当前 top 没有外部总线错误输入且关闭 PMP，故相应精确访存故障扩展为 NOT_APPLICABLE。截至 2026-10-21，bitstream、KV260 编程、板级运行与功耗测量均为 NOT_RUN；2026-10-29 已新增 bitstream、编程与板级运行 PASS 证据，功耗仍未测量，详见本文开头链接。
 
 ## 5. 重建与原项目保护
 

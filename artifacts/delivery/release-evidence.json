@@ -4,6 +4,11 @@
   "fpga_summary": "artifacts/fpga/summary.json",
   "fpga_run_count": 8,
   "20ns_timing_met": true,
-  "board_programming": "NOT_RUN",
-  "bitstream": "NOT_RUN"
+  "functional_snapshot_date": "2026-10-21",
+  "board_programming": "PASS",
+  "bitstream": "PASS",
+  "board_execution": "PASS",
+  "board_evidence": "docs/results/board-2026-10-29/summary.json",
+  "board_report": "docs/results/kv260-board-validation.md",
+  "programming_mode": "volatile JTAG; boot media unchanged"
 }

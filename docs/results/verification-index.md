@@ -1,7 +1,9 @@
 # Verification evidence index
 
 Generated: `2026-10-21T07:01:25.045081+00:00`  
-Release-current status: **PASS**.
+2026-10-21 release snapshot status: **PASS**.
+
+The 2026-10-29 passive-wrapper simulation and physical KV260 trials are recorded separately in the [board validation report](kv260-board-validation.md) and [source-hashed board evidence](board-2026-10-29/summary.json). The tables below retain their original snapshot scope.
 
 This is an evidence index, not the final validation report. It reads JSON as UTF-8 with BOM support. `NOT_RECORDED` means the historical run manifest omitted that class of source; it is not a hash match.
 

@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "config": "overlay_nn1",
+  "build_id": "f584e920",
+  "bitstream_sha256": "641ca4b902c58485450b20e76b1fe69829246fbe0d77343963866d235d6b0c4c",
+  "deterministic_words": 356,
+  "signature_words": 472,
+  "elapsed_cycles": 2927425,
+  "kernel_metrics": [
+    {
+      "name": "matmul_q4",
+      "logical_macs": 2048,
+      "physical_lane_macs": 2048,
+      "preparation_cycles": 27598,
+      "preparation_instret": 11722,
+      "legacy_cycles": 61152,
+      "legacy_instret": 57610,
+      "native_cycles": 3498,
+      "native_instret": 2540,
+      "scalar_cycles": 41577,
+      "scalar_instret": 38067
+    },
+    {
+      "name": "conv_q4",
+      "logical_macs": 20736,
+      "physical_lane_macs": 20736,
+      "preparation_cycles": 323822,
+      "preparation_instret": 138642,
+      "legacy_cycles": 587429,
+      "legacy_instret": 560039,
+      "native_cycles": 25562,
+      "native_instret": 19224,
+      "scalar_cycles": 388458,
+      "scalar_instret": 361212
+    },
+    {
+      "name": "tail_q4",
+      "logical_macs": 140,
+      "physical_lane_macs": 160,
+      "preparation_cycles": 7648,
+      "preparation_instret": 3254,
+      "legacy_cycles": 4265,
+      "legacy_instret": 3987,
+      "native_cycles": 322,
+      "native_instret": 222,
+      "scalar_cycles": 2906,
+      "scalar_instret": 2638
+    },
+    {
+      "name": "matmul_q2",
+      "logical_macs": 2048,
+      "physical_lane_macs": 2048,
+      "preparation_cycles": 26751,
+      "preparation_instret": 10938,
+      "legacy_cycles": 59286,
+      "legacy_instret": 54344,
+      "native_cycles": 2378,
+      "native_instret": 1804,
+      "scalar_cycles": 39711,
+      "scalar_instret": 36849
+    },
+    {
+      "name": "conv_q2",
+      "logical_macs": 20736,
+      "physical_lane_macs": 23040,
+      "preparation_cycles": 316847,
+      "preparation_instret": 132018,
+      "legacy_cycles": 579842,
+      "legacy_instret": 533984,
+      "native_cycles": 16058,
+      "native_instret": 12744,
+      "scalar_cycles": 380871,
+      "scalar_instret": 355893
+    },
+    {
+      "name": "tail_q2",
+      "logical_macs": 140,
+      "physical_lane_macs": 192,
+      "preparation_cycles": 7425,
+      "preparation_instret": 3046,
+      "legacy_cycles": 4164,
+      "legacy_instret": 3774,
+      "native_cycles": 250,
+      "native_instret": 176,
+      "scalar_cycles": 2805,
+      "scalar_instret": 2565
+    }
+  ]
+}
